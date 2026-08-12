@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to sync an Outlook calendar to Google Calendar</title>
+<meta name="description" content="Publish your Outlook or Microsoft 365 calendar as an iCal (.ics) feed, then sync it into Google Calendar. What each option does, and where the delay comes from.">
+<link rel="canonical" href="https://futzs.com/blog/outlook-to-google-calendar/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to sync an Outlook calendar to Google Calendar">
+<meta property="og:description" content="Publish your Outlook or Microsoft 365 calendar as an iCal (.ics) feed, then sync it into Google Calendar. What each option does, and where the delay comes from.">
+<meta property="og:url" content="https://futzs.com/blog/outlook-to-google-calendar/">
+<meta property="og:image" content="https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif">
+<meta property="og:image:alt" content="Syncing an Outlook calendar into Google Calendar">
+<meta property="article:published_time" content="2026-08-12"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to sync an Outlook calendar to Google Calendar">
+<meta name="twitter:description" content="Publish your Outlook or Microsoft 365 calendar as an iCal (.ics) feed, then sync it into Google Calendar. What each option does, and where the delay comes from.">
+<meta name="twitter:image" content="https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"Syncing an Outlook calendar into Google Calendar","item":"https://futzs.com/blog/outlook-to-google-calendar/"}]},{"@type":"BlogPosting","headline":"Syncing an Outlook calendar into Google Calendar","description":"Publish your Outlook or Microsoft 365 calendar as an iCal (.ics) feed, then sync it into Google Calendar. What each option does, and where the delay comes from.","url":"https://futzs.com/blog/outlook-to-google-calendar/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/outlook-to-google-calendar/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-08-12","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif"}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Sync multiple external calendars into Google Calendar in realtime, from any iCal (.ics) feed.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and insert them into Gmail or Google Chat without leaving the compose window.</span>
+              </a>
+              <a href="/apps/deskduty/">
+                <strong>DeskDuty</strong><span>On-call scheduling, alerting and incident response — fully integrated with the Google Workspace tools your team already lives in, at a fraction of the cost.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/about/">About</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>Syncing an Outlook calendar into Google Calendar</h1>
+  <div class="post-meta">Serge Koudoro &middot; 5 min read</div>
+  <div class="prose flush"><p>Plenty of people live in two calendars at once. A client runs on Microsoft 365,
+your own company runs on Google Workspace, and the only place the two meet is in
+your head — which is exactly where double bookings come from.</p>
+<p>There are three ways to put an Outlook calendar onto a Google Calendar grid.
+They are not equivalent, and the one Microsoft and Google both point you at is
+the weakest of the three.</p>
+<h2 id="option-1-publish-an-ical-feed-and-subscribe-to-it">Option 1: publish an iCal feed and subscribe to it</h2>
+<p>Outlook can publish a calendar as an iCal (<code>.ics</code>) URL, and Google Calendar can
+subscribe to that URL. This is the documented path and it takes about two minutes
+to set up.</p>
+<p>In Outlook on the web, open <strong>Settings → Calendar → Shared calendars</strong>, pick the
+calendar under <em>Publish a calendar</em>, choose the permission level, and publish.
+You get two links; the one ending in <code>.ics</code> is the iCal feed. In Google Calendar,
+open <strong>Other calendars → From URL</strong> and paste it.</p>
+<p>The catch is refresh rate. Google re-reads a subscribed URL on a schedule it does
+not publish and you cannot change — in practice, often somewhere between several
+hours and a day. Subscribed calendars are also read-only on the Google side, so
+you cannot annotate, recolour or correct anything you see.</p>
+<div class="admonition note">
+<p class="admonition-title">What this is good for</p>
+<p>A calendar you only need to look at. A colleague&rsquo;s rough availability, a
+public schedule, a term timetable. Anything you actively make decisions
+from will eventually catch you out.</p>
+</div>
+<h2 id="option-2-forward-individual-invitations">Option 2: forward individual invitations</h2>
+<p>You can also just forward meeting invites from Outlook to your Google address
+and accept them there. Each accepted invite becomes a real event you fully
+control.</p>
+<p>It works, and for two or three meetings a week it is genuinely the right answer.
+It does not scale, it misses anything you were not personally invited to, and
+every change on the Outlook side needs the same treatment again.</p>
+<h2 id="option-3-sync-the-feed-into-a-calendar-you-own">Option 3: sync the feed into a calendar you own</h2>
+<p>The third option keeps the iCal feed as the source but stops treating it as a
+subscription. Instead of pointing Google at the URL, an add-on reads the feed,
+works out what changed since last time, and creates, updates or removes matching
+events in a Google Calendar that belongs to you.</p>
+<p>The difference shows up in three places:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Subscribe (option 1)</th>
+<th>Sync (option 3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Update speed</td>
+<td>Google&rsquo;s own schedule</td>
+<td>Realtime, as the source changes</td>
+</tr>
+<tr>
+<td>Event ownership</td>
+<td>Read-only</td>
+<td>Yours — editable, colourable, shareable</td>
+</tr>
+<tr>
+<td>Offline &amp; mobile</td>
+<td>Patchy</td>
+<td>Same as any other event</td>
+</tr>
+</tbody>
+</table>
+<p>That is what <a href="/apps/icalsync/">ICalSync</a> does. The setup is the same publish step
+in Outlook; you paste the <code>.ics</code> URL into the add-on instead of into Google&rsquo;s
+<em>From URL</em> box, then pick which of your calendars the events should land in.</p>
+<h2 id="getting-the-outlook-feed-url">Getting the Outlook feed URL</h2>
+<p>The exact menu has moved around over the years. As of now:</p>
+<ol>
+<li>Outlook on the web → <strong>Settings</strong> (gear) → <strong>Calendar</strong> → <strong>Shared calendars</strong>.</li>
+<li>Under <em>Publish a calendar</em>, choose the calendar and select <strong>Can view all details</strong>.</li>
+<li>Select <strong>Publish</strong>, then copy the <strong>ICS</strong> link — not the HTML one.</li>
+</ol>
+<p>If your organisation has publishing disabled, this section will be missing or
+greyed out. That is a Microsoft 365 tenant policy and no calendar tool can work
+around it; you will need an administrator to enable external calendar publishing.</p>
+<h2 id="a-note-on-privacy">A note on privacy</h2>
+<p>An unauthenticated <code>.ics</code> URL is a secret URL: anyone who has it can read the
+calendar. Treat it like a password, publish the least detail you actually need,
+and re-publish to rotate the link if it leaks. This applies equally whichever of
+the three options you pick.</p>
+<h2 id="which-one-to-choose">Which one to choose</h2>
+<p>Forward invites if there are only a handful. Subscribe if you only ever look at
+the calendar. Sync if the schedule drives decisions and being a few hours behind
+would cost you something.</p>
+<p>The <a href="/help/icalsync/">ICalSync setup guide</a> walks through the sync path end to
+end, and <a href="/blog/ical-feeds/">why Google&rsquo;s iCal refresh is so slow</a> explains what
+is happening underneath if you want the longer version.</p></div>
+  <div class="cta-band inline">
+    <div><h3>Keep both calendars in step</h3><p class="muted">Free to install from the Google Workspace Marketplace.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">About ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/deskduty/">DeskDuty</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/help/icalsync/">ICalSync docs</a><a href="/legal/#privacy">Privacy Policy</a><a href="/legal/#terms">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

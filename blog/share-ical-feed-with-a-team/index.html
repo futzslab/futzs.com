@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to share an iCal (.ics) feed with your team</title>
+<meta name="description" content="Sending an .ics URL to twelve colleagues gives you twelve subscriptions, each stale at a different moment. Sync it once into a shared Google Calendar instead.">
+<link rel="canonical" href="https://futzs.com/blog/share-ical-feed-with-a-team/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to share an iCal (.ics) feed with your team">
+<meta property="og:description" content="Sending an .ics URL to twelve colleagues gives you twelve subscriptions, each stale at a different moment. Sync it once into a shared Google Calendar instead.">
+<meta property="og:url" content="https://futzs.com/blog/share-ical-feed-with-a-team/">
+<meta property="og:image" content="https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif">
+<meta property="og:image:alt" content="Sharing one iCal feed across a whole team">
+<meta property="article:published_time" content="2026-08-12"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to share an iCal (.ics) feed with your team">
+<meta name="twitter:description" content="Sending an .ics URL to twelve colleagues gives you twelve subscriptions, each stale at a different moment. Sync it once into a shared Google Calendar instead.">
+<meta name="twitter:image" content="https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"Sharing one iCal feed across a whole team","item":"https://futzs.com/blog/share-ical-feed-with-a-team/"}]},{"@type":"BlogPosting","headline":"Sharing one iCal feed across a whole team","description":"Sending an .ics URL to twelve colleagues gives you twelve subscriptions, each stale at a different moment. Sync it once into a shared Google Calendar instead.","url":"https://futzs.com/blog/share-ical-feed-with-a-team/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/share-ical-feed-with-a-team/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-08-12","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif"}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Sync multiple external calendars into Google Calendar in realtime, from any iCal (.ics) feed.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and insert them into Gmail or Google Chat without leaving the compose window.</span>
+              </a>
+              <a href="/apps/deskduty/">
+                <strong>DeskDuty</strong><span>On-call scheduling, alerting and incident response — fully integrated with the Google Workspace tools your team already lives in, at a fraction of the cost.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/about/">About</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>Sharing one iCal feed across a whole team</h1>
+  <div class="post-meta">Serge Koudoro &middot; 4 min read</div>
+  <div class="prose flush"><p>A booking system, a shift rota, a client&rsquo;s availability — something publishes an
+iCal feed and the whole team needs to see it. The obvious move is to paste the
+URL into a channel and let everyone add it themselves.</p>
+<p>That works, in the sense that everyone ends up seeing something. It also creates
+one independent subscription per person, each refreshed by Google whenever it
+feels like it. Two people looking at &ldquo;the&rdquo; calendar at the same moment can be
+looking at different versions of it, and neither of them can tell.</p>
+<h2 id="why-the-fan-out-is-the-problem">Why the fan-out is the problem</h2>
+<p>Handing out the URL means:</p>
+<ul>
+<li><strong>No shared truth.</strong> Each subscription refreshes on its own schedule. There is no moment at which everyone is looking at the same state.</li>
+<li><strong>No control.</strong> Subscribed calendars are read-only. Nobody can annotate an event, flag a conflict, or attach the context that makes it useful.</li>
+<li><strong>A secret spread wide.</strong> Most <code>.ics</code> URLs are unauthenticated: whoever holds the link can read the calendar. Once it is in a group chat, you have lost track of who has it and you cannot take it back without re-publishing.</li>
+<li><strong>Onboarding overhead.</strong> Every new person repeats the setup, and gets it slightly wrong at their own pace.</li>
+</ul>
+<p>None of this is dramatic. It is just persistent low-grade friction, which is the
+kind that never gets fixed because it never quite becomes anyone&rsquo;s problem.</p>
+<h2 id="the-better-shape-sync-once-share-normally">The better shape: sync once, share normally</h2>
+<p>Point one add-on at the feed, have it write real events into a single Google
+Calendar, and share that calendar with the team using ordinary Google Calendar
+sharing.</p>
+<p>The URL stays with whoever set it up. Everyone else gets a normal shared
+calendar — the same permissions model, the same mobile behaviour, the same
+notifications as every other calendar they already have.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Everyone subscribes</th>
+<th>Sync once, share the calendar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Versions in play</td>
+<td>One per person</td>
+<td>One</td>
+</tr>
+<tr>
+<td>Feed URL exposure</td>
+<td>Everyone who got the link</td>
+<td>The person who set it up</td>
+</tr>
+<tr>
+<td>Permissions</td>
+<td>Read-only, per person</td>
+<td>Google Calendar sharing</td>
+</tr>
+<tr>
+<td>Adding someone</td>
+<td>They repeat the setup</td>
+<td>Share, as with any calendar</td>
+</tr>
+<tr>
+<td>Removing someone</td>
+<td>They keep the URL</td>
+<td>Unshare</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setting-it-up">Setting it up</h2>
+<ol>
+<li>Get the iCal (<code>.ics</code>) URL from the source system — usually under a share, publish or export menu.</li>
+<li>Create a new Google Calendar for it, so the synced events stay separate from anyone&rsquo;s personal schedule.</li>
+<li>Install <a href="/apps/icalsync/">ICalSync</a> from the Google Workspace Marketplace, paste the URL, and choose that calendar as the destination.</li>
+<li>Share the calendar with the team, or with a Google group, at whatever permission level suits.</li>
+</ol>
+<p>A Workspace administrator can install the add-on domain-wide, so nobody else has
+to install anything at all.</p>
+<div class="admonition note">
+<p class="admonition-title">Use a group, not a list of people</p>
+<p>Share with a Google group rather than named individuals. Then team changes
+are handled by group membership, and nobody has to remember which calendars
+a leaver still has access to.</p>
+</div>
+<h2 id="when-to-keep-it-simple">When to keep it simple</h2>
+<p>If it is genuinely one person watching one feed for reference, subscribing
+directly is fine, and setting up a shared calendar is overkill. The fan-out only
+starts to hurt when the schedule drives decisions and more than a couple of
+people rely on it.</p>
+<p>The <a href="/help/icalsync/">ICalSync setup guide</a> covers the sync step in detail, and
+<a href="/blog/calendar-not-updating/">why subscriptions lag</a> explains the refresh
+behaviour that makes the many-subscriptions version so inconsistent.</p></div>
+  <div class="cta-band inline">
+    <div><h3>One calendar, one source</h3><p class="muted">Free to install from the Google Workspace Marketplace.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">About ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/deskduty/">DeskDuty</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/help/icalsync/">ICalSync docs</a><a href="/legal/#privacy">Privacy Policy</a><a href="/legal/#terms">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

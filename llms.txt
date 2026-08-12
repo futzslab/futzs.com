@@ -1,0 +1,52 @@
+# Futzs
+
+> Google Workspace apps and open-source tools that remove small, repeated friction from your working day.
+
+Futzs builds small, focused Google Workspace add-ons and open-source developer
+tools. Every add-on installs from the Google Workspace Marketplace and runs
+inside the Google apps a team already uses. Each app publishes its own privacy
+policy and terms.
+
+## Apps
+
+- [ICalSync](https://futzs.com/apps/icalsync/): ICalSync keeps Google Calendar in step with any external iCal or .ics feed in realtime, instead of waiting on Google's From URL refresh. Free Workspace add-on. Setup guide: https://futzs.com/help/icalsync/
+- [Quick Replies](https://futzs.com/apps/quickreplies/): Create shortcuts for the messages you send over and over, then insert them into Gmail or Google Chat in two keystrokes. Free Google Workspace add-on. Setup guide: https://futzs.com/help/quickreplies/
+- [DeskDuty](https://futzs.com/apps/deskduty/): On-call rotations, alerting and incident response inside Gmail and Google Chat, at a fraction of the cost of a dedicated on-call tool. Early access open. Setup guide: https://futzs.com/help/
+
+## Open-source libraries
+
+- [GAPPS](https://futzs.com/apps/gapps/): GAPPS is a library that allows developers to easily and flexibly build add-ons for Google Workspace using Python 🐍. With GAPPS, you can create powerful tools and integrations for Gmail, Google Chat, Calendar, Sheets, Drive, Docs and other Google Workspace apps, that can streamline your workflow and automate common tasks. Source: https://github.com/skoudoro/gapps
+
+
+## Documentation
+
+- [ICalSync docs](https://futzs.com/help/icalsync/): step-by-step setup and troubleshooting.
+
+- [Quick Replies docs](https://futzs.com/help/quickreplies/): step-by-step setup and troubleshooting.
+
+
+## Articles
+
+- [Why your Google Calendar subscription is not updating](https://futzs.com/blog/calendar-not-updating/): A subscribed iCal calendar showing stale or missing events is usually not broken. The refresh behaviour behind it, and how to tell slow from actually broken.
+
+- [Syncing an Outlook calendar into Google Calendar](https://futzs.com/blog/outlook-to-google-calendar/): Publish your Outlook or Microsoft 365 calendar as an iCal (.ics) feed, then sync it into Google Calendar. What each option does, and where the delay comes from.
+
+- [Sharing one iCal feed across a whole team](https://futzs.com/blog/share-ical-feed-with-a-team/): Sending an .ics URL to twelve colleagues gives you twelve subscriptions, each stale at a different moment. Sync it once into a shared Google Calendar instead.
+
+- [Pulling an external calendar into Google Calendar, properly](https://futzs.com/blog/ical-feeds/): Google Calendar refreshes an iCal subscription on its own schedule, often 12 to 24 hours behind. Here is what actually happens, and how realtime iCal sync fixes it.
+
+- [Why we build Workspace add-ons in Python](https://futzs.com/blog/python-addons/): Apps Script is the default answer for Workspace add-ons and a fine one. Here is what we gained by moving the add-on layer to Python, and what it cost.
+
+
+## Company and legal
+
+- [About](https://futzs.com/about/): who builds these apps.
+- [Partnership](https://futzs.com/partnership/): working with Futzs.
+- [Contact](https://futzs.com/contact/): contact@futzs.com
+- [Privacy and terms](https://futzs.com/legal/): per-app privacy policies and terms of use.
+
+## Optional
+
+- [Blog index](https://futzs.com/blog/)
+- [Help center](https://futzs.com/help/)
+- [All apps and libraries](https://futzs.com/apps/)

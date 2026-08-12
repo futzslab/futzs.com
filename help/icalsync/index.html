@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to sync an iCal (.ics) feed to Google Calendar</title>
+<meta name="description" content="Step by step: install ICalSync, add an iCal (.ics) feed URL, pick the destination Google Calendar and verify the first sync — plus fixes for common sync problems.">
+<link rel="canonical" href="https://futzs.com/help/icalsync/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Futzs">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to sync an iCal (.ics) feed to Google Calendar">
+<meta property="og:description" content="Step by step: install ICalSync, add an iCal (.ics) feed URL, pick the destination Google Calendar and verify the first sync — plus fixes for common sync problems.">
+<meta property="og:url" content="https://futzs.com/help/icalsync/">
+<meta property="og:image" content="https://futzs.com/images/futzs_logo.png">
+<meta property="og:image:alt" content="ICalSync docs">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to sync an iCal (.ics) feed to Google Calendar">
+<meta name="twitter:description" content="Step by step: install ICalSync, add an iCal (.ics) feed URL, pick the destination Google Calendar and verify the first sync — plus fixes for common sync problems.">
+<meta name="twitter:image" content="https://futzs.com/images/futzs_logo.png">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://futzs.com/help/"},{"@type":"ListItem","position":3,"name":"ICalSync docs","item":"https://futzs.com/help/icalsync/"}]},{"@type":"TechArticle","headline":"ICalSync docs","description":"Step by step: install ICalSync, add an iCal (.ics) feed URL, pick the destination Google Calendar and verify the first sync — plus fixes for common sync problems.","url":"https://futzs.com/help/icalsync/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/help/icalsync/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","author":{"@id":"https://futzs.com/#organization"}}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Sync multiple external calendars into Google Calendar in realtime, from any iCal (.ics) feed.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and insert them into Gmail or Google Chat without leaving the compose window.</span>
+              </a>
+              <a href="/apps/deskduty/">
+                <strong>DeskDuty</strong><span>On-call scheduling, alerting and incident response — fully integrated with the Google Workspace tools your team already lives in, at a fraction of the cost.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/about/">About</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link is-current" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<div class="docs-bar">
+  <div class="docs-bar-in">
+    <span class="docs-bar-title">ICalSync docs</span>
+    <div class="docs-search">
+      <input class="input" type="search" id="docs-search" placeholder="Search this page" autocomplete="off">
+      <div class="docs-results" id="docs-results" hidden></div>
+    </div>
+  </div>
+</div>
+<div class="docs-grid" data-docs-grid>
+  <nav class="docs-nav" data-docs-nav data-spy>
+    <div class="docs-group">
+      <div class="docs-group-title">ICalSync</div>
+<a href="#getting-started">Getting started</a><a href="#1-install-the-add-on">Install the add-on</a><a href="#2-add-a-calendar-feed">Add a calendar feed</a><a href="#3-choose-the-destination">Choose the destination</a><a href="#troubleshooting">Troubleshooting</a>    </div>
+    <div class="docs-group">
+      <div class="docs-group-title">Reference</div>
+<a href="/legal/icalsync/#privacy">Privacy policy</a><a href="/legal/icalsync/#terms">Terms &amp; conditions</a>    </div>
+    <div class="docs-group">
+      <div class="docs-group-title">Other apps</div>
+<a href="/help/quickreplies/">Quick Replies</a><a href="/apps/deskduty/">DeskDuty</a><a href="https://github.com/skoudoro/gapps">GAPPS on GitHub</a>    </div>
+    <div class="docs-nav-foot" data-docs-nav-foot>
+      <a href="/apps/icalsync/">&larr; Product page</a>
+    </div>
+  </nav>
+  <article class="docs-main prose flush" data-docs-body>
+    <div class="crumbs"><a href="/help/">Help</a> / <span>ICalSync</span> / <span class="here">Getting started</span></div>
+    <h1 id="getting-started">Getting started</h1>
+<p>ICalSync reads an external iCal feed and writes the events into a Google Calendar
+you own, keeping the two in step in realtime. This page takes you from install to
+first synced event.</p>
+<div class="admonition note">
+<p class="admonition-title">Before you start</p>
+<p>You need the iCal (<code>.ics</code>) URL of the calendar you want to bring in, and
+permission to install add-ons on your Google account.</p>
+</div>
+<h2 id="1-install-the-add-on">1. Install the add-on</h2>
+<p>Open the ICalSync listing on the Google Workspace Marketplace and choose
+<strong>Install</strong>. Google will show you the permissions the add-on requests — calendar
+access, so it can create and update the events you ask for. Accept, and ICalSync
+appears in the side panel of Google Calendar.</p>
+<p>Administrators installing for a whole domain should use the same listing and
+choose the domain-wide install; everyone in the organisation gets the add-on
+without acting individually.</p>
+<h2 id="2-add-a-calendar-feed">2. Add a calendar feed</h2>
+<p>Find the feed URL in the system that owns the schedule. It usually sits under a
+menu called share, publish, subscribe or export, and ends in <code>.ics</code>. Paste it
+into ICalSync and give the connection a name you will recognise later.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Where the feed URL usually lives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Another Google Calendar</td>
+<td>Settings → Integrate calendar → Secret address in iCal format</td>
+</tr>
+<tr>
+<td>Outlook / Microsoft 365</td>
+<td>Calendar settings → Shared calendars → Publish a calendar</td>
+</tr>
+<tr>
+<td>Booking &amp; scheduling tools</td>
+<td>Look for &ldquo;iCal feed&rdquo;, &ldquo;Subscribe&rdquo; or &ldquo;Calendar export&rdquo;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-choose-the-destination">3. Choose the destination</h2>
+<p>Pick which of your Google Calendars the events should be written into. A
+dedicated calendar per feed is the setup we recommend: you can toggle it on and
+off, give it its own colour, and share it without exposing anything else.</p>
+<h2 id="4-verify-the-first-sync">4. Verify the first sync</h2>
+<p>Open the destination calendar and find an event you recognise. Then change
+something on the source — move a booking by an hour — and watch it follow
+through. Once you have seen one change land, the connection needs no further
+attention.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="nothing-appeared-after-i-added-the-feed">Nothing appeared after I added the feed</h3>
+<p>Open the URL in a browser. If it downloads a text file starting with
+<code>BEGIN:VCALENDAR</code>, the feed is valid and the problem is the destination
+calendar. If it asks you to sign in, the feed is private and needs a public or
+secret address instead.</p>
+<h3 id="events-are-duplicated">Events are duplicated</h3>
+<p>Usually the same feed is both subscribed through Google&rsquo;s <em>From URL</em> option and
+synced through ICalSync. Remove the subscription and keep the sync.</p>
+<h3 id="times-are-off-by-an-hour">Times are off by an hour</h3>
+<p>Some systems publish feeds without timezone information. Check the timezone on
+both the source system and the destination Google Calendar before assuming the
+sync is at fault.</p>
+    <div class="docs-foot">
+      <a class="docs-foot-link" href="/help/"><span>Previous</span><strong>&larr; Help Center</strong></a>
+      <a class="docs-foot-link right" href="/contact/"><span>Next</span><strong>Talk to support &rarr;</strong></a>
+    </div>
+  </article>
+  <aside class="docs-toc" data-docs-toc data-spy>
+    <div class="docs-group-title">On this page</div>
+    <a href="#getting-started">Getting started</a>
+<a class="sub" href="#1-install-the-add-on">1. Install the add-on</a><a class="sub" href="#2-add-a-calendar-feed">2. Add a calendar feed</a><a class="sub" href="#3-choose-the-destination">3. Choose the destination</a><a class="sub" href="#4-verify-the-first-sync">4. Verify the first sync</a><a class="sub" href="#troubleshooting">Troubleshooting</a>  </aside>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/deskduty/">DeskDuty</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/help/icalsync/">ICalSync docs</a><a href="/legal/#privacy">Privacy Policy</a><a href="/legal/#terms">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

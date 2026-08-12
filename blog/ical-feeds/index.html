@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Google Calendar&#39;s iCal (.ics) feed sync is so slow</title>
+<meta name="description" content="Google Calendar refreshes an iCal subscription on its own schedule, often 12 to 24 hours behind. Here is what actually happens, and how realtime iCal sync fixes it.">
+<link rel="canonical" href="https://futzs.com/blog/ical-feeds/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Why Google Calendar&#39;s iCal (.ics) feed sync is so slow">
+<meta property="og:description" content="Google Calendar refreshes an iCal subscription on its own schedule, often 12 to 24 hours behind. Here is what actually happens, and how realtime iCal sync fixes it.">
+<meta property="og:url" content="https://futzs.com/blog/ical-feeds/">
+<meta property="og:image" content="https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif">
+<meta property="og:image:alt" content="Pulling an external calendar into Google Calendar, properly">
+<meta property="article:published_time" content="2025-11-18"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Google Calendar&#39;s iCal (.ics) feed sync is so slow">
+<meta name="twitter:description" content="Google Calendar refreshes an iCal subscription on its own schedule, often 12 to 24 hours behind. Here is what actually happens, and how realtime iCal sync fixes it.">
+<meta name="twitter:image" content="https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"Pulling an external calendar into Google Calendar, properly","item":"https://futzs.com/blog/ical-feeds/"}]},{"@type":"BlogPosting","headline":"Pulling an external calendar into Google Calendar, properly","description":"Google Calendar refreshes an iCal subscription on its own schedule, often 12 to 24 hours behind. Here is what actually happens, and how realtime iCal sync fixes it.","url":"https://futzs.com/blog/ical-feeds/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/ical-feeds/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2025-11-18","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/Calendar-Banner-ICAL-High-Quality.gif"}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Sync multiple external calendars into Google Calendar in realtime, from any iCal (.ics) feed.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and insert them into Gmail or Google Chat without leaving the compose window.</span>
+              </a>
+              <a href="/apps/deskduty/">
+                <strong>DeskDuty</strong><span>On-call scheduling, alerting and incident response — fully integrated with the Google Workspace tools your team already lives in, at a fraction of the cost.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/about/">About</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>Pulling an external calendar into Google Calendar, properly</h1>
+  <div class="post-meta">Serge Koudoro &middot; 6 min read</div>
+  <div class="prose flush"><p>If you have ever added a calendar with Google&rsquo;s <em>From URL</em> option and then
+watched a cancelled meeting sit stubbornly on your grid for most of a day, you
+have met the problem this app exists to solve.</p>
+<h2 id="what-an-ical-feed-actually-is">What an iCal feed actually is</h2>
+<p>An iCal feed is a plain text file at a URL, listing events in a standard format.
+Almost everything that keeps a schedule can publish one: booking systems,
+university timetables, project trackers, other calendar providers. The file is
+not a live connection. It is a document that someone rewrites when the underlying
+schedule changes, and your calendar client re-reads it whenever it decides to.</p>
+<h2 id="why-the-built-in-option-feels-broken">Why the built-in option feels broken</h2>
+<p>Google Calendar subscribes to the URL and re-reads it on its own schedule, which
+is neither published nor adjustable. In practice that means changes on the source
+can take hours to surface. For a read-only view of a public holiday calendar,
+fine. For anything you make decisions from — a client&rsquo;s availability, a room
+booking, a shift rota — the lag is the whole problem. Worse, subscribed calendars
+are read-only, so you cannot correct or annotate an event on your side.</p>
+<h2 id="syncing-instead-of-subscribing">Syncing instead of subscribing</h2>
+<p>The alternative is to treat the feed as a source and write real events into a
+Google Calendar you own. That is what ICalSync does: it reads the feed, works out
+what changed, and creates, updates or removes the matching events in the
+destination calendar in realtime. Because the events are yours, they behave like
+everything else on your calendar — searchable, colour-coded, visible to the
+people you share with, available offline on your phone.</p>
+<blockquote>
+<p>Rule of thumb: subscribe when you only need to look at a calendar, sync when
+you need to act on it.</p>
+</blockquote>
+<h2 id="setting-one-up">Setting one up</h2>
+<ol>
+<li>Find the iCal (.ics) URL in the source system. It is usually under a share, publish or export menu.</li>
+<li>Install ICalSync from the Google Workspace Marketplace and grant the calendar permissions.</li>
+<li>Paste the URL, choose which of your calendars the events should land in, and save.</li>
+<li>Check one event you know recently changed, to confirm the mapping looks the way you expect.</li>
+</ol>
+<p>After that there is nothing to maintain. If the source moves a meeting, your
+calendar moves it too.</p></div>
+  <div class="cta-band inline">
+    <div><h3>Try it on one calendar</h3><p class="muted">Free to install from the Google Workspace Marketplace.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">About ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/deskduty/">DeskDuty</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/help/icalsync/">ICalSync docs</a><a href="/legal/#privacy">Privacy Policy</a><a href="/legal/#terms">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

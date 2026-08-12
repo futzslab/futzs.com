@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building Google Workspace add-ons in Python, not Apps Script</title>
+<meta name="description" content="Apps Script is the default answer for Workspace add-ons and a fine one. Here is what we gained by moving the add-on layer to Python, and what it cost.">
+<link rel="canonical" href="https://futzs.com/blog/python-addons/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Building Google Workspace add-ons in Python, not Apps Script">
+<meta property="og:description" content="Apps Script is the default answer for Workspace add-ons and a fine one. Here is what we gained by moving the add-on layer to Python, and what it cost.">
+<meta property="og:url" content="https://futzs.com/blog/python-addons/">
+<meta property="og:image" content="https://futzs.com/images/futzs_logo.png">
+<meta property="og:image:alt" content="Why we build Workspace add-ons in Python">
+<meta property="article:published_time" content="2025-10-02"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Building Google Workspace add-ons in Python, not Apps Script">
+<meta name="twitter:description" content="Apps Script is the default answer for Workspace add-ons and a fine one. Here is what we gained by moving the add-on layer to Python, and what it cost.">
+<meta name="twitter:image" content="https://futzs.com/images/futzs_logo.png">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"Why we build Workspace add-ons in Python","item":"https://futzs.com/blog/python-addons/"}]},{"@type":"BlogPosting","headline":"Why we build Workspace add-ons in Python","description":"Apps Script is the default answer for Workspace add-ons and a fine one. Here is what we gained by moving the add-on layer to Python, and what it cost.","url":"https://futzs.com/blog/python-addons/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/python-addons/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2025-10-02","author":{"@type":"Person","name":"Serge Koudoro"}}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Sync multiple external calendars into Google Calendar in realtime, from any iCal (.ics) feed.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and insert them into Gmail or Google Chat without leaving the compose window.</span>
+              </a>
+              <a href="/apps/deskduty/">
+                <strong>DeskDuty</strong><span>On-call scheduling, alerting and incident response — fully integrated with the Google Workspace tools your team already lives in, at a fraction of the cost.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/about/">About</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Engineering · GAPPS</span>
+  <h1>Why we build Workspace add-ons in Python</h1>
+  <div class="post-meta">Serge Koudoro &middot; 8 min read</div>
+  <div class="prose flush"><p>Apps Script is the default way to extend Google Workspace, and for a lot of jobs
+it is the right answer. It is also the only answer most people ever consider,
+which is why it is worth writing down what changes when you step outside it.</p>
+<h2 id="the-case-for-apps-script">The case for Apps Script</h2>
+<p>No servers, no deployment pipeline, authentication handled for you, and an editor
+a single click from the document you are automating. For a script that tidies one
+spreadsheet every Monday, anything else is overkill.</p>
+<h2 id="where-it-starts-to-hurt">Where it starts to hurt</h2>
+<p>The trouble arrives when the script stops being a script. You want the same logic
+behind an add-on, a scheduled job and an API. You want the libraries you already
+trust. You want tests that run in your normal test runner, dependencies you pin,
+and a diff you can review. At that point the constraints that made Apps Script
+pleasant start working against you.</p>
+<h2 id="what-gapps-does">What GAPPS does</h2>
+<p>GAPPS is the library we extracted from doing this repeatedly. It lets you build
+add-ons for Gmail, Google Chat, Calendar, Sheets, Drive, Docs and the rest of
+Workspace in Python: describe the cards and actions the add-on presents, handle
+the callbacks Google sends, and keep the rest of your application in ordinary
+Python where the rest of your tooling already lives.</p>
+<blockquote>
+<p>The add-on becomes a presentation layer over a normal Python service, rather
+than the place all the logic has to live.</p>
+</blockquote>
+<h2 id="what-it-costs">What it costs</h2>
+<p>You now own a deployment. Something has to run, be reachable, and stay patched;
+you handle your own OAuth configuration and your own logs. That is a real trade,
+and if your automation is small you should not make it. If you are building
+several apps on the same foundations, you make it once and stop paying it.</p>
+<h2 id="how-to-decide">How to decide</h2>
+<p>Ask whether the thing you are building has a life outside the document. If it
+does not, use Apps Script and enjoy the afternoon you save. If it does — if it
+needs a database, a queue, a model, a second interface — writing it in Python and
+letting GAPPS handle the Workspace surface will cost you a day now and save you
+the rewrite later.</p></div>
+  <div class="cta-band inline">
+    <div><h3>GAPPS is open source</h3><p class="muted">Read the code, file an issue, or take it for a spin.</p></div>
+    <a class="btn btn-primary" href="https://github.com/skoudoro/gapps">View on GitHub</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/deskduty/">DeskDuty</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/help/icalsync/">ICalSync docs</a><a href="/legal/#privacy">Privacy Policy</a><a href="/legal/#terms">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

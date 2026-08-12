@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Futzs — Blog</title>
+    <link>https://futzs.com/blog/</link>
+    <description>Google Workspace apps and open-source tools that remove small, repeated friction from your working day.</description>
+    <language>en</language>
+    <atom:link href="https://futzs.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Why your Google Calendar subscription is not updating</title>
+      <link>https://futzs.com/blog/calendar-not-updating/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/calendar-not-updating/</guid>
+      <description>A subscribed iCal calendar showing stale or missing events is usually not broken. The refresh behaviour behind it, and how to tell slow from actually broken.</description>
+      <pubDate>Wed, 12 Aug 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
+      <title>Syncing an Outlook calendar into Google Calendar</title>
+      <link>https://futzs.com/blog/outlook-to-google-calendar/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/outlook-to-google-calendar/</guid>
+      <description>Publish your Outlook or Microsoft 365 calendar as an iCal (.ics) feed, then sync it into Google Calendar. What each option does, and where the delay comes from.</description>
+      <pubDate>Wed, 12 Aug 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
+      <title>Sharing one iCal feed across a whole team</title>
+      <link>https://futzs.com/blog/share-ical-feed-with-a-team/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/share-ical-feed-with-a-team/</guid>
+      <description>Sending an .ics URL to twelve colleagues gives you twelve subscriptions, each stale at a different moment. Sync it once into a shared Google Calendar instead.</description>
+      <pubDate>Wed, 12 Aug 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
+      <title>Pulling an external calendar into Google Calendar, properly</title>
+      <link>https://futzs.com/blog/ical-feeds/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/ical-feeds/</guid>
+      <description>Google Calendar refreshes an iCal subscription on its own schedule, often 12 to 24 hours behind. Here is what actually happens, and how realtime iCal sync fixes it.</description>
+      <pubDate>Tue, 18 Nov 2025 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
+      <title>Why we build Workspace add-ons in Python</title>
+      <link>https://futzs.com/blog/python-addons/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/python-addons/</guid>
+      <description>Apps Script is the default answer for Workspace add-ons and a fine one. Here is what we gained by moving the add-on layer to Python, and what it cost.</description>
+      <pubDate>Thu, 02 Oct 2025 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Answer engines and AI crawlers are welcome: the docs and blog are written to
+# be quoted. See /llms.txt for a map of the site.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://futzs.com/sitemap.xml
