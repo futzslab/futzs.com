@@ -1010,10 +1010,12 @@ textarea.input { resize: vertical; line-height: 1.6; }
   color: var(--faint);
 }
 
+/* Flex, not a grid: with only a couple of facts an auto-fit grid stretches
+   them across the full width. */
 .manifesto-facts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
-  gap: 26px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px 56px;
   margin: 64px 0 0;
   padding-top: 34px;
   border-top: 1px solid var(--divider);
