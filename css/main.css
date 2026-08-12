@@ -183,7 +183,9 @@ img { max-width: 100%; height: auto; }
 .nav-shell.is-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-shell.is-open .nav-toggle span:nth-child(2) { opacity: 0; }
 .nav-shell.is-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav-cta-inline { display: none; }
+/* Two classes, so this beats the later `.btn { display: inline-block }` —
+   otherwise the panel CTA also shows on desktop and Contact appears twice. */
+.nav-links .nav-cta-inline { display: none; }
 
 .nav-subrow {
   display: flex;
@@ -404,7 +406,7 @@ img { max-width: 100%; height: auto; }
 .docs-nav a:hover { background: rgba(32, 31, 29, 0.04); color: var(--text); }
 .docs-nav a.is-active { color: var(--accent); background: rgba(182, 130, 53, 0.1); font-weight: 500; }
 .docs-nav-foot { padding-top: 18px; border-top: 1px solid rgba(32, 31, 29, 0.14); }
-.docs-main { max-width: none; margin: 0; padding: 46px clamp(24px, 4vw, 56px) 96px; }
+/* Sizing lives with the other .docs-main.prose rules further down. */
 .docs-toc { position: sticky; top: 63px; padding: 46px clamp(20px, 3vw, 32px) 60px 0; }
 .docs-toc a {
   display: block;
@@ -513,22 +515,6 @@ img { max-width: 100%; height: auto; }
   color: var(--muted);
 }
 .stars { color: var(--accent); letter-spacing: 0.1em; }
-
-.app-strip {
-  max-width: var(--page);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
-  border: 1px solid var(--divider);
-  border-radius: 6px;
-  overflow: hidden;
-}
-.app-strip a { padding: 22px 24px; border-right: 1px solid var(--divider); color: var(--text); }
-.app-strip a:last-child { border-right: 0; }
-.app-strip a:hover { background: rgba(182, 130, 53, 0.07); }
-.app-strip strong { display: block; font-family: var(--font-heading); font-weight: 600; font-size: 20px; }
-.app-strip span { display: block; margin-top: 3px; font-size: 12.5px; color: var(--faint); }
 
 .marquee-band { padding: 64px 0 8px; }
 .marquee-label {
@@ -802,7 +788,16 @@ textarea.input { resize: vertical; line-height: 1.6; }
 .crumbs .here { color: rgba(32, 31, 29, 0.75); }
 /* The docs column is a reading column: cap the measure and give the page
    title real room below it, rather than letting text run the full width. */
-.docs-main { max-width: 720px; font-size: 16.5px; line-height: 1.75; }
+/* The element is `.docs-main.prose.flush`, and `.prose.flush` above resets
+   max-width/margin/padding. Match its specificity or the reading measure is
+   never applied and the text runs the full width of the window. */
+.docs-main.prose {
+  max-width: 760px;
+  margin: 0;
+  padding: 40px clamp(24px, 4vw, 56px) 96px;
+  font-size: 16.5px;
+  line-height: 1.75;
+}
 .docs-main h1 { font-size: clamp(30px, 3.4vw, 40px); margin-bottom: 30px; }
 .docs-main h2 { font-size: 24px; margin: 52px 0 14px; }
 .docs-main h3 { font-size: 19px; margin: 34px 0 10px; }
@@ -838,7 +833,7 @@ textarea.input { resize: vertical; line-height: 1.6; }
   .nav-row { flex-wrap: nowrap; justify-content: space-between; gap: 12px; padding: 7px 8px 7px 16px; }
   .nav-toggle { display: flex; }
   .nav-cta { display: none; }
-  .nav-cta-inline { display: block; margin-top: 8px; text-align: center; }
+  .nav-links .nav-cta-inline { display: block; margin-top: 8px; text-align: center; }
 
   .nav-links {
     display: none;
@@ -910,7 +905,7 @@ textarea.input { resize: vertical; line-height: 1.6; }
   .docs-bar-in { gap: 10px; padding: 10px var(--gutter); }
   .docs-search { flex: 1 1 100%; }
   .docs-search .input { width: 100%; min-width: 0; }
-  .docs-main { padding: 30px var(--gutter) 64px; }
+  .docs-main.prose { padding: 30px var(--gutter) 64px; }
   .docs-foot { flex-direction: column; }
   .docs-foot-link, .docs-foot-link.right { text-align: left; min-width: 0; }
 
