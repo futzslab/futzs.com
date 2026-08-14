@@ -7,6 +7,14 @@
     <language>en</language>
     <atom:link href="https://futzs.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Why Futzs sponsors PyCon Togo</title>
+      <link>https://futzs.com/blog/pycon-togo-2026/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/pycon-togo-2026/</guid>
+      <description>Futzs is a bronze sponsor of PyCon Togo 2026 in Lomé, 28–30 August. Why a small Google Workspace shop puts money into an African Python conference.</description>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
       <title>Why your Google Calendar subscription is not updating</title>
       <link>https://futzs.com/blog/calendar-not-updating/</link>
       <guid isPermaLink="true">https://futzs.com/blog/calendar-not-updating/</guid>

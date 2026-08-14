@@ -743,6 +743,9 @@ textarea.input { resize: vertical; line-height: 1.6; }
 .post-meta { display: flex; gap: 12px; margin-top: 24px; padding-bottom: 30px; border-bottom: 1px solid var(--divider); font-size: 13.5px; color: var(--faint); }
 .prose.flush { max-width: none; margin: 0; padding: 34px 0 0; }
 .plate-link { display: block; }
+/* A sponsor / partner mark dropped into a post body. Sized well under the
+   column so it reads as a logo rather than a banner. */
+.post-logo { display: block; max-width: 340px; margin: 4px 0 30px; }
 
 /* ── docs ────────────────────────────────────────────── */
 

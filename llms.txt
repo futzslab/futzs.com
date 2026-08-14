@@ -27,6 +27,8 @@ policy and terms.
 
 ## Articles
 
+- [Why Futzs sponsors PyCon Togo](https://futzs.com/blog/pycon-togo-2026/): Futzs is a bronze sponsor of PyCon Togo 2026 in Lomé, 28–30 August. Why a small Google Workspace shop puts money into an African Python conference.
+
 - [Why your Google Calendar subscription is not updating](https://futzs.com/blog/calendar-not-updating/): A subscribed iCal calendar showing stale or missing events is usually not broken. The refresh behaviour behind it, and how to tell slow from actually broken.
 
 - [Syncing an Outlook calendar into Google Calendar](https://futzs.com/blog/outlook-to-google-calendar/): Publish your Outlook or Microsoft 365 calendar as an iCal (.ics) feed, then sync it into Google Calendar. What each option does, and where the delay comes from.
