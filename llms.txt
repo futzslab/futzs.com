@@ -18,6 +18,10 @@ policy and terms.
 - [GAPPS](https://futzs.com/apps/gapps/): GAPPS is a library that allows developers to easily and flexibly build add-ons for Google Workspace using Python 🐍. With GAPPS, you can create powerful tools and integrations for Gmail, Google Chat, Calendar, Sheets, Drive, Docs and other Google Workspace apps, that can streamline your workflow and automate common tasks. Source: https://github.com/skoudoro/gapps
 
 
+## Services
+
+- [Scientific software services](https://futzs.com/services/): imaging and 3D pipelines, performance optimization (Cython, SIMD, GPU), file formats and maintenance contracts for R&D teams.
+
 ## Documentation
 
 - [ICalSync docs](https://futzs.com/help/icalsync/): step-by-step setup and troubleshooting.

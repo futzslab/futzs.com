@@ -1042,3 +1042,7 @@ textarea.input { resize: vertical; line-height: 1.6; }
   .manifesto-body { font-size: 14.5px; line-height: 1.85; }
   .manifesto-sign { margin-top: 40px; }
 }
+
+/* Services page: 2x2 card grid */
+.card-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 720px) { .card-grid.two { grid-template-columns: 1fr; } }
