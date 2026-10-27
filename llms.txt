@@ -9,7 +9,7 @@ policy and terms.
 
 ## Apps
 
-- [ICalSync](https://futzs.com/apps/icalsync/): ICalSync keeps Google Calendar in step with any external iCal or .ics feed in realtime, instead of waiting on Google's From URL refresh. Free Workspace add-on. Setup guide: https://futzs.com/help/icalsync/
+- [ICalSync](https://futzs.com/apps/icalsync/): ICalSync keeps Google Calendar in step with any external iCal or .ics feed every few minutes, instead of waiting hours on Google's From URL refresh. 14-day free trial, from $4/month. Setup guide: https://futzs.com/help/icalsync/
 - [Quick Replies](https://futzs.com/apps/quickreplies/): Create shortcuts for the messages you send over and over, then insert them into Gmail or Google Chat in two keystrokes. Free Google Workspace add-on. Setup guide: https://futzs.com/help/quickreplies/
 - [DeskDuty](https://futzs.com/apps/deskduty/): On-call rotations, alerting and incident response inside Gmail and Google Chat, at a fraction of the cost of a dedicated on-call tool. Early access open. Setup guide: https://futzs.com/help/
 
