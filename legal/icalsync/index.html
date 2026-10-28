@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ICalSync privacy policy &amp; terms of use</title>
-<meta name="description" content="Exactly which Google Calendar scopes ICalSync requests, what the add-on stores and for how long, who it is shared with, the terms of use, and billing, cancellation and refunds.">
+<meta name="description" content="Which Google, Microsoft and Apple calendar data ICalSync accesses, what the add-on stores and for how long, who it is shared with, the terms of use, and billing, cancellation and refunds.">
 <link rel="canonical" href="https://futzs.com/legal/icalsync/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="Futzs">
@@ -14,14 +14,14 @@
 <meta property="og:site_name" content="Futzs">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="ICalSync privacy policy &amp; terms of use">
-<meta property="og:description" content="Exactly which Google Calendar scopes ICalSync requests, what the add-on stores and for how long, who it is shared with, the terms of use, and billing, cancellation and refunds.">
+<meta property="og:description" content="Which Google, Microsoft and Apple calendar data ICalSync accesses, what the add-on stores and for how long, who it is shared with, the terms of use, and billing, cancellation and refunds.">
 <meta property="og:url" content="https://futzs.com/legal/icalsync/">
 <meta property="og:image" content="https://futzs.com/images/futzs_logo.png">
 <meta property="og:image:alt" content="ICalSync — Privacy &amp; Terms">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ICalSync privacy policy &amp; terms of use">
-<meta name="twitter:description" content="Exactly which Google Calendar scopes ICalSync requests, what the add-on stores and for how long, who it is shared with, the terms of use, and billing, cancellation and refunds.">
+<meta name="twitter:description" content="Which Google, Microsoft and Apple calendar data ICalSync accesses, what the add-on stores and for how long, who it is shared with, the terms of use, and billing, cancellation and refunds.">
 <meta name="twitter:image" content="https://futzs.com/images/futzs_logo.png">
 
 <link rel="icon" href="/images/futzs_favicon.png">
@@ -76,12 +76,49 @@
 <h3 id="in-short">In Short</h3>
 <blockquote>
 <ul>
-<li>We do not store your data (inputs, clicks). It stays on Google’s servers. Granting us access to your data is only used for displaying your information on the app and for taking actions on your behalf. All the actions performed come from you.</li>
-<li>The only information we store from your Google account is your e-mail and the granted refresh token to update your calendar offline.</li>
-<li>We do not share your data with any third party, except Polar (polar.sh), which processes payments for paid plans and receives your e-mail address for that purpose.</li>
+<li>We do not store the content of your events. ICalSync reads them from the calendars you connect when a sync runs, writes them where you asked, and keeps only what it needs to recognise them next time (an event identifier and a fingerprint).</li>
+<li>What we store: your e-mail, your plan, the settings of each synchronization (the calendar link or connected calendar, the target calendar, your options), and the credentials that let the sync run while you are away: the Google refresh token of your account, and for each calendar account you connect, its refresh token (Google, Microsoft) or app-specific password (Apple iCloud). Credentials are encrypted at rest.</li>
+<li>We access only the calendars you pick, only to do the synchronization you set up: one-way copies events into your Google Calendar; two-way also copies the events you create in Google into the connected calendar, marked so ICalSync recognises them.</li>
+<li>We do not sell your data or share it, except with Polar (polar.sh), which processes payments for paid plans and receives your e-mail address for that purpose, and PostHog, which receives product usage events under a random identifier (never your calendar content or e-mail).</li>
 <li>The app’s use and transfer of information received from Google APIs adheres to <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
 </ul>
 </blockquote>
+<h3 id="accounts">Connected calendar accounts</h3>
+<p>You can connect calendars from other accounts so ICalSync can read them, and, if you choose two-way, write to them:</p>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>How it connects</th>
+<th>What ICalSync can do</th>
+<th>What we store</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Another Google account</td>
+<td>Sign in with Google</td>
+<td>Read the calendars you pick; in two-way, create, update and delete the copies it made</td>
+<td>Encrypted refresh token, account e-mail</td>
+</tr>
+<tr>
+<td>Outlook / Microsoft 365</td>
+<td>Sign in with Microsoft (Microsoft Graph, permissions <code>Calendars.ReadWrite</code>, <code>User.Read</code>, <code>offline_access</code>)</td>
+<td>Same as above</td>
+<td>Encrypted refresh token, account e-mail</td>
+</tr>
+<tr>
+<td>Apple iCloud</td>
+<td>Apple ID and an app-specific password you create (CalDAV)</td>
+<td>Same as above</td>
+<td>Encrypted Apple ID and app-specific password</td>
+</tr>
+</tbody>
+</table>
+<p>ICalSync never asks for your Apple ID password: an app-specific password cannot be used to sign in to your Apple account or change it, ICalSync only uses it for the calendars you pick, and you can revoke it at any time on account.apple.com. You can revoke ICalSync&rsquo;s access to a Microsoft account at account.microsoft.com (Privacy › Apps and services) or, for a work account, ask your administrator; for Google, at myaccount.google.com › Security › Third-party access.</p>
+<p>In ICalSync, <strong>Connect a calendar › Connected accounts › Disconnect</strong> deletes the stored credentials immediately, stops the synchronizations of that account and removes the events and copies they made.</p>
+<h3 id="rental">Rental export links</h3>
+<p>For rental properties, ICalSync gives you secret calendar links to paste into Airbnb, Booking.com, Vrbo or Expedia. Those links only show &ldquo;Blocked&rdquo; dates (no titles, guests or descriptions), are built when the channel asks for them, and stop working as soon as you renew them or delete the property.</p>
 <h3 id="why-is-my-information-needed">Why is my information needed?</h3>
 <p><strong>ICalSync</strong> is a web based product; because of this they may require the use of first and last names, billing contact information, and a Google account as a login. Therefore, at a minimum, we may require such necessary information in order to establish your account with us.</p>
 <p>What information does ICalSync gather/track and how is it used?</p>
@@ -132,7 +169,7 @@
 <h3 id="how-does-icalsync-protect-my-information-from-loss-misuse-or-alteration">How does ICalSync protect my information from loss, misuse or alteration?</h3>
 <p>ICalSync has implemented commercially reasonable precautions designed to protect the web sites and applications it hosts and the information it collects from loss, misuse, and unauthorized access, disclosure, alteration, and destruction. Nevertheless, we remind you that no security measure is perfect. ICalSync applications are accessed via Google Apps user accounts. ICalSync is not liable for loss of passwords due to user carelessness. If you lose control over your Google account, you may lose control over your personally identifiable information. If you believe your Google Account has been compromised, we recommend that you immediately change your password or activate Google’s 2 step authentication.</p>
 <h3 id="how-long-does-icalsync-retain-data">How long does ICalSync retain data?</h3>
-<p>ICalSync currently retains all user and business data indefinitely, until you specifically delete the data or shut down your ICalSync account.</p>
+<p>ICalSync keeps your account and synchronization settings while you use the add-on. Deleting a synchronization removes its settings; disconnecting an account deletes its credentials at once. To close your ICalSync account and erase everything we store about you, e-mail support-icalsync@futzs.com; it is done within 30 days. Payment records kept by Polar follow Polar&rsquo;s own retention rules.</p>
 <p>Who can I ask if I have additional questions?</p>
 <p>ICalSync is committed to respecting your privacy. This Online Privacy Policy describes the privacy practices for ICalSync applications and their website ( ICalSync ).</p>
 <h2 id="terms">Terms &amp; Conditions</h2>
@@ -144,8 +181,8 @@
 <p>You acknowledge that you have read this Agreement and agree to all its terms and conditions. By accessing and using the Application and Services you agree to be bound by this Agreement. If you do not agree to abide by the terms of this Agreement, you are not authorized to access or use the Application and Services.</p>
 <p>Specifically, ICalSync can only be installed from the Google Workspace Marketplace and when installing, Google will prompt you to accept this Agreement: “By clicking Continue, you acknowledge that your information will be used in accordance with the terms of service and privacy policy of this application.”</p>
 <h3 id="description-of-service">Description of Service</h3>
-<p>&ldquo;ICalSync&rdquo; is an add-on for Google Calendar that copies the events of external iCal (.ics) feeds you choose into the Google Calendars you choose, and keeps them up to date. The Service is offered and provided subject to these Terms.</p>
-<p>The Service requires a Google account (Gmail or Google Workspace account) and a Google Calendar the add-on is allowed to write to.</p>
+<p>&ldquo;ICalSync&rdquo; is an add-on for Google Calendar that copies the events of calendars you choose (iCal (.ics) links, other Google accounts, Outlook / Microsoft 365 and Apple iCloud calendars) into the Google Calendars you choose and keeps them up to date; on request it also copies your Google events back to a connected calendar (two-way), and for rental hosts it publishes blocked-dates links for booking channels. The Service is offered and provided subject to these Terms.</p>
+<p>The Service requires a Google account (Gmail or Google Workspace account) and a Google Calendar the add-on is allowed to write to. Connecting another calendar account requires that you are allowed to use that account and its calendars. Two-way synchronization writes to the connected calendar: events are edited or deleted where they were created, and copies follow their original.</p>
 <p>You understand and acknowledge that You are solely responsible for obtaining and maintaining the Internet access and all equipment necessary to use the Service, for appropriately configuring Your Google account, and for creating and managing the datasource and its content. All fees associated with the foregoing shall be paid by You.</p>
 <h3 id="use-of-service">Use of Service</h3>
 <p>If you create a Google account to use the Add-on, you are responsible for maintaining the security of your account and you are fully responsible for all activities that occur under the account and any other actions taken in connection with it. We will not be liable for any acts or omissions by you, including any damages of any kind incurred as a result of such acts or omissions.</p>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to sync an iCal (.ics) feed to Google Calendar</title>
-<meta name="description" content="Step by step: install ICalSync, add an iCal (.ics) feed URL, pick the destination Google Calendar and verify the first sync — plus fixes for common sync problems.">
+<title>Sync Outlook, iCloud, Airbnb or any iCal calendar with Google Calendar</title>
+<meta name="description" content="Step by step: install ICalSync, connect an Outlook, iCloud, Google or iCal (.ics) calendar, choose one-way or two-way sync, set up rental properties for Airbnb and Booking.com, and fix common problems.">
 <link rel="canonical" href="https://futzs.com/help/icalsync/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="Futzs">
@@ -13,15 +13,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Futzs">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="How to sync an iCal (.ics) feed to Google Calendar">
-<meta property="og:description" content="Step by step: install ICalSync, add an iCal (.ics) feed URL, pick the destination Google Calendar and verify the first sync — plus fixes for common sync problems.">
+<meta property="og:title" content="Sync Outlook, iCloud, Airbnb or any iCal calendar with Google Calendar">
+<meta property="og:description" content="Step by step: install ICalSync, connect an Outlook, iCloud, Google or iCal (.ics) calendar, choose one-way or two-way sync, set up rental properties for Airbnb and Booking.com, and fix common problems.">
 <meta property="og:url" content="https://futzs.com/help/icalsync/">
 <meta property="og:image" content="https://futzs.com/images/futzs_logo.png">
 <meta property="og:image:alt" content="ICalSync docs">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to sync an iCal (.ics) feed to Google Calendar">
-<meta name="twitter:description" content="Step by step: install ICalSync, add an iCal (.ics) feed URL, pick the destination Google Calendar and verify the first sync — plus fixes for common sync problems.">
+<meta name="twitter:title" content="Sync Outlook, iCloud, Airbnb or any iCal calendar with Google Calendar">
+<meta name="twitter:description" content="Step by step: install ICalSync, connect an Outlook, iCloud, Google or iCal (.ics) calendar, choose one-way or two-way sync, set up rental properties for Airbnb and Booking.com, and fix common problems.">
 <meta name="twitter:image" content="https://futzs.com/images/futzs_logo.png">
 
 <link rel="icon" href="/images/futzs_favicon.png">
@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://futzs.com/help/"},{"@type":"ListItem","position":3,"name":"ICalSync docs","item":"https://futzs.com/help/icalsync/"}]},{"@type":"TechArticle","headline":"ICalSync docs","description":"Step by step: install ICalSync, add an iCal (.ics) feed URL, pick the destination Google Calendar and verify the first sync — plus fixes for common sync problems.","url":"https://futzs.com/help/icalsync/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/help/icalsync/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","author":{"@id":"https://futzs.com/#organization"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://futzs.com/help/"},{"@type":"ListItem","position":3,"name":"ICalSync docs","item":"https://futzs.com/help/icalsync/"}]},{"@type":"TechArticle","headline":"ICalSync docs","description":"Step by step: install ICalSync, connect an Outlook, iCloud, Google or iCal (.ics) calendar, choose one-way or two-way sync, set up rental properties for Airbnb and Booking.com, and fix common problems.","url":"https://futzs.com/help/icalsync/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/help/icalsync/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","author":{"@id":"https://futzs.com/#organization"}}]}</script>
 <script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
 </head>
 <body>
@@ -82,7 +82,7 @@
   <nav class="docs-nav" data-docs-nav data-spy>
     <div class="docs-group">
       <div class="docs-group-title">ICalSync</div>
-<a href="#getting-started">Getting started</a><a href="#1-install-the-add-on">Install the add-on</a><a href="#2-add-a-calendar-feed">Add a calendar feed</a><a href="#3-choose-the-destination">Choose the destination</a><a href="#troubleshooting">Troubleshooting</a>    </div>
+<a href="#getting-started">Getting started</a><a href="#connect-a-calendar">Connect a calendar</a><a href="#outlook">Outlook / Microsoft 365</a><a href="#google">Another Google account</a><a href="#icloud">Apple iCloud</a><a href="#ics-link">Calendar link (ICS)</a><a href="#two-way">One-way or two-way</a><a href="#manage">Manage your calendars</a><a href="#rental">Rental properties</a><a href="#plans">Plans and trial</a><a href="#troubleshooting">Troubleshooting</a>    </div>
     <div class="docs-group">
       <div class="docs-group-title">Reference</div>
 <a href="/legal/icalsync/#privacy">Privacy policy</a><a href="/legal/icalsync/#terms">Terms &amp; conditions</a>    </div>
@@ -96,70 +96,226 @@
   <article class="docs-main prose flush" data-docs-body>
     <div class="crumbs"><a href="/help/">Help</a> / <span>ICalSync</span> / <span class="here">Getting started</span></div>
     <h1 id="getting-started">Getting started</h1>
-<p>ICalSync reads an external iCal feed and writes the events into a Google Calendar
-you own, keeping the two in step in realtime. This page takes you from install to
-first synced event.</p>
+<p>ICalSync copies the events of your other calendars (Outlook, iCloud, another
+Google account, Airbnb, Booking.com or any iCal link) into Google Calendar and
+keeps them up to date. It can also copy your Google events back (two-way).</p>
+<ol>
+<li>Open the ICalSync listing on the Google Workspace Marketplace and choose
+   <strong>Install</strong>. Google shows the permissions the add-on needs: calendar access,
+   so it can create and update the events you ask for.</li>
+<li>Open Google Calendar and click the ICalSync icon in the right side panel.</li>
+<li>Allow access to your Google Calendar when ICalSync asks.</li>
+<li>Click <strong>Connect a calendar</strong> and follow the steps below.</li>
+</ol>
+<p><img alt="The Get started steps of ICalSync" class="shot" src="/images/help/icalsync/get-started.png" width="320" /></p>
+<p>Administrators can install it for a whole domain from the same listing.</p>
+<h1 id="connect-a-calendar">Connect a calendar</h1>
+<p><strong>Connect a calendar</strong> asks where the calendar is. Accounts you connect once
+appear under <strong>Connected accounts</strong>: click one to sync another of its
+calendars, or <strong>Disconnect</strong> it.</p>
+<p><img alt="Where is the calendar?" class="shot" src="/images/help/icalsync/connect-choice.png" width="320" /></p>
+<h2 id="outlook">Outlook / Microsoft 365</h2>
+<ol>
+<li>Choose <strong>Outlook / Microsoft 365</strong>.</li>
+<li>A page names the ICalSync account the calendar will be added to. Check it
+   is yours, then <strong>Continue</strong>.</li>
+<li>Sign in with Microsoft (Outlook.com, Hotmail or a work account) and accept.</li>
+<li>Back in ICalSync, open <strong>Connect a calendar</strong>, click the account under
+   <strong>Connected accounts</strong> and pick the calendar.</li>
+</ol>
 <div class="admonition note">
-<p class="admonition-title">Before you start</p>
-<p>You need the iCal (<code>.ics</code>) URL of the calendar you want to bring in, and
-permission to install add-ons on your Google account.</p>
+<p class="admonition-title">Work accounts</p>
+<p>Some companies only let their administrator approve apps. If Microsoft
+says you need approval, ask your IT team, or use the
+<a href="#ics-link">publish link</a> of your Outlook calendar instead.</p>
 </div>
-<h2 id="1-install-the-add-on">1. Install the add-on</h2>
-<p>Open the ICalSync listing on the Google Workspace Marketplace and choose
-<strong>Install</strong>. Google will show you the permissions the add-on requests — calendar
-access, so it can create and update the events you ask for. Accept, and ICalSync
-appears in the side panel of Google Calendar.</p>
-<p>Administrators installing for a whole domain should use the same listing and
-choose the domain-wide install; everyone in the organisation gets the add-on
-without acting individually.</p>
-<h2 id="2-add-a-calendar-feed">2. Add a calendar feed</h2>
-<p>Find the feed URL in the system that owns the schedule. It usually sits under a
-menu called share, publish, subscribe or export, and ends in <code>.ics</code>. Paste it
-into ICalSync and give the connection a name you will recognise later.</p>
+<p>If Outlook is not in the list yet, use the <a href="#ics-link">calendar link</a> of your
+Outlook calendar: Outlook on the web › <strong>Settings › Calendar › Shared
+calendars › Publish a calendar</strong>, choose <strong>Can view all details</strong>, publish and
+copy the <strong>ICS</strong> link.</p>
+<h2 id="google">Another Google account</h2>
+<p>Sync a personal calendar into your work account, or the other way round.</p>
+<ol>
+<li>Choose <strong>Another Google account</strong>.</li>
+<li>Check the ICalSync account named on the page, then <strong>Continue</strong>.</li>
+<li>Pick the other Google account and accept. (The account ICalSync already
+   uses is refused: its calendars are already available.)</li>
+<li>Back in ICalSync, click the account under <strong>Connected accounts</strong> and pick
+   the calendar.</li>
+</ol>
+<h2 id="icloud">Apple iCloud</h2>
+<p>Apple does not let other apps use your Apple ID password, so ICalSync uses an
+<strong>app-specific password</strong>:</p>
+<ol>
+<li>Open <a href="https://account.apple.com/account/manage">account.apple.com</a> ›
+   <strong>Sign-In and Security</strong> › <strong>App-Specific Passwords</strong>.</li>
+<li>Create one named <em>ICalSync</em> and copy it (format <code>xxxx-xxxx-xxxx-xxxx</code>).</li>
+<li>In ICalSync choose <strong>iCloud</strong>, enter your Apple ID and that password, then
+   <strong>Connect</strong>.</li>
+<li>Pick the calendar.</li>
+</ol>
+<p><img alt="Connect iCloud" class="shot" src="/images/help/icalsync/icloud.png" width="320" /></p>
+<p>You can revoke the password at any time on the same Apple page; ICalSync then
+shows <em>Account disconnected</em> until you connect again.</p>
+<h2 id="ics-link">Calendar link (ICS)</h2>
+<p>For any calendar that can publish an iCal link: Airbnb, Booking.com, Vrbo,
+Expedia, school and sports schedules, booking tools, or an Outlook calendar
+without sign-in.</p>
+<ol>
+<li>Find the link in the system that owns the calendar. It sits under a menu
+   called share, publish, subscribe, export or sync, and usually ends in <code>.ics</code>.</li>
+<li>Choose <strong>Calendar link (ICS)</strong>, paste it, give it a short name and pick the
+   Google calendar to write to.</li>
+<li>Click <strong>Sync</strong>.</li>
+</ol>
 <table>
 <thead>
 <tr>
 <th>Source</th>
-<th>Where the feed URL usually lives</th>
+<th>Where the link is</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Another Google Calendar</td>
-<td>Settings → Integrate calendar → Secret address in iCal format</td>
-</tr>
-<tr>
 <td>Outlook / Microsoft 365</td>
-<td>Calendar settings → Shared calendars → Publish a calendar</td>
+<td>Settings › Calendar › Shared calendars › Publish a calendar › ICS link</td>
 </tr>
 <tr>
-<td>Booking &amp; scheduling tools</td>
-<td>Look for &ldquo;iCal feed&rdquo;, &ldquo;Subscribe&rdquo; or &ldquo;Calendar export&rdquo;</td>
+<td>Another Google Calendar</td>
+<td>Settings › your calendar › Integrate calendar › Secret address in iCal format</td>
+</tr>
+<tr>
+<td>Apple iCloud</td>
+<td>Share the calendar as a Public Calendar and copy the link (<code>webcal://</code> works)</td>
+</tr>
+<tr>
+<td>Airbnb, Booking.com, Vrbo, Expedia</td>
+<td>See <a href="#rental">Rental properties</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-choose-the-destination">3. Choose the destination</h2>
-<p>Pick which of your Google Calendars the events should be written into. A
-dedicated calendar per feed is the setup we recommend: you can toggle it on and
-off, give it its own colour, and share it without exposing anything else.</p>
-<h2 id="4-verify-the-first-sync">4. Verify the first sync</h2>
-<p>Open the destination calendar and find an event you recognise. Then change
-something on the source — move a booking by an hour — and watch it follow
-through. Once you have seen one change land, the connection needs no further
-attention.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="nothing-appeared-after-i-added-the-feed">Nothing appeared after I added the feed</h3>
-<p>Open the URL in a browser. If it downloads a text file starting with
-<code>BEGIN:VCALENDAR</code>, the feed is valid and the problem is the destination
-calendar. If it asks you to sign in, the feed is private and needs a public or
-secret address instead.</p>
+<p><img alt="Connect a calendar link" class="shot" src="/images/help/icalsync/connect-link.png" width="320" /></p>
+<h2 id="two-way">One-way or two-way</h2>
+<p>For an account calendar (Outlook, iCloud, another Google account), the form
+asks for a <strong>Direction</strong>:</p>
+<ul>
+<li><strong>One-way</strong> copies the calendar into Google.</li>
+<li><strong>Two-way</strong> also copies the events you create in the chosen Google calendar
+  to the other calendar. It needs a calendar that account can write to.</li>
+</ul>
+<p><img alt="Choose the direction" class="shot" src="/images/help/icalsync/connect-account.png" width="320" /></p>
+<p>How two-way behaves:</p>
+<ul>
+<li>Edit or delete an event in the calendar where you created it: its copy
+  follows within minutes.</li>
+<li>A copy edited by hand is overwritten at the next change of its original; a
+  copy deleted by hand comes back.</li>
+<li>Events ICalSync copied are marked, so they never bounce back and forth.</li>
+<li>Repeating Google events are copied as single occurrences, for the next 12
+  months.</li>
+<li>Deleting the synchronization also removes its copies.</li>
+</ul>
+<p><strong>Advanced options</strong> (hide titles, descriptions or locations, mark as private,
+add an identifier like <code>[Work]</code>) apply to the copies in both directions.</p>
+<h1 id="manage">Manage your calendars</h1>
+<p>The home card lists your synchronizations with your plan&rsquo;s limit. Under each
+one:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✏️ Edit</td>
+<td>Change the name and options</td>
+</tr>
+<tr>
+<td>⏸ Pause / ▶ Resume</td>
+<td>Stop syncing for a while; a paused calendar frees its place in your plan</td>
+</tr>
+<tr>
+<td>🗑 Delete</td>
+<td>Asks first, then removes the events it copied</td>
+</tr>
+<tr>
+<td>🔄 Sync now</td>
+<td>Runs it immediately and refreshes the card</td>
+</tr>
+</tbody>
+</table>
+<p>A ⇄ arrow marks a two-way synchronization.</p>
+<p><img alt="Your synchronizations" class="shot" src="/images/help/icalsync/home.png" width="320" /></p>
+<h1 id="rental">Rental properties</h1>
+<p>For hosts with the same place on several channels: ICalSync blocks the dates
+booked on one channel on all the others, and warns you by e-mail about double
+bookings.</p>
+<ol>
+<li>Connect each channel&rsquo;s calendar link (export, below) with <strong>Calendar link
+   (ICS)</strong>. ICalSync recognises the channels and hides guest names.</li>
+<li>Open <strong>Rental properties</strong> on the home card, add a property and tick its
+   calendars.</li>
+<li>Under <strong>Export links</strong>, copy the link labelled <em>Paste in Airbnb</em> into
+   Airbnb&rsquo;s import setting, <em>Paste in Booking.com</em> into Booking.com, and so on.</li>
+</ol>
+<p><img alt="A property and its export links" class="shot" src="/images/help/icalsync/property.png" width="320" /></p>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Export (copy into ICalSync)</th>
+<th>Import (paste the ICalSync link)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Airbnb</td>
+<td>Listings › your listing › Availability › Connect calendars › Export calendar</td>
+<td>Same page › Import calendar, name it ICalSync</td>
+</tr>
+<tr>
+<td>Booking.com</td>
+<td>Extranet › Rates and Availability › Sync calendars › Add calendar connection</td>
+<td>Same page, name it ICalSync</td>
+</tr>
+<tr>
+<td>Vrbo</td>
+<td>Calendar › Import and export › export link</td>
+<td>Import a calendar</td>
+</tr>
+<tr>
+<td>Expedia</td>
+<td>Partner Central › Rooms and rates › Calendar sync</td>
+<td>Same page</td>
+</tr>
+</tbody>
+</table>
+<p>Channels refresh imported calendars every 30 minutes to a few hours; ICalSync
+cannot make them faster. Direct bookings kept in a Google Calendar can be added
+to the property too: add its secret iCal address as a calendar link.</p>
+<h1 id="plans">Plans and trial</h1>
+<p>Every new account gets a 14-day trial with all features. When it ends, nothing
+is deleted: your first calendar keeps syncing once a day and the others pause
+until you choose a plan in <strong>Dashboard › Plans &amp; pricing</strong>.</p>
+<p><img alt="Trial ended" class="shot" src="/images/help/icalsync/trial-ended.png" width="320" /></p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h3 id="nothing-appeared-after-i-added-a-calendar-link">Nothing appeared after I added a calendar link</h3>
+<p>Open the link in a browser. If it downloads a text file starting with
+<code>BEGIN:VCALENDAR</code>, the link is fine; check the Google calendar you picked. If
+it asks you to sign in, it is a web page link, not the ICS link.</p>
+<h3 id="account-disconnected">Account disconnected</h3>
+<p>The connected account refused access: the app-specific password was revoked,
+the Microsoft or Google access was removed, or the password changed. Open
+<strong>Connect a calendar</strong>, click the account and connect it again.</p>
 <h3 id="events-are-duplicated">Events are duplicated</h3>
-<p>Usually the same feed is both subscribed through Google&rsquo;s <em>From URL</em> option and
-synced through ICalSync. Remove the subscription and keep the sync.</p>
+<p>The same calendar is probably subscribed in Google (<em>From URL</em>) and synced by
+ICalSync. Remove the subscription and keep the sync.</p>
 <h3 id="times-are-off-by-an-hour">Times are off by an hour</h3>
-<p>Some systems publish feeds without timezone information. Check the timezone on
-both the source system and the destination Google Calendar before assuming the
-sync is at fault.</p>
+<p>Some systems publish calendars without time zone information. Check the time
+zone of the source and of the Google calendar.</p>
+<p>Still stuck? E-mail support-icalsync@futzs.com.</p>
     <div class="docs-foot">
       <a class="docs-foot-link" href="/help/"><span>Previous</span><strong>&larr; Help Center</strong></a>
       <a class="docs-foot-link right" href="/contact/"><span>Next</span><strong>Talk to support &rarr;</strong></a>
@@ -168,7 +324,12 @@ sync is at fault.</p>
   <aside class="docs-toc" data-docs-toc data-spy>
     <div class="docs-group-title">On this page</div>
     <a href="#getting-started">Getting started</a>
-<a class="sub" href="#1-install-the-add-on">1. Install the add-on</a><a class="sub" href="#2-add-a-calendar-feed">2. Add a calendar feed</a><a class="sub" href="#3-choose-the-destination">3. Choose the destination</a><a class="sub" href="#4-verify-the-first-sync">4. Verify the first sync</a><a class="sub" href="#troubleshooting">Troubleshooting</a>  </aside>
+    <a href="#connect-a-calendar">Connect a calendar</a>
+<a class="sub" href="#outlook">Outlook / Microsoft 365</a><a class="sub" href="#google">Another Google account</a><a class="sub" href="#icloud">Apple iCloud</a><a class="sub" href="#ics-link">Calendar link (ICS)</a><a class="sub" href="#two-way">One-way or two-way</a>    <a href="#manage">Manage your calendars</a>
+    <a href="#rental">Rental properties</a>
+    <a href="#plans">Plans and trial</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+<a class="sub" href="#nothing-appeared-after-i-added-a-calendar-link">Nothing appeared after I added a calendar link</a><a class="sub" href="#account-disconnected">Account disconnected</a><a class="sub" href="#events-are-duplicated">Events are duplicated</a><a class="sub" href="#times-are-off-by-an-hour">Times are off by an hour</a>  </aside>
 </div>
 </main>
 <footer class="site-footer">
