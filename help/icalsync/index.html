@@ -82,7 +82,7 @@
   <nav class="docs-nav" data-docs-nav data-spy>
     <div class="docs-group">
       <div class="docs-group-title">ICalSync</div>
-<a href="#getting-started">Getting started</a><a href="#connect-a-calendar">Connect a calendar</a><a href="#outlook">Outlook / Microsoft 365</a><a href="#google">Another Google account</a><a href="#icloud">Apple iCloud</a><a href="#ics-link">Calendar link (ICS)</a><a href="#two-way">One-way or two-way</a><a href="#manage">Manage your calendars</a><a href="#rental">Rental properties</a><a href="#plans">Plans and trial</a><a href="#troubleshooting">Troubleshooting</a>    </div>
+<a href="#getting-started">Getting started</a><a href="#connect-a-calendar">Connect a calendar</a><a href="#outlook">Outlook / Microsoft 365</a><a href="#outlook-admin-approval">Outlook admin approval</a><a href="#google">Another Google account</a><a href="#icloud">Apple iCloud</a><a href="#ics-link">Calendar link (ICS)</a><a href="#two-way">One-way or two-way</a><a href="#manage">Manage your calendars</a><a href="#rental">Rental properties</a><a href="#plans">Plans and trial</a><a href="#troubleshooting">Troubleshooting</a>    </div>
     <div class="docs-group">
       <div class="docs-group-title">Reference</div>
 <a href="/legal/icalsync/#privacy">Privacy policy</a><a href="/legal/icalsync/#terms">Terms &amp; conditions</a>    </div>
@@ -120,15 +120,42 @@ calendars, or <strong>Disconnect</strong> it.</p>
 <li>A page names the ICalSync account the calendar will be added to. Check it
    is yours, then <strong>Continue</strong>.</li>
 <li>Sign in with Microsoft (Outlook.com, Hotmail or a work account) and accept.</li>
-<li>Back in ICalSync, open <strong>Connect a calendar</strong>, click the account under
-   <strong>Connected accounts</strong> and pick the calendar.</li>
+<li>Close the window: ICalSync asks you to pick the calendar to sync.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Work accounts</p>
-<p>Some companies only let their administrator approve apps. If Microsoft
-says you need approval, ask your IT team, or use the
+<p>Some companies and schools only let their administrator approve apps.
+If Microsoft says <strong>Need admin approval</strong>, see
+<a href="#outlook-admin-approval">Outlook admin approval</a>, or use the
 <a href="#ics-link">publish link</a> of your Outlook calendar instead.</p>
 </div>
+<h3 id="outlook-admin-approval">Outlook admin approval</h3>
+<p>Microsoft shows <strong>Need admin approval</strong> when your organization does not let
+its users approve apps that read their calendar. ICalSync is published by
+a verified publisher (Futzs); an IT administrator approves it once for the
+whole organization.</p>
+<p><strong>For you:</strong> send this page to your IT team, then connect Outlook again once
+they have approved ICalSync.</p>
+<p><strong>For the IT administrator:</strong></p>
+<ol>
+<li>Open the approval link and sign in with an administrator account
+   (Cloud Application Administrator, Application Administrator or Global
+   Administrator):
+   <a href="https://login.microsoftonline.com/organizations/adminconsent?client_id=907d5b97-5165-496a-9bc2-b2948bc7703d&amp;redirect_uri=https://icalsync.futzs.com/connect/microsoft/callback">approve ICalSync for your organization</a>.</li>
+<li>Review and accept the permissions:
+   - <strong>Sign you in and read your profile</strong> (User.Read), to show which
+     account is connected;
+   - <strong>Have full access to your calendars</strong> (Calendars.ReadWrite), to read
+     events and, for two-way syncs only, write tagged copies;
+   - <strong>Maintain access to data you have given it access to</strong>
+     (offline_access), so syncs run in the background;
+   - <strong>View your email address</strong> and <strong>Sign you in</strong> (email, openid).</li>
+<li>A page confirms the approval. Users can now connect Outlook.</li>
+</ol>
+<p>App details: name <strong>ICalSync</strong>, application (client) ID
+<code>907d5b97-5165-496a-9bc2-b2948bc7703d</code>, publisher <strong>Futzs</strong> (verified).
+ICalSync stores no event content; see the
+<a href="/legal/icalsync/#privacy">privacy policy</a>.</p>
 <p>If Outlook is not in the list yet, use the <a href="#ics-link">calendar link</a> of your
 Outlook calendar: Outlook on the web › <strong>Settings › Calendar › Shared
 calendars › Publish a calendar</strong>, choose <strong>Can view all details</strong>, publish and
