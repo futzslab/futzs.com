@@ -134,22 +134,41 @@ If Microsoft says <strong>Need admin approval</strong>, see
 its users approve apps that read their calendar. ICalSync is published by
 a verified publisher (Futzs); an IT administrator approves it once for the
 whole organization.</p>
-<p><strong>For you:</strong> send this page to your IT team, then connect Outlook again once
-they have approved ICalSync.</p>
+<p>You have two options:</p>
+<ol>
+<li><strong>Ask your IT admin</strong> to approve ICalSync (steps below), then connect
+   Outlook again. Best choice: two-way sync becomes possible.</li>
+<li>
+<p><strong>Use the calendar link (ICS) of your Outlook calendar.</strong> No approval
+   needed, works right away, one-way only (Outlook to Google):</p>
+<ol>
+<li>In <a href="https://outlook.office.com/calendar/">Outlook on the web</a>, open
+   <strong>Settings › Calendar › Shared calendars</strong>.</li>
+<li>Under <strong>Publish a calendar</strong>, pick your calendar and <strong>Can view all
+   details</strong>, then <strong>Publish</strong>.</li>
+<li>Copy the <strong>ICS</strong> link (not the HTML one).</li>
+<li>In ICalSync, <strong>Connect a calendar › Calendar link (ICS)</strong>, paste the
+   link and save.</li>
+</ol>
+<p>Some organizations also turn publishing off; then only option 1 is left.</p>
+</li>
+</ol>
 <p><strong>For the IT administrator:</strong></p>
 <ol>
 <li>Open the approval link and sign in with an administrator account
    (Cloud Application Administrator, Application Administrator or Global
    Administrator):
    <a href="https://login.microsoftonline.com/organizations/adminconsent?client_id=907d5b97-5165-496a-9bc2-b2948bc7703d&amp;redirect_uri=https://icalsync.futzs.com/connect/microsoft/callback">approve ICalSync for your organization</a>.</li>
-<li>Review and accept the permissions:
-   - <strong>Sign you in and read your profile</strong> (User.Read), to show which
-     account is connected;
-   - <strong>Have full access to your calendars</strong> (Calendars.ReadWrite), to read
-     events and, for two-way syncs only, write tagged copies;
-   - <strong>Maintain access to data you have given it access to</strong>
-     (offline_access), so syncs run in the background;
-   - <strong>View your email address</strong> and <strong>Sign you in</strong> (email, openid).</li>
+<li>Review and accept the permissions:<ul>
+<li><strong>Sign you in and read your profile</strong> (User.Read), to show which
+  account is connected;</li>
+<li><strong>Have full access to your calendars</strong> (Calendars.ReadWrite), to read
+  events and, for two-way syncs only, write tagged copies;</li>
+<li><strong>Maintain access to data you have given it access to</strong>
+  (offline_access), so syncs run in the background;</li>
+<li><strong>View your email address</strong> and <strong>Sign you in</strong> (email, openid).</li>
+</ul>
+</li>
 <li>A page confirms the approval. Users can now connect Outlook.</li>
 </ol>
 <p>App details: name <strong>ICalSync</strong>, application (client) ID
