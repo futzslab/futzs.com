@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DutyDesk — on-call rotation and request routing for Google Chat</title>
+<meta name="description" content="Mention @DutyDesk in Google Chat and the request goes to whoever is on duty. Rotations, handoffs and claim / resolve buttons in the space your team already uses. Early access open.">
+<link rel="canonical" href="https://futzs.com/apps/dutydesk/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Futzs">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="DutyDesk — on-call rotation and request routing for Google Chat">
+<meta property="og:description" content="Mention @DutyDesk in Google Chat and the request goes to whoever is on duty. Rotations, handoffs and claim / resolve buttons in the space your team already uses. Early access open.">
+<meta property="og:url" content="https://futzs.com/apps/dutydesk/">
+<meta property="og:image" content="https://futzs.com/images/futzs_logo.png">
+<meta property="og:image:alt" content="DutyDesk">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DutyDesk — on-call rotation and request routing for Google Chat">
+<meta name="twitter:description" content="Mention @DutyDesk in Google Chat and the request goes to whoever is on duty. Rotations, handoffs and claim / resolve buttons in the space your team already uses. Early access open.">
+<meta name="twitter:image" content="https://futzs.com/images/futzs_logo.png">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Apps","item":"https://futzs.com/apps/"},{"@type":"ListItem","position":3,"name":"DutyDesk","item":"https://futzs.com/apps/dutydesk/"}]},{"@type":"SoftwareApplication","name":"DutyDesk","url":"https://futzs.com/apps/dutydesk/","description":"Mention @DutyDesk in Google Chat and the request goes to whoever is on duty. Rotations, handoffs and claim / resolve buttons in the space your team already uses. Early access open.","applicationCategory":"BusinessApplication","applicationSuite":"Google Workspace","operatingSystem":"Web browser, Google Workspace","publisher":{"@id":"https://futzs.com/#organization"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"/contact/","softwareHelp":"https://futzs.com/help/"}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell has-sub" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link is-current" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Sync multiple external calendars into Google Calendar every few minutes, from any iCal (.ics) feed.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and insert them into Gmail or Google Chat without leaving the compose window.</span>
+              </a>
+              <a href="/apps/dutydesk/" class="is-current">
+                <strong>DutyDesk</strong><span>An on-call rotation that lives in your Google Chat space. Mention @DutyDesk, and the request goes to the person on duty, with buttons to claim and resolve it.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-subrow" data-spy>
+      <span class="nav-subrow-title">DutyDesk</span>
+      <a class="nav-sublink" href="#overview">Overview</a>
+      <a class="nav-sublink" href="#features">Features</a>
+      <a class="nav-sublink" href="#setup">How it works</a>
+      <a class="nav-sublink" href="#install">Early access</a>
+    </div>
+  </div>
+</div><main id="content">
+<header id="overview" class="app-head anchor">
+  <div>
+    <a class="back" href="/apps/">&larr; All apps</a>
+<span class="badge">Coming soon</span>    <h1>DutyDesk</h1>
+    <p class="lede">@DutyDesk in Google Chat reaches whoever is on duty right now.</p>
+<p class="muted">An on-call rotation that lives in your Google Chat space. Mention @DutyDesk, and the request goes to the person on duty, with buttons to claim and resolve it.</p>    <div class="btn-row">
+      <a class="btn btn-primary" href="/contact/" data-umami-event="install-click" data-umami-event-app="DutyDesk" data-umami-event-place="hero">Early access</a>
+      <a class="btn btn-secondary" href="/help/">Setup guide</a>
+    </div>
+  </div>
+  <div class="plate placeholder">DutyDesk screenshot</div>
+</header>
+
+<section id="features" class="cols-3 anchor">
+  <div><h3>One handle for the whole rotation</h3><p>Google Chat has no group mention. @DutyDesk stands in for whoever is on duty, so nobody has to check a spreadsheet first.</p></div>
+  <div><h3>Handoffs on schedule</h3><p>Daily or weekly rotations in your team&#39;s timezone. DutyDesk posts the handoff in the space and names who is next.</p></div>
+  <div><h3>Priced for small teams</h3><p>One flat price per space, not per seat.</p></div>
+</section>
+
+
+
+
+<section id="setup" class="anchor steps-band">
+  <span class="kicker">Get started</span>
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">01</div>
+      <h3>Add DutyDesk to a space</h3>
+      <p>The space your team already uses for requests.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <h3>Run /setup</h3>
+      <p>Pick the people, the cadence and the handoff time.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <h3>Mention @DutyDesk</h3>
+      <p>The request goes to the person on duty, who can claim it, hand it on or resolve it from the card.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="install" class="anchor cta-wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Want it early?</h2>
+      <p class="muted">Tell us how your team runs on-call today and we'll bring you into the first group.</p>
+    </div>
+    <a class="btn btn-primary" href="/contact/" data-umami-event="install-click" data-umami-event-app="DutyDesk" data-umami-event-place="footer">Early access</a>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/help/icalsync/">ICalSync docs</a><a href="/legal/#privacy">Privacy Policy</a><a href="/legal/#terms">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>
