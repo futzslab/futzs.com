@@ -121,6 +121,39 @@
 </tbody>
 </table>
 <p>People are identified by their Google Chat user ID (<code>users/…</code>), never by e-mail. DutyDesk does not store e-mail addresses.</p>
+<h3 id="scopes">Google permissions</h3>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Why DutyDesk asks for it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chat.bot</code> (granted to the app, not to your account)</td>
+<td>Post and update its messages and cards in the spaces it is added to, and list the members of those spaces for the setup dialog</td>
+</tr>
+<tr>
+<td><code>openid</code>, <code>userinfo.email</code>, <code>userinfo.profile</code></td>
+<td>Only for the DutyDesk side panel in other Google Workspace apps: to know which Google Chat user opened it, so it shows the spaces that person belongs to. Your user ID is matched to your Chat user ID; the e-mail and profile are not stored</td>
+</tr>
+<tr>
+<td><code>script.locale</code></td>
+<td>Only for the side panel: your timezone, to show handoff times in your local time. Not stored</td>
+</tr>
+</tbody>
+</table>
+<p>DutyDesk never receives a token that lets it read your Gmail, Drive, Calendar or other Google data, and never acts as you.</p>
+<h3 id="use">How DutyDesk uses this data</h3>
+<p>DutyDesk uses the data above only to provide its features to the space: keep the rotation, post handoffs, route and track requests, and bill the space. We never:</p>
+<ul>
+<li>use it for advertising, including targeted, personalized, retargeted or interest-based advertising;</li>
+<li>sell it, or give it to data brokers or information resellers;</li>
+<li>use it to determine creditworthiness or for lending;</li>
+<li>use it to build databases beyond what the features above need;</li>
+<li>use it, or any data from Google Workspace APIs, to develop, improve or train generalized or non-personalized AI or ML models.</li>
+</ul>
 <h3 id="visibility">Who sees what</h3>
 <p>Rotation, handoff and request cards are posted in the space, so every member of the space sees them, as they see any message. Cards about one person (your duty, help, plans, confirmations) are private: only that person sees them.</p>
 <h3 id="third-parties">Third parties</h3>
@@ -151,11 +184,11 @@
 </tbody>
 </table>
 <h3 id="security">Security</h3>
-<p>Data is stored in our own database, not shared with other Futzs apps. All traffic to and from DutyDesk is encrypted (HTTPS). Every request from Google Chat is checked to come from Google before DutyDesk acts on it. Only the Futzs team can access the database, to support the service.</p>
+<p>Data is stored in our own database, not shared with other Futzs apps. All traffic to and from DutyDesk is encrypted (HTTPS). Every request from Google Chat is checked to come from Google before DutyDesk acts on it. The database is on a server only the Futzs team can access, and used only to support the service. DutyDesk&rsquo;s Google service account key and payment webhook secret are stored as server secrets, never in the code.</p>
 <h3 id="retention">How long DutyDesk keeps data</h3>
 <p>DutyDesk keeps a space&rsquo;s rotation and requests while it is installed in the space. When the app is removed, the data is kept so the rotation comes back as it was if the app is added again. To erase everything DutyDesk stores about a space, a member of that space can e-mail support-dutydesk@futzs.com; it is done within 30 days. Payment records kept by Polar follow Polar&rsquo;s own retention rules.</p>
 <h3 id="changes">Changes to this policy</h3>
-<p>We will post any change on this page. If a change concerns what DutyDesk accesses or stores, Google Chat will ask the space again before DutyDesk gets the new access.</p>
+<p>We will post any change on this page, with its date. Last updated: November 8, 2026. If a change concerns what DutyDesk accesses or stores, Google Chat will ask the space again before DutyDesk gets the new access.</p>
 <h3 id="contact">Contact</h3>
 <p>Questions about privacy: support-dutydesk@futzs.com.</p>
 <h2 id="terms">Terms &amp; Conditions</h2>
@@ -228,6 +261,7 @@
     <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
     <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
   </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
 </footer><script src="/js/site.js" defer></script>
 </body>
 </html>
