@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set up a duty rotation in Google Chat with DutyDesk</title>
+<meta name="description" content="Step by step: add DutyDesk to a Google Chat space, set up the rotation, route requests with @DutyDesk, skip or swap a shift, and fix common problems.">
+<link rel="canonical" href="https://futzs.com/help/dutydesk/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Futzs">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Set up a duty rotation in Google Chat with DutyDesk">
+<meta property="og:description" content="Step by step: add DutyDesk to a Google Chat space, set up the rotation, route requests with @DutyDesk, skip or swap a shift, and fix common problems.">
+<meta property="og:url" content="https://futzs.com/help/dutydesk/">
+<meta property="og:image" content="https://futzs.com/images/futzs_logo.png">
+<meta property="og:image:alt" content="DutyDesk docs">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Set up a duty rotation in Google Chat with DutyDesk">
+<meta name="twitter:description" content="Step by step: add DutyDesk to a Google Chat space, set up the rotation, route requests with @DutyDesk, skip or swap a shift, and fix common problems.">
+<meta name="twitter:image" content="https://futzs.com/images/futzs_logo.png">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://futzs.com/help/"},{"@type":"ListItem","position":3,"name":"DutyDesk docs","item":"https://futzs.com/help/dutydesk/"}]},{"@type":"TechArticle","headline":"DutyDesk docs","description":"Step by step: add DutyDesk to a Google Chat space, set up the rotation, route requests with @DutyDesk, skip or swap a shift, and fix common problems.","url":"https://futzs.com/help/dutydesk/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/help/dutydesk/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","author":{"@id":"https://futzs.com/#organization"}}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Sync multiple external calendars into Google Calendar every few minutes, from any iCal (.ics) feed.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and insert them into Gmail or Google Chat without leaving the compose window.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>An on-call rotation that lives in your Google Chat space. Mention @DutyDesk, and the request goes to the person on duty, with buttons to claim and resolve it.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link is-current" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<div class="docs-bar">
+  <div class="docs-bar-in">
+    <span class="docs-bar-title">DutyDesk docs</span>
+    <div class="docs-search">
+      <input class="input" type="search" id="docs-search" placeholder="Search this page" autocomplete="off">
+      <div class="docs-results" id="docs-results" hidden></div>
+    </div>
+  </div>
+</div>
+<div class="docs-grid" data-docs-grid>
+  <nav class="docs-nav" data-docs-nav data-spy>
+    <div class="docs-group">
+      <div class="docs-group-title">DutyDesk</div>
+<a href="#getting-started">Getting started</a><a href="#add">Add DutyDesk to a space</a><a href="#setup">Set up the rotation</a><a href="#requests">Send a request</a><a href="#skip-swap">Skip or swap a shift</a><a href="#commands">Commands</a><a href="#plans">Plans and trial</a><a href="#remove">Remove DutyDesk</a><a href="#troubleshooting">Troubleshooting</a>    </div>
+    <div class="docs-group">
+      <div class="docs-group-title">Reference</div>
+<a href="/legal/dutydesk/#privacy">Privacy policy</a><a href="/legal/dutydesk/#terms">Terms &amp; conditions</a>    </div>
+    <div class="docs-group">
+      <div class="docs-group-title">Other apps</div>
+<a href="/help/icalsync/">ICalSync</a><a href="/help/quickreplies/">Quick Replies</a><a href="https://github.com/skoudoro/gapps">GAPPS on GitHub</a>    </div>
+    <div class="docs-nav-foot" data-docs-nav-foot>
+      <a href="/apps/dutydesk/">&larr; Product page</a>
+    </div>
+  </nav>
+  <article class="docs-main prose flush" data-docs-body>
+    <div class="crumbs"><a href="/help/">Help</a> / <span>DutyDesk</span> / <span class="here">Getting started</span></div>
+    <h1 id="getting-started">Getting started</h1>
+<p>Google Chat has no way to mention a group. DutyDesk gives your team one handle,
+<strong>@DutyDesk</strong>, that always reaches whoever is on duty right now. It keeps the
+rotation, posts the handoff when the duty changes hands, and turns each mention
+into a request card the person on duty can claim, hand on or resolve.</p>
+<h2 id="add">Add DutyDesk to a space</h2>
+<ol>
+<li>Open the Google Chat space your team uses for requests.</li>
+<li>Click the space name › <strong>Apps &amp; integrations</strong> › <strong>Add apps</strong>.</li>
+<li>Search for <strong>DutyDesk</strong> and choose <strong>Add</strong>.</li>
+</ol>
+<p>DutyDesk posts a short checklist in the space. It ticks itself off as you go.</p>
+<h2 id="setup">Set up the rotation</h2>
+<p>Type <code>/dd_setup</code> in the space. In the dialog:</p>
+<ul>
+<li><strong>Who</strong>: the people of the space are listed and selected. Unselect anyone who
+  should not be on duty. The order of the list is the duty order.</li>
+<li><strong>When it changes hands</strong>: daily, weekly or every two weeks, the day and the
+  time of the handoff, and the team&rsquo;s timezone (type a city to search).</li>
+</ul>
+<p>Choose <strong>Save rotation</strong>. DutyDesk posts who is on duty and who is next. From
+then on, it posts a handoff message in the space at each handoff time and
+notifies the next person.</p>
+<p>To change the rotation later, run <code>/dd_setup</code> again or choose <strong>Edit rotation</strong>
+on the <code>/dd_duty</code> card.</p>
+<h2 id="requests">Send a request</h2>
+<p>Mention DutyDesk with your request in the space:</p>
+<blockquote>
+<p>@DutyDesk the VPN is down for the Paris office</p>
+</blockquote>
+<p>DutyDesk replies in the thread of your message with a request card and notifies
+the person on duty. On the card:</p>
+<ul>
+<li><strong>Claim</strong>: you are on it. Everyone in the space sees who took it.</li>
+<li><strong>Reassign</strong>: give it to someone else in the rotation. They are notified.</li>
+<li><strong>Resolve</strong>: done. The card shows who resolved it.</li>
+</ul>
+<p><code>/dd_requests</code> lists the open requests and the ones resolved during the current
+shift. The next handoff message says how many requests are still open, so
+nothing is lost between shifts.</p>
+<h2 id="skip-swap">Skip or swap a shift</h2>
+<p>From the <code>/dd_duty</code> card:</p>
+<ul>
+<li><strong>Skip me next time</strong>: you are passed over at your next turn, once.</li>
+<li><strong>Swap the next shift</strong>: the person on duty or the next one can give the next
+  shift to someone else in the rotation. The space is told who takes it, and
+  both people are notified. One swap can be planned at a time.</li>
+</ul>
+<h2 id="commands">Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@DutyDesk &lt;request&gt;</code></td>
+<td>Sends a request to the person on duty</td>
+</tr>
+<tr>
+<td><code>/dd_duty</code></td>
+<td>Who is on duty, the next handoffs, Skip and Swap (only you see it)</td>
+</tr>
+<tr>
+<td><code>/dd_requests</code></td>
+<td>Open requests and the ones resolved this shift</td>
+</tr>
+<tr>
+<td><code>/dd_setup</code></td>
+<td>Set up or change the rotation</td>
+</tr>
+<tr>
+<td><code>/dd_help</code></td>
+<td>Commands, your plan and links to this page</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plans">Plans and trial</h2>
+<p>Each space gets a <strong>21-day free trial</strong>, no payment card needed. Then one plan
+per space, priced by the people in its rotation:</p>
+<table>
+<thead>
+<tr>
+<th>Plan</th>
+<th>People in the rotation</th>
+<th>Monthly</th>
+<th>Yearly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small</td>
+<td>up to 5</td>
+<td>$12</td>
+<td>$120</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>up to 20</td>
+<td>$29</td>
+<td>$290</td>
+</tr>
+</tbody>
+</table>
+<p>Choose a plan from <code>/dd_help</code> › <strong>See plans</strong>. Payment is handled by Polar,
+which sends the receipts. If the trial ends without a plan, nothing is deleted:
+<code>/dd_duty</code> still answers, but new requests are not routed and no handoff is
+posted until the space subscribes. To cancel, use <strong>Manage subscription</strong> on
+the same card. Details in the <a href="/legal/dutydesk/#billing">terms</a>.</p>
+<h2 id="remove">Remove DutyDesk</h2>
+<p>Click the space name › <strong>Apps &amp; integrations</strong>, then remove DutyDesk. The
+rotation is kept, so it comes back as it was if you add DutyDesk again. To have
+everything erased, write to support-dutydesk@futzs.com.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="dutydesk-does-not-answer-a-message">DutyDesk does not answer a message</h3>
+<p>DutyDesk only sees messages that mention it. Type <code>@DutyDesk</code> and pick it from
+the list so the mention turns into a chip, then write the request.</p>
+<h3 id="no-rotation-yet">&ldquo;No rotation yet&rdquo;</h3>
+<p>The space has no rotation. Choose <strong>Set up the rotation</strong> (or run
+<code>/dd_setup</code>), save, and mention DutyDesk again.</p>
+<h3 id="someone-is-missing-from-the-setup-dialog">Someone is missing from the setup dialog</h3>
+<p>The dialog lists the people of the space. Add the person to the space first,
+then open <code>/dd_setup</code> again.</p>
+<h3 id="the-handoff-came-at-the-wrong-time">The handoff came at the wrong time</h3>
+<p>Check the timezone in <code>/dd_setup</code>. Handoffs follow the team&rsquo;s timezone,
+including daylight saving time changes.</p>
+<h3 id="still-stuck">Still stuck?</h3>
+<p>Write to support-dutydesk@futzs.com with the space name and what happened. A
+person reads every message.</p>
+    <div class="docs-foot">
+      <a class="docs-foot-link" href="/help/"><span>Previous</span><strong>&larr; Help Center</strong></a>
+      <a class="docs-foot-link right" href="/contact/"><span>Next</span><strong>Talk to support &rarr;</strong></a>
+    </div>
+  </article>
+  <aside class="docs-toc" data-docs-toc data-spy>
+    <div class="docs-group-title">On this page</div>
+    <a href="#getting-started">Getting started</a>
+<a class="sub" href="#add">Add DutyDesk to a space</a><a class="sub" href="#setup">Set up the rotation</a><a class="sub" href="#requests">Send a request</a><a class="sub" href="#skip-swap">Skip or swap a shift</a><a class="sub" href="#commands">Commands</a><a class="sub" href="#plans">Plans and trial</a><a class="sub" href="#remove">Remove DutyDesk</a><a class="sub" href="#troubleshooting">Troubleshooting</a>  </aside>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/help/icalsync/">ICalSync docs</a><a href="/legal/#privacy">Privacy Policy</a><a href="/legal/#terms">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

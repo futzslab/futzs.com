@@ -11,7 +11,7 @@ policy and terms.
 
 - [ICalSync](https://futzs.com/apps/icalsync/): ICalSync keeps Google Calendar in step with any external iCal or .ics feed every few minutes, instead of waiting hours on Google's From URL refresh. 14-day free trial, from $4/month. Setup guide: https://futzs.com/help/icalsync/
 - [Quick Replies](https://futzs.com/apps/quickreplies/): Create shortcuts for the messages you send over and over, then insert them into Gmail or Google Chat in two keystrokes. Free Google Workspace add-on. Setup guide: https://futzs.com/help/quickreplies/
-- [DutyDesk](https://futzs.com/apps/dutydesk/): Mention @DutyDesk in Google Chat and the request goes to whoever is on duty. Rotations, handoffs and claim / resolve buttons in the space your team already uses. Early access open. Setup guide: https://futzs.com/help/
+- [DutyDesk](https://futzs.com/apps/dutydesk/): Mention @DutyDesk in Google Chat and the request goes to whoever is on duty. Rotations, handoffs and claim / resolve buttons in the space your team already uses. Early access open. Setup guide: https://futzs.com/help/dutydesk/
 
 ## Open-source libraries
 
@@ -27,6 +27,8 @@ policy and terms.
 - [ICalSync docs](https://futzs.com/help/icalsync/): step-by-step setup and troubleshooting.
 
 - [Quick Replies docs](https://futzs.com/help/quickreplies/): step-by-step setup and troubleshooting.
+
+- [DutyDesk docs](https://futzs.com/help/dutydesk/): step-by-step setup and troubleshooting.
 
 
 ## Articles
