@@ -82,7 +82,7 @@
   <nav class="docs-nav" data-docs-nav data-spy>
     <div class="docs-group">
       <div class="docs-group-title">DutyDesk</div>
-<a href="#getting-started">Getting started</a><a href="#add">Add DutyDesk to a space</a><a href="#setup">Set up the rotation</a><a href="#requests">Send a request</a><a href="#skip-swap">Skip or swap a shift</a><a href="#commands">Commands</a><a href="#plans">Plans and trial</a><a href="#remove">Remove DutyDesk</a><a href="#troubleshooting">Troubleshooting</a>    </div>
+<a href="#getting-started">Getting started</a><a href="#add">Add DutyDesk to a space</a><a href="#setup">Set up the rotation</a><a href="#requests">Send a request</a><a href="#skip-swap">Skip or swap a shift</a><a href="#away">Away dates and covers</a><a href="#calendar">Rotation in your calendar</a><a href="#commands">Commands</a><a href="#plans">Plans and trial</a><a href="#remove">Remove DutyDesk</a><a href="#troubleshooting">Troubleshooting</a>    </div>
     <div class="docs-group">
       <div class="docs-group-title">Reference</div>
 <a href="/legal/dutydesk/#privacy">Privacy policy</a><a href="/legal/dutydesk/#terms">Terms &amp; conditions</a>    </div>
@@ -140,6 +140,10 @@ the person on duty. On the card:</p>
 <li><strong>Resolve</strong>: done. The card shows who resolved it.</li>
 </ul>
 <p><img alt="A request card resolved in place, with the conversation in its thread" class="shot" src="/images/dutydesk/2-triage.webp" /></p>
+<p><strong>Nobody claims it?</strong> After 30 minutes DutyDesk mentions the person on duty
+again in the thread. After 60 minutes the request goes to the next person in
+the rotation, once. Change the delay, or turn it off, in <code>/dd_setup</code> ›
+<strong>Requests nobody claims</strong> (15 minutes, 30 minutes, 1 hour or Never).</p>
 <p><code>/dd_requests</code> lists the open requests and the ones resolved during the current
 shift. The next handoff message says how many requests are still open, so
 nothing is lost between shifts.</p>
@@ -152,6 +156,27 @@ nothing is lost between shifts.</p>
   both people are notified. One swap can be planned at a time.</li>
 </ul>
 <p><img alt="The private /dd_duty card with the next shifts, Skip and Swap" class="shot" src="/images/dutydesk/4-duty.webp" /></p>
+<p>For weekly and every-two-weeks rotations, DutyDesk posts a <strong>heads-up</strong> the day
+before each handoff, mentioning the next person, with Skip and Swap on the
+card. There is still time to change plans.</p>
+<h2 id="away">Away dates and covers</h2>
+<ul>
+<li><strong>I&rsquo;m away…</strong> (on the <code>/dd_duty</code> card): enter the first and the last day
+  away, for yourself or a teammate. At every handoff whose shift touches
+  those days, that person is passed over, then comes back in the usual order.
+  The dates are listed on the <code>/dd_duty</code> card, each with <strong>Remove</strong>.</li>
+<li><strong>Cover a shift…</strong>: someone takes the duty for a few hours or days, without
+  changing the rotation. Requests made in that window go to the person
+  covering, and the space is told. Times are in the team&rsquo;s timezone.</li>
+</ul>
+<h2 id="calendar">Rotation in your calendar</h2>
+<p>On the <code>/dd_duty</code> card, choose <strong>Add to calendar</strong>. DutyDesk shows, only to
+you, a private link to the rotation as a calendar feed. In Google Calendar,
+choose <strong>Other calendars › From URL</strong> and paste it: each shift shows as &ldquo;On
+duty: name&rdquo;, for the next 90 days, people away included. Google refreshes it
+every few hours.</p>
+<p>Anyone with the link sees the names in the rotation. <strong>New link</strong> turns the
+old link off.</p>
 <h2 id="commands">Commands</h2>
 <table>
 <thead>
@@ -243,7 +268,7 @@ person reads every message.</p>
   <aside class="docs-toc" data-docs-toc data-spy>
     <div class="docs-group-title">On this page</div>
     <a href="#getting-started">Getting started</a>
-<a class="sub" href="#add">Add DutyDesk to a space</a><a class="sub" href="#setup">Set up the rotation</a><a class="sub" href="#requests">Send a request</a><a class="sub" href="#skip-swap">Skip or swap a shift</a><a class="sub" href="#commands">Commands</a><a class="sub" href="#plans">Plans and trial</a><a class="sub" href="#remove">Remove DutyDesk</a><a class="sub" href="#troubleshooting">Troubleshooting</a>  </aside>
+<a class="sub" href="#add">Add DutyDesk to a space</a><a class="sub" href="#setup">Set up the rotation</a><a class="sub" href="#requests">Send a request</a><a class="sub" href="#skip-swap">Skip or swap a shift</a><a class="sub" href="#away">Away dates and covers</a><a class="sub" href="#calendar">Rotation in your calendar</a><a class="sub" href="#commands">Commands</a><a class="sub" href="#plans">Plans and trial</a><a class="sub" href="#remove">Remove DutyDesk</a><a class="sub" href="#troubleshooting">Troubleshooting</a>  </aside>
 </div>
 </main>
 <footer class="site-footer">
