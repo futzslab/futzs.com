@@ -152,9 +152,13 @@
 <td><code>script.locale</code></td>
 <td>Only for the side panel: your timezone, to show handoff times in your local time. Not stored</td>
 </tr>
+<tr>
+<td><code>gmail.addons.execute</code>, <code>calendar.addons.execute</code></td>
+<td>Only to show the DutyDesk side panel in Gmail and Google Calendar. They let DutyDesk run there; they give no access to your emails or events</td>
+</tr>
 </tbody>
 </table>
-<p>DutyDesk never receives a token that lets it read your Gmail, Drive, Calendar or other Google data, and never acts as you.</p>
+<p>DutyDesk never receives a token that lets it read your Gmail, Drive, Calendar or other Google data, and never acts as you. In Drive, Docs, Sheets and Slides the side panel needs no permission beyond the ones above.</p>
 <h3 id="use">How DutyDesk uses this data</h3>
 <p>DutyDesk uses the data above only to provide its features to the space: keep the rotation, post handoffs, route and track requests, and bill the space. We never:</p>
 <ul>
