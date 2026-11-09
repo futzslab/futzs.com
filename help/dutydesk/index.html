@@ -50,7 +50,7 @@
                 <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
               </a>
               <a href="/apps/dutydesk/">
-                <strong>DutyDesk</strong><span>An on-call rotation that lives in your Google Chat space. Mention @DutyDesk, and the request goes to the person on duty, with buttons to claim and resolve it.</span>
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
               </a>
               <hr>
               <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
@@ -100,6 +100,7 @@
 <strong>@DutyDesk</strong>, that always reaches whoever is on duty right now. It keeps the
 rotation, posts the handoff when the duty changes hands, and turns each mention
 into a request card the person on duty can claim, hand on or resolve.</p>
+<p><img alt="A request sent to @DutyDesk in a Google Chat space, routed to the person on duty" class="shot" src="/images/dutydesk/1-mention.webp" /></p>
 <h2 id="add">Add DutyDesk to a space</h2>
 <ol>
 <li>Open the Google Chat space your team uses for requests.</li>
@@ -114,10 +115,16 @@ into a request card the person on duty can claim, hand on or resolve.</p>
   should not be on duty. The order of the list is the duty order.</li>
 <li><strong>When it changes hands</strong>: daily, weekly or every two weeks, the day and the
   time of the handoff, and the team&rsquo;s timezone (type a city to search).</li>
+<li><strong>Language</strong>: the language of DutyDesk&rsquo;s cards and messages in this space,
+  for everyone in it. English, Español, Français, Português (Brasil), Deutsch,
+  Italiano or 日本語. A new space starts in the Google language of whoever
+  added DutyDesk.</li>
 </ul>
+<p><img alt="The /dd_setup dialog: people, handoff day and time, timezone and language" class="shot" src="/images/dutydesk/5-setup.webp" /></p>
 <p>Choose <strong>Save rotation</strong>. DutyDesk posts who is on duty and who is next. From
 then on, it posts a handoff message in the space at each handoff time and
 notifies the next person.</p>
+<p><img alt="The handoff card: who is on duty, who is next, and the open requests carried over" class="shot" src="/images/dutydesk/3-handoff.webp" /></p>
 <p>To change the rotation later, run <code>/dd_setup</code> again or choose <strong>Edit rotation</strong>
 on the <code>/dd_duty</code> card.</p>
 <h2 id="requests">Send a request</h2>
@@ -132,6 +139,7 @@ the person on duty. On the card:</p>
 <li><strong>Reassign</strong>: give it to someone else in the rotation. They are notified.</li>
 <li><strong>Resolve</strong>: done. The card shows who resolved it.</li>
 </ul>
+<p><img alt="A request card resolved in place, with the conversation in its thread" class="shot" src="/images/dutydesk/2-triage.webp" /></p>
 <p><code>/dd_requests</code> lists the open requests and the ones resolved during the current
 shift. The next handoff message says how many requests are still open, so
 nothing is lost between shifts.</p>
@@ -143,6 +151,7 @@ nothing is lost between shifts.</p>
   shift to someone else in the rotation. The space is told who takes it, and
   both people are notified. One swap can be planned at a time.</li>
 </ul>
+<p><img alt="The private /dd_duty card with the next shifts, Skip and Swap" class="shot" src="/images/dutydesk/4-duty.webp" /></p>
 <h2 id="commands">Commands</h2>
 <table>
 <thead>
