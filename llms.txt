@@ -11,7 +11,7 @@ policy and terms.
 
 - [ICalSync](https://futzs.com/apps/icalsync/): Two-way calendar sync for Google Calendar: Outlook and Microsoft 365, iCloud, other Google accounts, Airbnb, Booking.com, Vrbo and any iCal (.ics) link, updated in minutes instead of hours. 14-day free trial, from $4/month. Setup guide: https://futzs.com/help/icalsync/
 - [Quick Replies](https://futzs.com/apps/quickreplies/): Save the messages you send over and over, then send them in Google Chat with one command: /qr and a shortcut. 14-day free trial. Setup guide: https://futzs.com/help/quickreplies/
-- [DutyDesk](https://futzs.com/apps/dutydesk/): Mention @DutyDesk in Google Chat and the request reaches whoever is on duty. On-call rotations, shift handoffs, follow-up of unclaimed requests, away dates, a Google Calendar feed and a side panel in Gmail and Docs, in 7 languages. 21-day free trial, from $12 per space. Setup guide: https://futzs.com/help/dutydesk/
+- [DutyDesk](https://futzs.com/apps/dutydesk/): Mention @DutyDesk in Google Chat and the request reaches whoever is on duty. On-call rotations, shift handoffs, follow-up of unclaimed requests, away dates, a Google Calendar feed and a side panel in Gmail and Docs, in 7 languages. 21-day free trial, from $19 per space. Setup guide: https://futzs.com/help/dutydesk/
 
 ## Open-source libraries
 
