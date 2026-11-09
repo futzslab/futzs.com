@@ -79,7 +79,7 @@
 <li>DutyDesk is a Google Chat app. It acts as itself (an app with the <code>chat.bot</code> permission), never as you: it does not ask for access to your Gmail, Drive, Calendar or any other Google data.</li>
 <li>It only sees the messages that mention @DutyDesk, the commands you send it, the buttons you press on its cards, and what you do in its side panel. It does not read the other messages of the space, nor your emails, events or files.</li>
 <li>What we store, per Chat space: the space name, the rotation (people, order, schedule, timezone), who was on duty when, and for each request the first 200 characters of its text, who asked, who it was assigned to and its status.</li>
-<li>We do not sell your data or share it, except with Polar (polar.sh), which processes payments and receives the buyer&rsquo;s e-mail address for that purpose, and PostHog, which receives product usage events about a space under a random identifier (never message text, names or e-mail addresses).</li>
+<li>We do not sell your data or share it, except with Polar (polar.sh), which processes payments and receives the buyer&rsquo;s e-mail address for that purpose, and PostHog, which receives product usage events about a space under a random identifier and side-panel use under a one-way hash of the person (never message text, names, e-mail addresses or Google account IDs).</li>
 <li>The app’s use and transfer of information received from Google APIs adheres to <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
 </ul>
 </blockquote>
@@ -203,7 +203,7 @@
 <tr>
 <td>PostHog</td>
 <td>Product analytics</td>
-<td>Events such as &ldquo;rotation created&rdquo; or &ldquo;request resolved&rdquo; for a space, under a random identifier. No message text, names or e-mail addresses</td>
+<td>Events such as &ldquo;rotation created&rdquo; or &ldquo;request resolved&rdquo; for a space, under a random identifier, and side-panel use (which Google app, which action) under a one-way hash of the person, never their Google account ID. No message text, names or e-mail addresses</td>
 </tr>
 </tbody>
 </table>
