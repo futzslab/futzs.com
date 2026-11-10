@@ -82,7 +82,7 @@
   <nav class="docs-nav" data-docs-nav data-spy>
     <div class="docs-group">
       <div class="docs-group-title">DutyDesk</div>
-<a href="#getting-started">Getting started</a><a href="#add">Add DutyDesk to a space</a><a href="#setup">Set up the rotation</a><a href="#requests">Send a request</a><a href="#skip-swap">Skip or swap a shift</a><a href="#away">Away</a><a href="#calendar">Rotation in your calendar</a><a href="#side-panel">Side panel in Gmail and Docs</a><a href="#commands">Commands</a><a href="#plans">Plans and trial</a><a href="#remove">Remove DutyDesk</a><a href="#troubleshooting">Troubleshooting</a>    </div>
+<a href="#getting-started">Getting started</a><a href="#add">Add DutyDesk to a space</a><a href="#setup">Set up the rotation</a><a href="#requests">Send a request</a><a href="#skip-swap">Skip or swap a shift</a><a href="#away">Away</a><a href="#calendar">Rotation in your calendar</a><a href="#side-panel">Side panel in Gmail and Docs</a><a href="#commands">Commands</a><a href="#plans">Plans and trial</a><a href="#admins">For Workspace admins</a><a href="#remove">Remove DutyDesk</a><a href="#troubleshooting">Troubleshooting</a>    </div>
     <div class="docs-group">
       <div class="docs-group-title">Reference</div>
 <a href="/legal/dutydesk/#privacy">Privacy policy</a><a href="/legal/dutydesk/#terms">Terms &amp; conditions</a>    </div>
@@ -265,6 +265,34 @@ which sends the receipts. If the trial ends without a plan, nothing is deleted:
 <code>/dd_duty</code> still answers, but new requests are not routed and no handoff is
 posted until the space subscribes. To cancel, use <strong>Manage subscription</strong> on
 the same card. Details in the <a href="/legal/dutydesk/#billing">terms</a>.</p>
+<h2 id="admins">For Google Workspace admins</h2>
+<ul>
+<li><strong>Install for your organization.</strong> In the Admin console, install DutyDesk
+  from the Google Workspace Marketplace for everyone or for one group. Each
+  person then gets a direct message from DutyDesk with the three steps to add
+  it to a team space. Nothing is billed at this point: a space starts its
+  21-day trial only when someone adds DutyDesk to it.</li>
+<li><strong>If Chat apps need approval.</strong> When your organization allows only approved
+  Chat apps, add DutyDesk to the allowed apps in the Google Chat settings of
+  the Admin console.</li>
+<li><strong>Permissions.</strong> In Chat, DutyDesk acts as itself: it receives only the
+  messages that mention it or are sent to it directly, and reads the member
+  list of the spaces it is in.
+  The side panel asks for identity and locale only. DutyDesk never reads
+  Gmail, Drive, Calendar or Docs content. <a href="/legal/dutydesk/#scopes">Every permission, and
+  why</a>.</li>
+<li><strong>What is stored.</strong> Per space: its name, the rotation, who was on duty when,
+  and for each request the first 200 characters of its text, who asked, who
+  it went to and its status. <a href="/legal/dutydesk/#privacy">Privacy policy</a>;
+  erasure on request within 30 days
+  (<a href="/legal/dutydesk/#retention">retention</a>).</li>
+<li><strong>Billing.</strong> Per space, paid by card by anyone in it, invoices from Polar.
+  One invoice for several spaces: write to
+  <a href="mailto:support-dutydesk@futzs.com">support-dutydesk@futzs.com</a>.</li>
+<li><strong>Remove.</strong> Uninstalling in the Admin console removes DutyDesk for the
+  people you installed it for; a space member can also remove it from one
+  space (below).</li>
+</ul>
 <h2 id="remove">Remove DutyDesk</h2>
 <p>Click the space name › <strong>Apps &amp; integrations</strong>, then remove DutyDesk. The
 rotation is kept, so it comes back as it was if you add DutyDesk again. To have
@@ -293,7 +321,7 @@ person reads every message.</p>
   <aside class="docs-toc" data-docs-toc data-spy>
     <div class="docs-group-title">On this page</div>
     <a href="#getting-started">Getting started</a>
-<a class="sub" href="#add">Add DutyDesk to a space</a><a class="sub" href="#setup">Set up the rotation</a><a class="sub" href="#requests">Send a request</a><a class="sub" href="#skip-swap">Skip or swap a shift</a><a class="sub" href="#away">Away dates, covers and pause</a><a class="sub" href="#calendar">Rotation in your calendar</a><a class="sub" href="#side-panel">Side panel in Gmail, Calendar, Drive and Docs</a><a class="sub" href="#commands">Commands</a><a class="sub" href="#plans">Plans and trial</a><a class="sub" href="#remove">Remove DutyDesk</a><a class="sub" href="#troubleshooting">Troubleshooting</a>  </aside>
+<a class="sub" href="#add">Add DutyDesk to a space</a><a class="sub" href="#setup">Set up the rotation</a><a class="sub" href="#requests">Send a request</a><a class="sub" href="#skip-swap">Skip or swap a shift</a><a class="sub" href="#away">Away dates, covers and pause</a><a class="sub" href="#calendar">Rotation in your calendar</a><a class="sub" href="#side-panel">Side panel in Gmail, Calendar, Drive and Docs</a><a class="sub" href="#commands">Commands</a><a class="sub" href="#plans">Plans and trial</a><a class="sub" href="#admins">For Google Workspace admins</a><a class="sub" href="#remove">Remove DutyDesk</a><a class="sub" href="#troubleshooting">Troubleshooting</a>  </aside>
 </div>
 </main>
 <footer class="site-footer">
