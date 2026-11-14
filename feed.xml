@@ -7,6 +7,14 @@
     <language>en</language>
     <atom:link href="https://futzs.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>How to add your Canvas calendar to Google Calendar (and keep it up to date)</title>
+      <link>https://futzs.com/blog/canvas-calendar-google-calendar/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/canvas-calendar-google-calendar/</guid>
+      <description>Find the Canvas Calendar Feed link, add it to Google Calendar in 2 minutes, and fix slow updates, missing assignments and wrong times.</description>
+      <pubDate>Fri, 13 Nov 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
       <title>Why Futzs sponsors PyCon Togo</title>
       <link>https://futzs.com/blog/pycon-togo-2026/</link>
       <guid isPermaLink="true">https://futzs.com/blog/pycon-togo-2026/</guid>

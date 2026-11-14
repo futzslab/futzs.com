@@ -33,6 +33,8 @@ policy and terms.
 
 ## Articles
 
+- [How to add your Canvas calendar to Google Calendar (and keep it up to date)](https://futzs.com/blog/canvas-calendar-google-calendar/): Find the Canvas Calendar Feed link, add it to Google Calendar in 2 minutes, and fix slow updates, missing assignments and wrong times.
+
 - [Why Futzs sponsors PyCon Togo](https://futzs.com/blog/pycon-togo-2026/): Futzs is a bronze sponsor of PyCon Togo 2026 in Lomé, 28–30 August. Why a small Google Workspace shop puts money into an African Python conference.
 
 - [Why your Google Calendar subscription is not updating](https://futzs.com/blog/calendar-not-updating/): A subscribed iCal calendar showing stale or missing events is usually not broken. The refresh behaviour behind it, and how to tell slow from actually broken.

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add Canvas calendar to Google Calendar: step-by-step guide</title>
+<meta name="description" content="Find the Canvas Calendar Feed link, add it to Google Calendar in 2 minutes, and fix slow updates, missing assignments and wrong times.">
+<link rel="canonical" href="https://futzs.com/blog/canvas-calendar-google-calendar/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Add Canvas calendar to Google Calendar: step-by-step guide">
+<meta property="og:description" content="Find the Canvas Calendar Feed link, add it to Google Calendar in 2 minutes, and fix slow updates, missing assignments and wrong times.">
+<meta property="og:url" content="https://futzs.com/blog/canvas-calendar-google-calendar/">
+<meta property="og:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+<meta property="og:image:alt" content="How to add your Canvas calendar to Google Calendar (and keep it up to date)">
+<meta property="article:published_time" content="2026-11-13"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add Canvas calendar to Google Calendar: step-by-step guide">
+<meta name="twitter:description" content="Find the Canvas Calendar Feed link, add it to Google Calendar in 2 minutes, and fix slow updates, missing assignments and wrong times.">
+<meta name="twitter:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"How to add your Canvas calendar to Google Calendar (and keep it up to date)","item":"https://futzs.com/blog/canvas-calendar-google-calendar/"}]},{"@type":"BlogPosting","headline":"How to add your Canvas calendar to Google Calendar (and keep it up to date)","description":"Find the Canvas Calendar Feed link, add it to Google Calendar in 2 minutes, and fix slow updates, missing assignments and wrong times.","url":"https://futzs.com/blog/canvas-calendar-google-calendar/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/canvas-calendar-google-calendar/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-11-13","dateModified":"2026-11-13","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/icalsync/2-connect.webp"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add my Canvas calendar to Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"In Canvas, open Calendar in the left menu and click Calendar Feed at the bottom of the right-hand column. Copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar."}},{"@type":"Question","name":"Why is my Canvas calendar not updating in Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"A calendar added with From URL is refreshed on Google's schedule, which Google does not publish and you cannot change. In practice a new or moved due date can take several hours to a day to appear. A sync tool such as ICalSync checks the link every few minutes and copies the changes into a calendar you own."}},{"@type":"Question","name":"Can I add the Canvas calendar from my phone?","acceptedAnswer":{"@type":"Answer","text":"Not with the From URL option: Google Calendar only lets you subscribe to a calendar from a computer browser. Once it is added there, it shows in the Google Calendar app on your phone too."}},{"@type":"Question","name":"Why are some Canvas assignments missing from Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"The Canvas feed only carries items that have a date. To Do items, undated assignments and anything older than about 30 days are not in the feed. If a new course is missing, copy the Calendar Feed link again after you enroll."}},{"@type":"Question","name":"Is the Canvas Calendar Feed link private?","acceptedAnswer":{"@type":"Answer","text":"The link works without a password, so anyone who has it can read your course schedule. Paste it only into tools you trust and do not share it in group chats or forums."}}]}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Outlook, iCloud, another Google account, Airbnb, Booking.com or any iCal (.ics) link: ICalSync copies them into Google Calendar, or keeps both sides in step, every few minutes instead of the 8 to 24 hours Google&#39;s own &#34;From URL&#34; takes.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>How to add your Canvas calendar to Google Calendar (and keep it up to date)</h1>
+  <div class="post-meta">Serge Koudoro &middot; 8 min read</div>
+  <div class="prose flush"><p>Canvas knows every due date you have. Google Calendar is where you actually
+plan your week. Until the two meet, you are checking two places and hoping
+nothing slips between them.</p>
+<p>The good news: Canvas can publish your whole course calendar as a link, and
+Google Calendar can read that link. The setup takes about two minutes. The less
+good news: the standard setup updates slowly, hides a few items, and leaves you
+with events you cannot edit. This guide covers the setup, then each of those
+problems and how to get around it.</p>
+<h2 id="the-short-version">The short version</h2>
+<ol>
+<li>In Canvas, open <strong>Calendar</strong> in the left menu.</li>
+<li>In the right-hand column, scroll down and click <strong>Calendar Feed</strong>.</li>
+<li>Copy the link that appears.</li>
+<li>On a computer, open Google Calendar. Next to <strong>Other calendars</strong>, click
+   <strong>+</strong> and choose <strong>From URL</strong>.</li>
+<li>Paste the link and click <strong>Add calendar</strong>.</li>
+</ol>
+<p>Your Canvas events appear as a new calendar in the left sidebar. That is the
+whole setup, and for many students it is enough. Read on if you want changes to
+show up quickly, or if something looks wrong.</p>
+<h2 id="what-the-canvas-calendar-feed-is">What the Canvas Calendar Feed is</h2>
+<p>The Calendar Feed is a web address that points to a file in the iCalendar
+format (<code>.ics</code>), the standard nearly every calendar app can read. Canvas builds
+it for you personally, from every course you are enrolled in. Each time an app
+opens the link, Canvas generates a fresh copy of your calendar.</p>
+<p>A Canvas feed link usually looks like this:</p>
+<pre><code class="language-text">https://yourschool.instructure.com/feeds/calendars/user_AbC123xYz.ics
+</code></pre>
+<p>Schools with their own Canvas address will show a different first part, such
+as <code>canvas.yourschool.edu</code>, but the link still contains <code>/feeds/calendars/</code> and
+ends in <code>.ics</code>. If the link you copied looks like the Calendar page itself, you
+copied the wrong thing. Go back and click <strong>Calendar Feed</strong> again.</p>
+<p>According to <a href="https://community.instructure.com/en/kb/articles/662804-how-do-i-view-the-calendar-ical-feed-to-subscribe-to-an-external-calendar">Instructure&rsquo;s own guide</a>,
+the feed carries events and assignments from all your course calendars, covers
+events up to about a year ahead and the last 30 days, and holds up to 1,000
+items. That last limit rarely matters for one student, but it can for a teacher
+with many sections.</p>
+<h2 id="three-ways-to-get-canvas-into-google-calendar">Three ways to get Canvas into Google Calendar</h2>
+<p>There are three ways to use that link. They look similar, and they behave very
+differently once the term is under way.</p>
+<h3 id="option-1-subscribe-with-from-url">Option 1: subscribe with &ldquo;From URL&rdquo;</h3>
+<p>This is the method in the short version above, and the one most school help
+desks describe. Google Calendar stores the link and fetches the file again from
+time to time.</p>
+<p>It is free and takes two minutes. It has three limits worth knowing before you
+rely on it:</p>
+<ul>
+<li><strong>Slow updates.</strong> Google does not publish how often it re-reads a subscribed
+  link, and you cannot make it go faster. In practice, a new assignment or a
+  moved deadline can take several hours to a day to appear. We explain why in
+  <a href="/blog/calendar-not-updating/">why your Google Calendar subscription is not updating</a>.</li>
+<li><strong>Read-only events.</strong> Subscribed events cannot be edited, moved or annotated.
+  You cannot add a note like &ldquo;start this on Monday&rdquo; to a due date.</li>
+<li><strong>Computer only for setup.</strong> Google Calendar does not let you subscribe to a
+  calendar from the phone app (<a href="https://support.google.com/calendar/answer/37100">Google&rsquo;s help page</a>).
+  Add it once on a computer and it will then show on your phone.</li>
+</ul>
+<h3 id="option-2-import-the-file-once">Option 2: import the file once</h3>
+<p>Google Calendar can also import an <code>.ics</code> file under <strong>Settings → Import &amp;
+export</strong>. You would download the feed file and import it.</p>
+<p>This copies a snapshot. The events become fully editable, but they never update
+again. When a teacher moves a quiz, your calendar still shows the old date,
+which is worse than having no date at all. Use this only for something that
+will not change, such as a printed exam timetable.</p>
+<h3 id="option-3-sync-the-feed-into-a-calendar-you-own">Option 3: sync the feed into a calendar you own</h3>
+<p>The third option keeps the Canvas link as the source, and copies its events
+into one of your own Google calendars, checking for changes every few minutes.
+New assignments are added, moved deadlines move, and deleted items disappear.</p>
+<p>This is what <a href="/apps/icalsync/">ICalSync</a> does. It runs as a side panel inside
+Google Calendar, so there is nothing to install on your phone or computer
+beyond the add-on itself.</p>
+<p><img alt="ICalSync side panel in Google Calendar: pick where the calendar lives, then choose the Google calendar it lands in" height="800" loading="lazy" src="/images/icalsync/2-connect.webp" width="1280" /></p>
+<h3 id="side-by-side">Side by side</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Subscribe (From URL)</th>
+<th>Import once</th>
+<th>Sync (ICalSync)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New and moved due dates</td>
+<td>Hours to a day, on Google&rsquo;s schedule</td>
+<td>Never</td>
+<td>Every 5 to 15 minutes, or right away with <strong>Sync now</strong></td>
+</tr>
+<tr>
+<td>Edit, recolor or add notes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Reminders on each due date</td>
+<td>No per-event control</td>
+<td>Manual</td>
+<td>Your calendar&rsquo;s default reminders apply</td>
+</tr>
+<tr>
+<td>Set up from a phone</td>
+<td>No</td>
+<td>No</td>
+<td>No (Google Calendar add-ons run on a computer)</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Free</td>
+<td>Free</td>
+<td>14-day free trial, then a paid plan; a free plan updates one calendar once a day</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setting-up-the-sync-with-icalsync">Setting up the sync with ICalSync</h2>
+<ol>
+<li>Install ICalSync from the
+   <a href="https://workspace.google.com/marketplace/app/icalsync/1001284326178">Google Workspace Marketplace</a>
+   and open it from the right-hand panel of Google Calendar.</li>
+<li>Under <strong>School &amp; work</strong>, pick <strong>Canvas / school</strong>. The add-on shows the same
+   three Canvas steps as above, so you can copy the link without leaving the
+   page.</li>
+<li>Paste the Calendar Feed link, give it a name such as <em>Canvas</em>, and choose
+   the Google calendar the events should land in.</li>
+</ol>
+<p>It is worth creating a separate Google calendar called <em>Canvas</em> first
+(<strong>Other calendars → + → Create new calendar</strong>). You can then give it its own
+color, hide it in one click during holidays, and set a default reminder such as
+&ldquo;1 day before&rdquo; that every due date picks up.</p>
+<p>The 14-day trial starts when you connect your first calendar, not when you
+install, and it does not ask for a card.</p>
+<h2 id="what-is-not-in-the-canvas-feed">What is not in the Canvas feed</h2>
+<p>Some items never reach any calendar app, whichever option you choose, because
+Canvas does not put them in the feed:</p>
+<ul>
+<li><strong>To Do items</strong> you add yourself in Canvas.</li>
+<li><strong>Assignments without a due date.</strong></li>
+<li><strong>Anything older than about 30 days.</strong></li>
+<li><strong>A new course, sometimes.</strong> Instructure recommends copying the Calendar Feed
+  link again after you enroll in a new course. If a course is missing at the
+  start of a term, copy the link again and replace the old one.</li>
+</ul>
+<p>If something with a date is still missing, check that the course calendar is
+ticked in the Canvas Calendar sidebar. Canvas only shows, and exports, what is
+there.</p>
+<h2 id="fixing-common-problems">Fixing common problems</h2>
+<h3 id="nothing-shows-up-after-adding-the-link">Nothing shows up after adding the link</h3>
+<p>Check what you pasted. A link to the Canvas Calendar page, or a link copied from
+the browser&rsquo;s address bar, will not work. The feed link contains
+<code>/feeds/calendars/</code> and ends in <code>.ics</code>. In Google Calendar, also make sure the
+new calendar is ticked under <strong>Other calendars</strong>.</p>
+<h3 id="times-are-off-by-an-hour-or-more">Times are off by an hour or more</h3>
+<p>Canvas writes times in the time zone set in your Canvas profile. If you study
+remotely or moved, open <strong>Account → Settings</strong> in Canvas and check the time
+zone there, then check Google Calendar&rsquo;s own time zone under <strong>Settings →
+General</strong>. Assignment due times shift when the two disagree.</p>
+<h3 id="every-due-date-appears-twice">Every due date appears twice</h3>
+<p>You probably added the link twice, once with <strong>From URL</strong> and once in a sync
+tool, or subscribed again after an earlier attempt seemed to fail. Remove the
+extra calendar from <strong>Other calendars</strong> in Google Calendar and keep one.</p>
+<h3 id="the-link-stopped-working">The link stopped working</h3>
+<p>If Google Calendar or a sync tool reports that the link cannot be read, your
+school may have moved to a new Canvas address. Copy a fresh link from
+<strong>Calendar Feed</strong> and replace the old one.</p>
+<h2 id="keep-the-link-to-yourself">Keep the link to yourself</h2>
+<p>The feed link works without a password. Anyone who has it can read your course
+schedule, and in some courses the event descriptions include more than dates.
+Paste it only into tools you trust, and do not share it in group chats or
+forums when asking for help. If you want help setting up, describe the problem
+and leave the link out.</p>
+<h2 id="which-option-to-choose">Which option to choose</h2>
+<p>If you mainly glance at your calendar to see the shape of the week, subscribing
+with <strong>From URL</strong> is free and fine. If you plan your work around due dates, or
+your teachers move things around, the delay will catch you at some point, and a
+sync that checks every few minutes is worth it.</p>
+<p>The same approach works for other learning platforms that offer a calendar
+link, such as Moodle, Blackboard and Brightspace, and for any other calendar
+with an <code>.ics</code> link. Our guide to <a href="/blog/outlook-to-google-calendar/">syncing an Outlook calendar into Google
+Calendar</a> covers the school or work account
+side, and <a href="/help/icalsync/">the ICalSync help pages</a> walk through every
+setting.</p></div>
+  <h2>Questions</h2>
+<div class="faq">
+  <details class="faq-item">
+    <summary>How do I add my Canvas calendar to Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>In Canvas, open Calendar in the left menu and click Calendar Feed at the bottom of the right-hand column. Copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why is my Canvas calendar not updating in Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>A calendar added with From URL is refreshed on Google&#39;s schedule, which Google does not publish and you cannot change. In practice a new or moved due date can take several hours to a day to appear. A sync tool such as ICalSync checks the link every few minutes and copies the changes into a calendar you own.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Can I add the Canvas calendar from my phone?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Not with the From URL option: Google Calendar only lets you subscribe to a calendar from a computer browser. Once it is added there, it shows in the Google Calendar app on your phone too.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why are some Canvas assignments missing from Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>The Canvas feed only carries items that have a date. To Do items, undated assignments and anything older than about 30 days are not in the feed. If a new course is missing, copy the Calendar Feed link again after you enroll.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Is the Canvas Calendar Feed link private?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>The link works without a password, so anyone who has it can read your course schedule. Paste it only into tools you trust and do not share it in group chats or forums.</p>
+  </details>
+</div>  <div class="cta-band inline">
+    <div><h3>Canvas due dates in Google Calendar, minutes after they change</h3><p class="muted">14-day free trial from your first calendar. No credit card.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">Get ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/terms/">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>
