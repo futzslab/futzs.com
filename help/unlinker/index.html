@@ -150,6 +150,11 @@ anything. Three switches decide what happens to the look of the text.</p>
 <td>A colored address such as <code>www.example.com</code> or <code>name@example.com</code> is treated as a link even when it was never clickable, which is common in letterheads and footers. Other text of the same color on that page turns black too</td>
 </tr>
 <tr>
+<td><strong>Keep addresses unclickable in viewers</strong></td>
+<td>On</td>
+<td>Some viewers, Google Drive and Chrome included, make any web or e-mail address in the text clickable on their own. The address keeps exactly its look, but viewers no longer read it as an address. Copied, its dots, slashes and @ become look-alike characters</td>
+</tr>
+<tr>
 <td><strong>Also make all colored text black</strong></td>
 <td>Off</td>
 <td>Every colored text in the document turns black, headings included. Images and drawings are not changed</td>
@@ -183,9 +188,10 @@ keeps its color.</p>
 <ul>
 <li><strong>Some PDF viewers make addresses clickable on their own.</strong> If the text of
   your document contains <code>www.example.com</code>, a viewer may turn it into a link
-  when it displays the page, even though the PDF holds no link. No tool can
-  prevent this short of rewriting the text. Check the rules of whoever receives
-  the document if this matters.</li>
+  when it displays the page, even though the PDF holds no link. <strong>Keep
+  addresses unclickable in viewers</strong> prevents this: the address looks the
+  same, but its dots, slashes and @ are read as look-alike characters. If you
+  copy it from the PDF, paste it somewhere and retype those characters.</li>
 <li><strong>Always look at the result.</strong> Open the clean copy and check the pages that
   had links before you send it.</li>
 </ul>
