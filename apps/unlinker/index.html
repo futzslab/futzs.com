@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unlinker — remove links from PDFs in Google Drive</title>
+<meta name="description" content="Unlinker is a Google Workspace add-on that removes every hyperlink from a PDF in Google Drive and turns the blue link text black. The original stays untouched, files are never stored. Coming soon: 3 free files, then a one-time $29.">
+<link rel="canonical" href="https://futzs.com/apps/unlinker/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Futzs">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Unlinker — remove links from PDFs in Google Drive">
+<meta property="og:description" content="Unlinker is a Google Workspace add-on that removes every hyperlink from a PDF in Google Drive and turns the blue link text black. The original stays untouched, files are never stored. Coming soon: 3 free files, then a one-time $29.">
+<meta property="og:url" content="https://futzs.com/apps/unlinker/">
+<meta property="og:image" content="https://futzs.com/images/unlinker-social-1200x630.png">
+<meta property="og:image:alt" content="Unlinker">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unlinker — remove links from PDFs in Google Drive">
+<meta name="twitter:description" content="Unlinker is a Google Workspace add-on that removes every hyperlink from a PDF in Google Drive and turns the blue link text black. The original stays untouched, files are never stored. Coming soon: 3 free files, then a one-time $29.">
+<meta name="twitter:image" content="https://futzs.com/images/unlinker-social-1200x630.png">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Apps","item":"https://futzs.com/apps/"},{"@type":"ListItem","position":3,"name":"Unlinker","item":"https://futzs.com/apps/unlinker/"}]},{"@type":"SoftwareApplication","name":"Unlinker","url":"https://futzs.com/apps/unlinker/","description":"Unlinker is a Google Workspace add-on that removes every hyperlink from a PDF in Google Drive and turns the blue link text black. The original stays untouched, files are never stored. Coming soon: 3 free files, then a one-time $29.","applicationCategory":"BusinessApplication","applicationSuite":"Google Workspace","operatingSystem":"Web browser, Google Workspace","publisher":{"@id":"https://futzs.com/#organization"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":"https://futzs.com/images/unlinker/unlinker-hero.svg","installUrl":"/contact/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When will Unlinker be available?","acceptedAnswer":{"@type":"Answer","text":"Soon. It is being finished and will then go through Google's review for the Workspace Marketplace. Use Get early access and we will write to you when it opens."}},{"@type":"Question","name":"Can Unlinker read my whole Drive?","acceptedAnswer":{"@type":"Answer","text":"No. It uses Google's per-file permission. It can open only the files you select and allow, and the copies it creates."}},{"@type":"Question","name":"What happens to my file on your servers?","acceptedAnswer":{"@type":"Answer","text":"The PDF is processed in memory and returned at once. It is never written to disk, never stored and never logged. We do not record file names or contents."}},{"@type":"Question","name":"Does it change my original PDF?","acceptedAnswer":{"@type":"Answer","text":"No. The original stays exactly as it is. Unlinker creates a new file next to it with \"(unlinked)\" in its name."}},{"@type":"Question","name":"Will the text still look like a link?","acceptedAnswer":{"@type":"Answer","text":"Link text and its underline turn black by default. You can also keep the colors and only remove the links, or turn all colored text black."}},{"@type":"Question","name":"Can a PDF viewer still make an address clickable?","acceptedAnswer":{"@type":"Answer","text":"Some viewers turn any text that looks like a web address into a link on their own. Unlinker removes the links stored in the PDF and the link styling; it cannot change how a viewer treats plain text."}},{"@type":"Question","name":"Which PDFs are not supported?","acceptedAnswer":{"@type":"Answer","text":"Password-protected PDFs, files over 25 MB and documents over 300 pages. Unlinker tells you why and the file does not count."}},{"@type":"Question","name":"Does it work in Google Docs, Sheets and Slides?","acceptedAnswer":{"@type":"Answer","text":"Not yet. Unlinker starts with PDFs in Drive; Docs, Sheets and Slides come next."}},{"@type":"Question","name":"Is it a subscription?","acceptedAnswer":{"@type":"Answer","text":"No. Three files are free, then a single $29 payment unlocks unlimited use for your Google account."}}]}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell has-sub" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link is-current" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Outlook, iCloud, another Google account, Airbnb, Booking.com or any iCal (.ics) link: ICalSync copies them into Google Calendar, or keeps both sides in step, every few minutes instead of the 8 to 24 hours Google&#39;s own &#34;From URL&#34; takes.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
+              </a>
+              <a href="/apps/unlinker/" class="is-current">
+                <strong>Unlinker</strong><span>Some documents must go out without a single clickable link: grant applications, court filings, submissions with a no-hyperlink rule. Unlinker removes the links from a PDF and turns the blue link text black, in two clicks, without leaving Drive.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-subrow" data-spy>
+      <span class="nav-subrow-title">Unlinker</span>
+      <a class="nav-sublink" href="#overview">Overview</a>
+      <a class="nav-sublink" href="#pricing">Pricing</a>
+      <a class="nav-sublink" href="#setup">How it works</a>
+      <a class="nav-sublink" href="#faq">FAQ</a>
+      <a class="nav-sublink" href="#install">Early access</a>
+    </div>
+  </div>
+</div><main id="content">
+<header id="overview" class="app-head anchor">
+  <div>
+    <a class="back" href="/apps/">&larr; All apps</a>
+<span class="badge">Coming soon</span>    <h1>Unlinker</h1>
+    <p class="lede">Remove every link from a PDF, right from Google Drive.</p>
+<p class="muted">Some documents must go out without a single clickable link: grant applications, court filings, submissions with a no-hyperlink rule. Unlinker removes the links from a PDF and turns the blue link text black, in two clicks, without leaving Drive.</p>    <div class="btn-row">
+      <a class="btn btn-primary" href="/contact/" data-umami-event="install-click" data-umami-event-app="Unlinker" data-umami-event-place="hero">Get early access</a>
+      <a class="btn btn-secondary" href="/help/">Setup guide</a>
+    </div>
+  </div>
+  <img class="plate" src="/images/unlinker/unlinker-hero.svg" alt="Unlinker">
+</header>
+
+<section id="features" class="cols-3 anchor grid-six">
+  <div><h3>Every link gone</h3><p>Web links, e-mail links and links that jump to another page of the document are all removed. Clicking the text no longer opens anything.</p></div>
+  <div><h3>Link text turns black</h3><p>Blue, underlined link text becomes plain black text with a black underline, so the page reads as if the link had never been there.</p></div>
+  <div><h3>Bare addresses too</h3><p>A colored www.example.com or name@example.com that was never a real link can be turned black as well. One switch, on by default.</p></div>
+  <div><h3>Your original is never touched</h3><p>Unlinker saves a copy next to the file, named &#34;(unlinked)&#34;. If a PDF has no links, nothing is created and nothing is counted.</p></div>
+  <div><h3>Files are never stored</h3><p>The PDF is cleaned in memory and sent straight back to your Drive. Nothing is kept on our servers, and nothing about the file is logged, not even its name.</p></div>
+  <div><h3>Pay once</h3><p>Three files free to try it on your own documents. Then a one-time $29 for unlimited use: no subscription.</p></div>
+</section>
+
+
+<section id="pricing" class="anchor pricing-band">
+  <span class="kicker">Pricing</span>
+  <h2>Three files free, then pay once</h2>
+<p class="muted">A file only counts when Unlinker changed something in it. Prices in USD; customers in the EU pay the same amount in EUR. Payments are handled by Polar, our merchant of record, which also takes care of VAT and sales tax.</p>  <div class="card-grid three pricing-grid">
+    <div class="card plan">
+      <h3>Free</h3>
+      <p class="plan-price"><strong>$0</strong></p>
+      <p>Try it on your own documents.</p>
+      <ul class="plan-features">
+<li>3 files</li><li>All options</li><li>No card needed</li>      </ul>
+    </div>
+    <div class="card plan">
+      <h3>Lifetime</h3>
+      <p class="plan-price"><strong>$29 once</strong></p>
+      <p>For anyone who cleans documents regularly.</p>
+      <ul class="plan-features">
+<li>Unlimited files</li><li>All options</li><li>No subscription</li>      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="setup" class="anchor steps-band">
+  <span class="kicker">Get started</span>
+  <h2>Up and running in minutes</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">01</div>
+      <h3>Select a PDF in Google Drive</h3>
+      <p>One file or several, up to 10 at a time. Open Unlinker in the side panel.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <h3>Allow access to that file</h3>
+      <p>Unlinker only ever sees the files you pick, one by one. It cannot browse the rest of your Drive.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <h3>Remove links</h3>
+      <p>A clean copy appears next to the original, with the number of links removed and pages recolored.</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="faq" class="anchor faq-band">
+  <span class="kicker">Questions</span>
+  <h2>Before you install</h2>
+<div class="faq">
+  <details class="faq-item">
+    <summary>When will Unlinker be available?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Soon. It is being finished and will then go through Google&#39;s review for the Workspace Marketplace. Use Get early access and we will write to you when it opens.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Can Unlinker read my whole Drive?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>No. It uses Google&#39;s per-file permission. It can open only the files you select and allow, and the copies it creates.</p>
+  </details>
+  <details class="faq-item">
+    <summary>What happens to my file on your servers?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>The PDF is processed in memory and returned at once. It is never written to disk, never stored and never logged. We do not record file names or contents.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Does it change my original PDF?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>No. The original stays exactly as it is. Unlinker creates a new file next to it with &#34;(unlinked)&#34; in its name.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Will the text still look like a link?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Link text and its underline turn black by default. You can also keep the colors and only remove the links, or turn all colored text black.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Can a PDF viewer still make an address clickable?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Some viewers turn any text that looks like a web address into a link on their own. Unlinker removes the links stored in the PDF and the link styling; it cannot change how a viewer treats plain text.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Which PDFs are not supported?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Password-protected PDFs, files over 25 MB and documents over 300 pages. Unlinker tells you why and the file does not count.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Does it work in Google Docs, Sheets and Slides?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Not yet. Unlinker starts with PDFs in Drive; Docs, Sheets and Slides come next.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Is it a subscription?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>No. Three files are free, then a single $29 payment unlocks unlimited use for your Google account.</p>
+  </details>
+</div></section>
+
+<section id="install" class="anchor cta-wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Add Unlinker to your workspace</h2>
+      <p class="muted">Unlinker is on its way to the Google Workspace Marketplace. Tell us what you need to clean up and we&#39;ll let you know the day it opens.</p>
+    </div>
+    <a class="btn btn-primary" href="/contact/" data-umami-event="install-click" data-umami-event-app="Unlinker" data-umami-event-place="footer">Get early access</a>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/unlinker/">Unlinker</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/terms/">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

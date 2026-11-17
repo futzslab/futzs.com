@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <title>Unlinker</title>
+  <g transform="rotate(45 300 300)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#4285F4" stroke-width="76" d="M205 238V190A95 95 0 0 1 395 190V238"/>
+    <path stroke="#34A853" stroke-width="76" d="M205 362V410A95 95 0 0 0 395 410V362"/>
+    <g stroke="#F2A72B" stroke-width="24">
+      <path d="M128 300H78"/>
+      <path d="M134 262L92 236"/>
+      <path d="M134 338L92 364"/>
+      <path d="M472 300H522"/>
+      <path d="M466 262L508 236"/>
+      <path d="M466 338L508 364"/>
+    </g>
+  </g>
+</svg>
