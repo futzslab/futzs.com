@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add iCloud calendar to Google Calendar: 3 ways, step by step</title>
+<meta name="description" content="Put your iPhone or Mac calendar in Google Calendar: a public link, a one-time import, or a private sync with an app-specific password. What each option gets wrong.">
+<link rel="canonical" href="https://futzs.com/blog/icloud-calendar-google-calendar/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Add iCloud calendar to Google Calendar: 3 ways, step by step">
+<meta property="og:description" content="Put your iPhone or Mac calendar in Google Calendar: a public link, a one-time import, or a private sync with an app-specific password. What each option gets wrong.">
+<meta property="og:url" content="https://futzs.com/blog/icloud-calendar-google-calendar/">
+<meta property="og:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+<meta property="og:image:alt" content="How to add your iCloud calendar to Google Calendar (and keep it in sync)">
+<meta property="article:published_time" content="2026-11-18"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add iCloud calendar to Google Calendar: 3 ways, step by step">
+<meta name="twitter:description" content="Put your iPhone or Mac calendar in Google Calendar: a public link, a one-time import, or a private sync with an app-specific password. What each option gets wrong.">
+<meta name="twitter:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"How to add your iCloud calendar to Google Calendar (and keep it in sync)","item":"https://futzs.com/blog/icloud-calendar-google-calendar/"}]},{"@type":"BlogPosting","headline":"How to add your iCloud calendar to Google Calendar (and keep it in sync)","description":"Put your iPhone or Mac calendar in Google Calendar: a public link, a one-time import, or a private sync with an app-specific password. What each option gets wrong.","url":"https://futzs.com/blog/icloud-calendar-google-calendar/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/icloud-calendar-google-calendar/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-11-18","dateModified":"2026-11-18","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/icalsync/2-connect.webp"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add my iCloud calendar to Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"Make the calendar public on your iPhone (Calendars, the info button next to the calendar, Public Calendar, Share Link) or on iCloud.com, and copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar. For a private calendar, use a sync tool that signs in with an app-specific password instead."}},{"@type":"Question","name":"Why is my iCloud calendar not updating in Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"A calendar added with From URL is refreshed on Google's schedule, which Google does not publish and you cannot change. A new or moved event can take several hours to a day to appear. A sync tool such as ICalSync checks iCloud every few minutes and copies the changes into a calendar you own."}},{"@type":"Question","name":"Can I add my iCloud calendar without making it public?","acceptedAnswer":{"@type":"Answer","text":"Not with Google's From URL option, which only reads public calendars. To keep the calendar private, create an app-specific password for your Apple Account and give it to a sync tool that connects to iCloud directly, such as ICalSync."}},{"@type":"Question","name":"Why does Apple refuse my password in a sync app?","acceptedAnswer":{"@type":"Answer","text":"Third-party apps cannot use your regular Apple Account password. They need an app-specific password, which you create at account.apple.com under Sign-In and Security, App-Specific Passwords. Your account must have two-factor authentication turned on, and changing your main password revokes every app-specific password."}},{"@type":"Question","name":"Is a public iCloud calendar link safe?","acceptedAnswer":{"@type":"Answer","text":"Anyone who has the link can read every event in that calendar, without signing in. Use it only for calendars you would not mind a stranger seeing, and turn Public Calendar off when you no longer need it."}}]}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Outlook, iCloud, another Google account, Airbnb, Booking.com or any iCal (.ics) link: ICalSync copies them into Google Calendar, or keeps both sides in step, every few minutes instead of the 8 to 24 hours Google&#39;s own &#34;From URL&#34; takes.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
+              </a>
+              <a href="/apps/unlinker/">
+                <strong>Unlinker</strong><span>Some documents must go out without a single clickable link: grant applications, court filings, submissions with a no-hyperlink rule. Unlinker removes the links from a PDF and turns the blue link text black, in two clicks, without leaving Drive.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>How to add your iCloud calendar to Google Calendar (and keep it in sync)</h1>
+  <div class="post-meta">Serge Koudoro &middot; 8 min read</div>
+  <div class="prose flush"><p>Your iPhone keeps your calendar in iCloud. Your work, your partner or your
+school lives in Google Calendar. Until the two meet, you keep both apps open and
+copy events by hand, or you forget to.</p>
+<p>There is no &ldquo;send to Google&rdquo; button in Apple&rsquo;s Calendar. You can still get
+there in three ways: a public link, a one-time file import, or a sync that signs
+in to iCloud for you. This guide covers each one, what it gets wrong, and how to
+fix the problems people run into most.</p>
+<h2 id="the-short-version">The short version</h2>
+<p>If you are fine with the calendar being readable by anyone who has its link:</p>
+<ol>
+<li>On your iPhone, open <strong>Calendar</strong> and tap <strong>Calendars</strong>.</li>
+<li>Tap the info button next to the iCloud calendar you want.</li>
+<li>Turn on <strong>Public Calendar</strong>, tap <strong>Share Link</strong>, and copy it.</li>
+<li>On a computer, open Google Calendar. Next to <strong>Other calendars</strong>, click
+   <strong>+</strong> and choose <strong>From URL</strong>.</li>
+<li>Paste the link and click <strong>Add calendar</strong>.</li>
+</ol>
+<p>The calendar appears under <strong>Other calendars</strong>. It is read-only and updates
+slowly. If you want it private, or quicker, skip to
+<a href="#option-3-sync-with-an-app-specific-password">option 3</a>.</p>
+<h2 id="why-this-is-harder-than-it-looks">Why this is harder than it looks</h2>
+<p>Apple and Google both speak the same calendar format, iCalendar (<code>.ics</code>), but
+neither offers a direct connection to the other. Google Calendar can read a
+calendar from a link, and it can import a file. Apple can publish a calendar as
+a link, and the Mac can export a file. Each of the three options below combines
+those pieces differently.</p>
+<p>The catch is that Google&rsquo;s link option only works with public calendars.
+<a href="https://support.google.com/calendar/answer/37100">Google&rsquo;s help page</a> says so
+plainly: you can only add a calendar with a link if that calendar is public. So
+the simple route means making your iCloud calendar public.</p>
+<h2 id="option-1-make-the-calendar-public-and-subscribe">Option 1: make the calendar public and subscribe</h2>
+<p>Apple lets the owner of an iCloud calendar turn on <strong>Public Calendar</strong>. You can
+do it from three places:</p>
+<ul>
+<li><strong>iPhone or iPad:</strong> in Calendar, tap <strong>Calendars</strong>, then the info button next
+  to the calendar, turn on <strong>Public Calendar</strong> and tap <strong>Share Link</strong>
+  (<a href="https://support.apple.com/guide/iphone/share-icloud-calendars-iph7613c4fb/ios">Apple&rsquo;s iPhone guide</a>).</li>
+<li><strong>iCloud.com:</strong> open <a href="https://www.icloud.com/calendar">icloud.com/calendar</a>,
+  open the calendar&rsquo;s information next to its name in the sidebar, turn on
+  <strong>Public Calendar</strong> and copy the link
+  (<a href="https://support.apple.com/guide/icloud/mm6b1a9479/icloud">Apple&rsquo;s iCloud guide</a>).</li>
+<li><strong>Mac:</strong> in Calendar, hold the pointer over the calendar&rsquo;s name, click the
+  <strong>Share Calendar</strong> button and select <strong>Public Calendar</strong>
+  (<a href="https://support.apple.com/guide/calendar/icl32362/mac">Apple&rsquo;s Mac guide</a>).</li>
+</ul>
+<p>Only iCloud calendars have this switch. Calendars under <strong>On My Mac</strong>, or ones
+that belong to another account on your device, do not.</p>
+<p>The link Apple gives you usually starts with <code>webcal://</code>. That just tells a
+device to open it in a calendar app. If Google Calendar does not accept it,
+replace <code>webcal</code> with <code>https</code> and try again.</p>
+<p>Then add it to Google Calendar on a computer: <strong>Other calendars → + → From URL</strong>,
+paste, <strong>Add calendar</strong>. Google does not let you subscribe from the phone app,
+but once added on a computer the calendar shows on your phone too.</p>
+<p>It is free and quick. Before you rely on it, know its limits:</p>
+<ul>
+<li><strong>Anyone with the link can read it.</strong> Apple says it directly: anyone can view
+  a public calendar. There is no password on the link.</li>
+<li><strong>Slow updates.</strong> Google does not publish how often it re-reads a subscribed
+  link, and you cannot make it go faster. In practice an event you add on your
+  iPhone can take several hours to a day to show up. We explain why in
+  <a href="/blog/calendar-not-updating/">why your Google Calendar subscription is not updating</a>.</li>
+<li><strong>Read-only and one-way.</strong> You cannot edit, move or recolor single events in
+  Google, and nothing you add in Google goes back to iCloud.</li>
+</ul>
+<h2 id="option-2-export-and-import-a-file-once">Option 2: export and import a file once</h2>
+<p>On a Mac, you can save an iCloud calendar as a file: select it in the calendar
+list, then choose <strong>File → Export → Export</strong>
+(<a href="https://support.apple.com/guide/calendar/icl1023/mac">Apple&rsquo;s guide</a>). In
+Google Calendar, open <strong>Settings → Import &amp; export</strong>, select the <code>.ics</code> file,
+pick the Google calendar it should go into, and click <strong>Import</strong>
+(<a href="https://support.google.com/calendar/answer/37118">Google&rsquo;s guide</a>).</p>
+<p>This copies a snapshot. The events become ordinary Google events you can edit,
+and Google notes that guests are not imported. They also never update again:
+change a dentist appointment on your iPhone and Google still shows the old time.
+Use this once, when you are moving away from iCloud for good, not to keep two
+calendars side by side.</p>
+<h2 id="option-3-sync-with-an-app-specific-password">Option 3: sync with an app-specific password</h2>
+<p>The third option leaves your calendar private. A sync tool signs in to iCloud
+for you, reads the calendar, and copies its events into one of your own Google
+calendars. Apple does not let third-party apps use your regular Apple Account
+password, so you give the tool an <strong>app-specific password</strong> instead: a separate
+password that only works for that app and that you can revoke on its own.</p>
+<p>This is what <a href="/apps/icalsync/">ICalSync</a> does. It is a Google Workspace add-on
+that runs in the right-hand side panel of Google Calendar on a computer. Synced
+events then show in Google Calendar on your phone like any others.</p>
+<p><img alt="ICalSync side panel in Google Calendar: pick where the calendar lives, then choose the Google calendar it lands in" height="800" loading="lazy" src="/images/icalsync/2-connect.webp" width="1280" /></p>
+<p>It checks iCloud every 5 minutes on the trial and Pro plans, and every 15
+minutes on Personal, and the <strong>Sync now</strong> button runs it right away. New events
+are added, moved events move, and deleted events disappear. The sync goes one
+way, from iCloud to Google.</p>
+<h3 id="side-by-side">Side by side</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Public link (From URL)</th>
+<th>Import once</th>
+<th>Sync (ICalSync)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calendar stays private</td>
+<td>No, anyone with the link can read it</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>New and changed events</td>
+<td>Hours to a day, on Google&rsquo;s schedule</td>
+<td>Never</td>
+<td>Every 5 to 15 minutes, or right away with <strong>Sync now</strong></td>
+</tr>
+<tr>
+<td>Edit or recolor events in Google</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes, in the Google calendar you chose</td>
+</tr>
+<tr>
+<td>Set up from a phone</td>
+<td>No</td>
+<td>No</td>
+<td>No (Google Calendar add-ons run on a computer)</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Free</td>
+<td>Free</td>
+<td>14-day free trial, then a paid plan; a free plan updates one calendar once a day</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-the-app-specific-password">Create the app-specific password</h2>
+<p><a href="https://support.apple.com/102654">Apple&rsquo;s guide to app-specific passwords</a>
+covers this in full. The short version:</p>
+<ol>
+<li>Make sure your Apple Account uses <strong>two-factor authentication</strong>. Apple only
+   lets you create app-specific passwords when it is on.</li>
+<li>Sign in at <a href="https://account.apple.com/account/manage">account.apple.com</a>.</li>
+<li>In <strong>Sign-In and Security</strong>, select <strong>App-Specific Passwords</strong>.</li>
+<li>Create a new one and name it something you will recognize later, such as
+   <em>ICalSync</em>.</li>
+<li>Copy the password Apple shows. It looks like <code>xxxx-xxxx-xxxx-xxxx</code>.</li>
+</ol>
+<p>You can revoke it at any time from the same page, and the app that uses it is
+signed out. One thing to know: when you change or reset your main Apple Account
+password, Apple revokes all your app-specific passwords at once, so you will
+need a new one.</p>
+<h2 id="connect-icloud-in-icalsync">Connect iCloud in ICalSync</h2>
+<ol>
+<li>Install ICalSync from the
+   <a href="https://workspace.google.com/marketplace/app/icalsync/1001284326178">Google Workspace Marketplace</a>
+   and open it from the right-hand panel of Google Calendar.</li>
+<li>Under <strong>School &amp; work</strong>, choose <strong>iCloud</strong>.</li>
+<li>Enter your <strong>Apple ID (e-mail)</strong> and the <strong>App-specific password</strong>, then
+   click <strong>Connect</strong>.</li>
+<li>Pick the iCloud calendar, choose the Google calendar its events land in, and
+   click <strong>Sync</strong>.</li>
+</ol>
+<p><img alt="The iCloud form in ICalSync: Apple ID and app-specific password" class="shot" src="/images/help/icalsync/icloud.png" width="320" /></p>
+<p>It helps to create a separate Google calendar first (<strong>Other calendars → + →
+Create new calendar</strong>), named <em>iCloud</em> or <em>Family</em>. You can give it its own
+color and hide it in one click. The
+<a href="/help/icalsync/#icloud">iCloud section of the help pages</a> has the same steps
+with screenshots.</p>
+<p>The 14-day trial starts when you connect your first calendar, not when you
+install, and it does not ask for a card. After that, Personal is $4 a month or
+$39 a year for 5 calendars, and Pro is $9 a month or $86 a year for 20
+calendars.</p>
+<h2 id="fixing-common-problems">Fixing common problems</h2>
+<h3 id="apple-refuses-the-password">Apple refuses the password</h3>
+<p>This is the most common problem, and it nearly always comes from one of three
+things:</p>
+<ul>
+<li><strong>You used your Apple Account password.</strong> Sync tools need the app-specific
+  password, the one in <code>xxxx-xxxx-xxxx-xxxx</code> form.</li>
+<li><strong>The e-mail is not your Apple ID.</strong> Use the address you sign in to iCloud
+  with, which may be different from the one you use every day.</li>
+<li><strong>Two-factor authentication is off,</strong> or you changed your Apple password
+  since you created the app-specific one. Create a new one.</li>
+</ul>
+<p>In ICalSync, the form stays open with the refusal explained in red, and your
+Apple ID still filled in, so you can fix the entry. From the second refusal, it lists these checks and offers a free
+15-minute setup call.</p>
+<h3 id="the-sync-says-account-disconnected">The sync says &ldquo;Account disconnected&rdquo;</h3>
+<p>If Apple briefly refuses the login, ICalSync retries for two hours before it
+marks the account disconnected. If you revoked the app-specific password, or
+changed your Apple password, create a new app-specific password and connect
+again.</p>
+<h3 id="the-public-link-stopped-working">The public link stopped working</h3>
+<p>If you turned <strong>Public Calendar</strong> off, or the person who owns the calendar did,
+Google can no longer read the link. The calendar stays in your sidebar but stops
+updating. Turn sharing back on and copy the link again, or switch to a sync that
+does not depend on the link.</p>
+<h3 id="times-are-off-by-an-hour-or-more">Times are off by an hour or more</h3>
+<p>Check the time zone in Google Calendar under <strong>Settings → General</strong>, and on
+your iPhone in the Calendar settings, where <strong>Time Zone Override</strong> can pin
+events to one zone. When the two disagree, events look shifted.</p>
+<h3 id="every-event-appears-twice">Every event appears twice</h3>
+<p>You probably added the calendar twice, for example once with <strong>From URL</strong> and
+once with a sync tool. Remove the extra one from <strong>Other calendars</strong> and keep
+one. Duplicates can also come from Option 2: an imported snapshot sitting next
+to a live calendar.</p>
+<h3 id="a-calendar-someone-shared-with-you">A calendar someone shared with you</h3>
+<p>Only the owner of an iCloud calendar can make it public, so for Option 1 you
+need to ask them. With a sync tool, the calendar list shows what your Apple ID
+can see; if a shared calendar is missing, check that you accepted the
+invitation in Apple Calendar.</p>
+<h2 id="a-word-on-privacy">A word on privacy</h2>
+<p>A public iCloud link has no password, and calendar events often carry more than
+times: addresses, names, notes. Make a calendar public only if you would be
+comfortable with a stranger reading it, and turn it off when you stop using the
+link. An app-specific password is narrower: it is tied to one app, it does not
+reveal your main password, and you can revoke it without touching anything
+else.</p>
+<h2 id="which-option-to-choose">Which option to choose</h2>
+<p>If the calendar holds nothing sensitive and a delay of a few hours does not
+matter, the public link with <strong>From URL</strong> is free and fine. If you are leaving
+iCloud for good, import the file once. If the calendar is personal, or you plan
+your day around it and need changes to show up quickly, sync it with an
+app-specific password.</p>
+<p>The same idea works for other calendars. Our guide to <a href="/blog/outlook-to-google-calendar/">syncing an Outlook
+calendar into Google Calendar</a> covers
+Microsoft accounts, and <a href="/help/icalsync/">the ICalSync help pages</a> walk through
+every setting.</p></div>
+  <h2>Questions</h2>
+<div class="faq">
+  <details class="faq-item">
+    <summary>How do I add my iCloud calendar to Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Make the calendar public on your iPhone (Calendars, the info button next to the calendar, Public Calendar, Share Link) or on iCloud.com, and copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar. For a private calendar, use a sync tool that signs in with an app-specific password instead.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why is my iCloud calendar not updating in Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>A calendar added with From URL is refreshed on Google&#39;s schedule, which Google does not publish and you cannot change. A new or moved event can take several hours to a day to appear. A sync tool such as ICalSync checks iCloud every few minutes and copies the changes into a calendar you own.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Can I add my iCloud calendar without making it public?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Not with Google&#39;s From URL option, which only reads public calendars. To keep the calendar private, create an app-specific password for your Apple Account and give it to a sync tool that connects to iCloud directly, such as ICalSync.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why does Apple refuse my password in a sync app?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Third-party apps cannot use your regular Apple Account password. They need an app-specific password, which you create at account.apple.com under Sign-In and Security, App-Specific Passwords. Your account must have two-factor authentication turned on, and changing your main password revokes every app-specific password.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Is a public iCloud calendar link safe?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Anyone who has the link can read every event in that calendar, without signing in. Use it only for calendars you would not mind a stranger seeing, and turn Public Calendar off when you no longer need it.</p>
+  </details>
+</div>  <div class="cta-band inline">
+    <div><h3>Your iCloud calendar in Google Calendar, without a public link</h3><p class="muted">14-day free trial from your first calendar. No credit card.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">Get ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/unlinker/">Unlinker</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/terms/">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

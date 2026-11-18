@@ -7,6 +7,14 @@
     <language>en</language>
     <atom:link href="https://futzs.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>How to add your iCloud calendar to Google Calendar (and keep it in sync)</title>
+      <link>https://futzs.com/blog/icloud-calendar-google-calendar/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/icloud-calendar-google-calendar/</guid>
+      <description>Put your iPhone or Mac calendar in Google Calendar: a public link, a one-time import, or a private sync with an app-specific password. What each option gets wrong.</description>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
       <title>How to add your Canvas calendar to Google Calendar (and keep it up to date)</title>
       <link>https://futzs.com/blog/canvas-calendar-google-calendar/</link>
       <guid isPermaLink="true">https://futzs.com/blog/canvas-calendar-google-calendar/</guid>
