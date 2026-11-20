@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sync Airbnb and Booking.com calendars with Google Calendar</title>
+<meta name="description" content="Put your Airbnb, Booking.com and Vrbo bookings in Google Calendar, block dates across channels, and cut the window where double bookings happen.">
+<link rel="canonical" href="https://futzs.com/blog/airbnb-booking-calendar-google-calendar/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Sync Airbnb and Booking.com calendars with Google Calendar">
+<meta property="og:description" content="Put your Airbnb, Booking.com and Vrbo bookings in Google Calendar, block dates across channels, and cut the window where double bookings happen.">
+<meta property="og:url" content="https://futzs.com/blog/airbnb-booking-calendar-google-calendar/">
+<meta property="og:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+<meta property="og:image:alt" content="How to sync your Airbnb and Booking.com calendars with Google Calendar">
+<meta property="article:published_time" content="2026-11-20"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sync Airbnb and Booking.com calendars with Google Calendar">
+<meta name="twitter:description" content="Put your Airbnb, Booking.com and Vrbo bookings in Google Calendar, block dates across channels, and cut the window where double bookings happen.">
+<meta name="twitter:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"How to sync your Airbnb and Booking.com calendars with Google Calendar","item":"https://futzs.com/blog/airbnb-booking-calendar-google-calendar/"}]},{"@type":"BlogPosting","headline":"How to sync your Airbnb and Booking.com calendars with Google Calendar","description":"Put your Airbnb, Booking.com and Vrbo bookings in Google Calendar, block dates across channels, and cut the window where double bookings happen.","url":"https://futzs.com/blog/airbnb-booking-calendar-google-calendar/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/airbnb-booking-calendar-google-calendar/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-11-20","dateModified":"2026-11-20","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/icalsync/2-connect.webp"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add my Airbnb calendar to Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"In Airbnb, open Calendar, select the listing, then Availability. Under Connect calendars, click Connect to another website and copy the Airbnb calendar link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar."}},{"@type":"Question","name":"Does adding Airbnb to Google Calendar stop double bookings?","acceptedAnswer":{"@type":"Answer","text":"No. Google Calendar only shows the bookings. To block dates, each channel has to import the other channels' calendar links, for example Airbnb importing Booking.com's link and Booking.com importing Airbnb's. Even then, each channel re-reads the links on its own schedule, so a short window for double bookings remains."}},{"@type":"Question","name":"How often does Airbnb update an imported calendar?","acceptedAnswer":{"@type":"Answer","text":"Airbnb's help center says your Airbnb calendar updates automatically every 3 hours and pulls in your connected calendars. You can also select Refresh on a connected calendar, within a limit on how many requests you can make."}},{"@type":"Question","name":"Why does a stay end one day early in Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"Booking calendars mark the nights a guest stays. A guest who checks out on the 25th has their last night on the 24th, so the event ends on the 24th. The check-out day is shown as free because it can take a new arrival."}},{"@type":"Question","name":"Are the Airbnb and Booking.com calendar links private?","acceptedAnswer":{"@type":"Answer","text":"They work without a password, so anyone who has a link can read that listing's calendar. Paste them only into channels and tools you trust, and replace a link if you think it has leaked."}}]}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Outlook, iCloud, another Google account, Airbnb, Booking.com or any iCal (.ics) link: ICalSync copies them into Google Calendar, or keeps both sides in step, every few minutes instead of the 8 to 24 hours Google&#39;s own &#34;From URL&#34; takes.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
+              </a>
+              <a href="/apps/unlinker/">
+                <strong>Unlinker</strong><span>Some documents must go out without a single clickable link: grant applications, court filings, submissions with a no-hyperlink rule. Unlinker removes the links from a PDF and turns the blue link text black, in two clicks, without leaving Drive.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>How to sync your Airbnb and Booking.com calendars with Google Calendar</h1>
+  <div class="post-meta">Serge Koudoro &middot; 9 min read</div>
+  <div class="prose flush"><p>If you list the same place on Airbnb and Booking.com, you have two calendars
+that both think they are in charge. A guest books on one, and until the other
+finds out, those nights are still for sale there. Most hosts also want all of
+it in Google Calendar, next to the cleaner&rsquo;s schedule and their own life.</p>
+<p>Every major channel can share its calendar as a link in the iCalendar format
+(<code>.ics</code>). Those links are how the channels talk to each other and how Google
+Calendar reads them. This guide shows where each link lives, the three ways to
+use them, and what each way leaves uncovered.</p>
+<h2 id="the-short-version">The short version</h2>
+<ol>
+<li>Copy the calendar export link of each channel your place is listed on.</li>
+<li>To <strong>see</strong> bookings in Google Calendar: on a computer, add each link with
+   <strong>Other calendars → + → From URL</strong>. Free, but slow to update.</li>
+<li>To <strong>block</strong> dates: paste Airbnb&rsquo;s link into Booking.com&rsquo;s import setting,
+   and Booking.com&rsquo;s link into Airbnb&rsquo;s. This is the standard way to avoid
+   double bookings, and it still leaves a gap of up to a few hours.</li>
+<li>To do both faster, a sync tool such as ICalSync reads the links every few
+   minutes and gives each channel one link to import back.</li>
+</ol>
+<h2 id="where-each-channel-keeps-its-calendar-link">Where each channel keeps its calendar link</h2>
+<p><strong>Airbnb.</strong> On a computer, click <strong>Calendar</strong> and select the listing, then
+<strong>Availability</strong>. Under <strong>Connect calendars</strong>, click <strong>Connect to another
+website</strong>. The Airbnb calendar link is the export; the calendar address field
+on the same screen is where you import another channel&rsquo;s link
+(<a href="https://www.airbnb.com/help/article/99">Airbnb&rsquo;s help article</a>). Each listing
+has its own link.</p>
+<p><strong>Booking.com.</strong> In the extranet, open <strong>Rates &amp; Availability → Sync
+calendars</strong>. You add a calendar connection there, which gives you Booking.com&rsquo;s
+export link and a field to import another channel&rsquo;s link
+(<a href="https://partner.booking.com/en-gb/property-management/calendar-sync">Booking.com&rsquo;s calendar sync page</a>).</p>
+<p><strong>Vrbo.</strong> In the Owner Dashboard, open <strong>Calendar</strong>, then <strong>Settings</strong> and the
+<strong>Availability</strong> tab, choose <strong>Connect calendars</strong> and <strong>Export calendar</strong>, then
+<strong>Copy URL</strong> (<a href="https://help.vrbo.com/articles/Export-your-reservation-calendar">Vrbo&rsquo;s export guide</a>).
+Leave <strong>Include tentative bookings</strong> off when the link goes to another booking
+site, as Vrbo itself advises.</p>
+<h2 id="option-1-subscribe-in-google-calendar-with-from-url">Option 1: subscribe in Google Calendar with &ldquo;From URL&rdquo;</h2>
+<p>On a computer, open Google Calendar, click <strong>+</strong> next to <strong>Other calendars</strong>,
+choose <strong>From URL</strong>, paste a channel link and click <strong>Add calendar</strong>. Repeat
+for each channel. You cannot do this from the phone app
+(<a href="https://support.google.com/calendar/answer/37100">Google&rsquo;s help page</a>), but
+once added, the calendars show on your phone too.</p>
+<p>It is free and takes a minute per link. The limits:</p>
+<ul>
+<li><strong>Slow updates.</strong> Google does not publish how often it re-reads a
+  subscribed link, and you cannot make it go faster. A new booking can take
+  several hours to a day to appear. We explain why in
+  <a href="/blog/calendar-not-updating/">why your Google Calendar subscription is not updating</a>.</li>
+<li><strong>Read-only.</strong> You cannot add a note such as &ldquo;late arrival, key in the box&rdquo;
+  to a booking event.</li>
+<li><strong>It blocks nothing.</strong> Google Calendar only displays the bookings. Airbnb and
+  Booking.com never see it.</li>
+<li><strong>Guest details vary.</strong> What an event contains depends on the channel. Some
+  exports show little more than &ldquo;Reserved&rdquo; or &ldquo;Not available&rdquo;; others may add a
+  reservation link or part of the guest&rsquo;s contact details. Open a few events
+  and check before you share that Google calendar with anyone.</li>
+</ul>
+<h2 id="option-2-let-the-channels-import-each-other">Option 2: let the channels import each other</h2>
+<p>This is the method each channel describes, and the one that actually blocks
+dates. You paste Airbnb&rsquo;s export link into Booking.com&rsquo;s import field, and
+Booking.com&rsquo;s export link into Airbnb&rsquo;s. With Vrbo as a third channel, each
+channel imports the other two.</p>
+<p>It is free, and it works, with one catch: each channel re-reads the links it
+imports on its own schedule.</p>
+<ul>
+<li><strong>Airbnb</strong> says your calendar
+  <a href="https://www.airbnb.com/help/article/99">updates automatically every 3 hours</a>
+  and pulls in your connected calendars. You can select <strong>Refresh</strong> on a
+  connected calendar to go sooner, but Airbnb limits how many refresh requests
+  you can make.</li>
+<li><strong>Booking.com</strong> does not refresh imported calendars in real time either, and
+  hosts in its partner community report delays of a few hours. It does not
+  offer a guaranteed interval.</li>
+<li><strong>Vrbo</strong> says imported events
+  <a href="https://help.vrbo.com/articles/How-do-I-import-my-iCal-or-Google-calendar">may take up to 20 minutes to appear</a>
+  when you add a calendar, and that calendars sync every 30 minutes in its
+  Owner app.</li>
+</ul>
+<p>So when a guest books on Booking.com, Airbnb may keep those nights open for up
+to three hours. If another guest books the same nights on Airbnb in that
+window, you have a double booking. It is more likely on busy dates, which is
+exactly when it hurts most. No calendar link closes this window completely.</p>
+<p>There is a second limit worth knowing. Airbnb notes that nights <em>booked</em> on
+another calendar are blocked on Airbnb, while nights you only <em>block</em> on
+another calendar may or may not be. Do not count on a manual block on one
+channel reaching the others.</p>
+<h2 id="option-3-sync-everything-through-icalsync">Option 3: sync everything through ICalSync</h2>
+<p><a href="/apps/icalsync/">ICalSync</a> is a Google Workspace add-on that runs in the
+right-hand side panel of Google Calendar on a computer. It reads your channel
+links every 5 minutes and copies the bookings into Google calendars you own,
+for example one calendar per property or per channel.</p>
+<p>On its start card, the <strong>Rentals</strong> group lists Airbnb (<em>Bookings and blocked
+dates</em>), Booking.com and Vrbo (<em>Reservations calendar</em>). Each opens a form
+where you paste the channel&rsquo;s link, give it a short name and choose the Google
+calendar it lands in, then click <strong>Sync</strong>. ICalSync recognizes channel links
+and by default hides guest details: no titles, descriptions, locations or
+attendees, events marked private, and no notifications.</p>
+<p><img alt="ICalSync side panel in Google Calendar: pick where the calendar lives, then choose the Google calendar it lands in" height="800" loading="lazy" src="/images/icalsync/2-connect.webp" width="1280" /></p>
+<p>For blocking dates, ICalSync groups the channels of one place into a
+<strong>rental property</strong> and gives you one export link per channel. You paste the
+link labelled <em>Paste in Airbnb</em> into Airbnb&rsquo;s import setting, <em>Paste in
+Booking.com</em> into Booking.com, and so on. A booking on one channel then blocks
+those dates on the others. If two bookings ever overlap, ICalSync e-mails you a
+warning and shows <strong>Double booking found</strong> on its home card, so you can sort it
+out with the guest before arrival day.</p>
+<p>What this does not change: Airbnb and Booking.com still read the ICalSync
+link on their own schedule. ICalSync sees a new booking within 5 minutes, but
+it cannot make Airbnb read faster. You get one place where every booking shows
+up quickly, and an alert when the window catches you.</p>
+<h3 id="side-by-side">Side by side</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Subscribe (From URL)</th>
+<th>Channels import each other</th>
+<th>Sync (ICalSync)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bookings in Google Calendar</td>
+<td>Hours to a day</td>
+<td>No</td>
+<td>Every 5 minutes, or right away with <strong>Sync now</strong></td>
+</tr>
+<tr>
+<td>Blocks dates on other channels</td>
+<td>No</td>
+<td>Yes, on each channel&rsquo;s schedule</td>
+<td>Yes, on each channel&rsquo;s schedule</td>
+</tr>
+<tr>
+<td>Double-booking warning</td>
+<td>No</td>
+<td>No</td>
+<td>E-mail and a notice on the home card</td>
+</tr>
+<tr>
+<td>Guest details in Google Calendar</td>
+<td>Whatever the channel exports</td>
+<td>Not applicable</td>
+<td>Hidden by default</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Free</td>
+<td>Free</td>
+<td>14-day free trial, then a Host plan from $12/month</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setting-up-a-rental-property-in-icalsync">Setting up a rental property in ICalSync</h2>
+<ol>
+<li>Install ICalSync from the
+   <a href="https://workspace.google.com/marketplace/app/icalsync/1001284326178">Google Workspace Marketplace</a>
+   and open it from the right-hand panel of Google Calendar.</li>
+<li>Under <strong>Rentals</strong>, pick the channel, paste its export link, name it (for
+   example <em>Lake house · Airbnb</em>) and choose a Google calendar. Click <strong>Sync</strong>.
+   Repeat for each channel.</li>
+<li>On the home card, open <strong>Rental properties</strong>, add the property and tick its
+   channel calendars.</li>
+<li>Under <strong>Export links</strong>, copy <em>Paste in Airbnb</em> into Airbnb&rsquo;s import field,
+   <em>Paste in Booking.com</em> into Booking.com&rsquo;s, and so on. Name each import
+   <em>ICalSync</em> so you recognize it later.</li>
+<li>Keep any direct imports between channels you set up earlier. A night
+   blocked twice is still one blocked night, and the direct imports keep
+   working on their own if you ever stop using ICalSync.</li>
+</ol>
+<p><img alt="A property and its export links" class="shot" src="/images/help/icalsync/property.png" width="320" /></p>
+<p>The <a href="/help/icalsync/#rental">rental properties help section</a> lists the export
+and import screen for each channel, Expedia included.</p>
+<p>The 14-day trial starts when you connect your first calendar, includes 3
+properties and does not ask for a card. After that, Host plans cover 3, 10 or
+25 properties for $12, $33 or $78 per month, or $115 per year for 3 properties.</p>
+<h2 id="fixing-common-problems">Fixing common problems</h2>
+<h3 id="the-link-was-copied-from-the-wrong-page">The link was copied from the wrong page</h3>
+<p>A link to your listing page or to the extranet will not work. A calendar link
+ends in <code>.ics</code> or contains <code>ical</code> or <code>icalendar</code>. Copy it again from the
+calendar sync screen, not from the browser&rsquo;s address bar.</p>
+<h3 id="blocked-nights-show-up-as-bookings-or-bookings-are-missing">Blocked nights show up as bookings, or bookings are missing</h3>
+<p>Channel exports usually mix real bookings with nights you closed by hand,
+and some show both the same way. That is fine for blocking, but it means a
+&ldquo;Not available&rdquo; event in Google Calendar is not always a guest. Check the
+channel itself before you schedule a cleaning.</p>
+<h3 id="a-stay-ends-one-day-early">A stay ends one day early</h3>
+<p>Booking calendars describe the nights a
+guest stays, and in the iCalendar format the end date of an all-day event is
+<em>exclusive</em>: it is the first day after the event. A guest who arrives on
+August 21 and checks out on August 25 is written as 21 to 25, and Google
+Calendar shows it as an event from August 21 to August 24, the last night.
+Nothing is missing. August 25 shows as free because the next guest can arrive
+that day.</p>
+<h3 id="dates-are-shifted-by-a-day">Dates are shifted by a day</h3>
+<p>Bookings are all-day events and should not move with time zones. If they do,
+check the time zone set for the listing on the channel and Google Calendar&rsquo;s
+own time zone under <strong>Settings → General</strong>.</p>
+<h3 id="an-import-stopped-updating">An import stopped updating</h3>
+<p>If a channel shows an old date for its last update, or reports an error, the
+link may have changed. This happens when you regenerate a link or relist a
+place. Copy a fresh export link and replace the old import.</p>
+<h3 id="every-booking-appears-twice">Every booking appears twice</h3>
+<p>You probably have the same link in Google Calendar twice, once with
+<strong>From URL</strong> and once through a sync tool. Remove the extra calendar from
+<strong>Other calendars</strong> and keep one.</p>
+<h2 id="keep-the-links-to-yourself">Keep the links to yourself</h2>
+<p>Calendar links work without a password. Anyone who has one can read that
+listing&rsquo;s calendar, and depending on the channel, the events may carry more
+than dates. Paste them only into the channels and tools you need, do not post
+them in host forums when asking for help, and do not share them with a cleaner
+as is. Share a Google calendar with guest details hidden instead. If a link has
+leaked, regenerate it on the channel, if it offers that, and update every place
+that imports it.</p>
+<h2 id="which-option-to-choose">Which option to choose</h2>
+<p>With one listing on one channel, subscribing in Google Calendar with
+<strong>From URL</strong> is free and enough to see your bookings. With the same place on
+two or more channels, set up the channel-to-channel imports at the very least:
+they cost nothing and prevent most double bookings. If you want every booking
+in Google Calendar within minutes, guest details kept out of it, and an e-mail
+when two bookings overlap, a sync tool is worth the few dollars a month.</p>
+<p>For the same approach with work or school calendars, see our guide to
+<a href="/blog/outlook-to-google-calendar/">syncing an Outlook calendar into Google Calendar</a>,
+and <a href="/help/icalsync/">the ICalSync help pages</a> for every setting.</p></div>
+  <h2>Questions</h2>
+<div class="faq">
+  <details class="faq-item">
+    <summary>How do I add my Airbnb calendar to Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>In Airbnb, open Calendar, select the listing, then Availability. Under Connect calendars, click Connect to another website and copy the Airbnb calendar link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Does adding Airbnb to Google Calendar stop double bookings?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>No. Google Calendar only shows the bookings. To block dates, each channel has to import the other channels&#39; calendar links, for example Airbnb importing Booking.com&#39;s link and Booking.com importing Airbnb&#39;s. Even then, each channel re-reads the links on its own schedule, so a short window for double bookings remains.</p>
+  </details>
+  <details class="faq-item">
+    <summary>How often does Airbnb update an imported calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Airbnb&#39;s help center says your Airbnb calendar updates automatically every 3 hours and pulls in your connected calendars. You can also select Refresh on a connected calendar, within a limit on how many requests you can make.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why does a stay end one day early in Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Booking calendars mark the nights a guest stays. A guest who checks out on the 25th has their last night on the 24th, so the event ends on the 24th. The check-out day is shown as free because it can take a new arrival.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Are the Airbnb and Booking.com calendar links private?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>They work without a password, so anyone who has a link can read that listing&#39;s calendar. Paste them only into channels and tools you trust, and replace a link if you think it has leaked.</p>
+  </details>
+</div>  <div class="cta-band inline">
+    <div><h3>Every booking in Google Calendar, checked every 5 minutes</h3><p class="muted">14-day free trial from your first calendar, 3 properties included. No credit card.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">Get ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/unlinker/">Unlinker</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/terms/">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>
