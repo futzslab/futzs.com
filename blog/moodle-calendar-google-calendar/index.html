@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add Moodle calendar to Google Calendar: step-by-step guide</title>
+<meta name="description" content="Get your Moodle calendar URL, add it to Google Calendar, and fix the usual problems: missing export button, short time span, broken link, wrong times.">
+<link rel="canonical" href="https://futzs.com/blog/moodle-calendar-google-calendar/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Add Moodle calendar to Google Calendar: step-by-step guide">
+<meta property="og:description" content="Get your Moodle calendar URL, add it to Google Calendar, and fix the usual problems: missing export button, short time span, broken link, wrong times.">
+<meta property="og:url" content="https://futzs.com/blog/moodle-calendar-google-calendar/">
+<meta property="og:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+<meta property="og:image:alt" content="How to add your Moodle calendar to Google Calendar (and keep it in sync)">
+<meta property="article:published_time" content="2026-11-22"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add Moodle calendar to Google Calendar: step-by-step guide">
+<meta name="twitter:description" content="Get your Moodle calendar URL, add it to Google Calendar, and fix the usual problems: missing export button, short time span, broken link, wrong times.">
+<meta name="twitter:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"How to add your Moodle calendar to Google Calendar (and keep it in sync)","item":"https://futzs.com/blog/moodle-calendar-google-calendar/"}]},{"@type":"BlogPosting","headline":"How to add your Moodle calendar to Google Calendar (and keep it in sync)","description":"Get your Moodle calendar URL, add it to Google Calendar, and fix the usual problems: missing export button, short time span, broken link, wrong times.","url":"https://futzs.com/blog/moodle-calendar-google-calendar/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/moodle-calendar-google-calendar/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/icalsync/2-connect.webp"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add my Moodle calendar to Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"In Moodle, open the Calendar, click Import or export calendars at the bottom of the page, then Export calendar. Choose All events and a time period, click Get calendar URL and copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar."}},{"@type":"Question","name":"Why is my Moodle calendar not syncing with Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"Two common reasons. Google refreshes a From URL calendar on its own schedule, so a new or moved deadline can take hours to a day to appear. And if you chose Recent and next 60 days when you made the link, anything due later than 60 days from now is not in the feed yet."}},{"@type":"Question","name":"I cannot find Export calendar in Moodle. Where is it?","acceptedAnswer":{"@type":"Answer","text":"Your school may have turned calendar export off. A Moodle administrator controls it with a single setting, and when it is off the export links do not appear. Ask your school's Moodle support whether calendar export is enabled."}},{"@type":"Question","name":"Why did my Moodle calendar link stop working?","acceptedAnswer":{"@type":"Answer","text":"The link contains a token tied to your Moodle account. On a standard Moodle site, changing your Moodle password changes the token, and the old link then fails. An administrator can also reset every link at once. Make a new link from Export calendar and replace the old one."}},{"@type":"Question","name":"Is the Moodle calendar URL private?","acceptedAnswer":{"@type":"Answer","text":"Treat it like a password. It works without logging in, so anyone who has it can read every event it covers, including course names and event descriptions. Paste it only into tools you trust."}}]}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Outlook, iCloud, another Google account, Airbnb, Booking.com or any iCal (.ics) link: ICalSync copies them into Google Calendar, or keeps both sides in step, every few minutes instead of the 8 to 24 hours Google&#39;s own &#34;From URL&#34; takes.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
+              </a>
+              <a href="/apps/unlinker/">
+                <strong>Unlinker</strong><span>Some documents must go out without a single clickable link: grant applications, court filings, submissions with a no-hyperlink rule. Unlinker removes the links from a PDF and turns the blue link text black, in two clicks, without leaving Drive.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>How to add your Moodle calendar to Google Calendar (and keep it in sync)</h1>
+  <div class="post-meta">Serge Koudoro &middot; 8 min read</div>
+  <div class="prose flush"><p>Your course deadlines live in Moodle. Your week lives in Google Calendar. If
+you check both, sooner or later a quiz date slips through the gap.</p>
+<p>Moodle can publish your calendar as a link that Google Calendar reads. The
+setup takes a few minutes, but the export form asks two questions, and the
+default answer to one of them limits your calendar to about two months. This
+guide walks through the form, the three ways to use the link, and the problems
+students hit most.</p>
+<h2 id="the-short-version">The short version</h2>
+<ol>
+<li>In Moodle, open the <strong>Calendar</strong> (from the main menu or the user menu,
+   depending on your school&rsquo;s theme).</li>
+<li>At the bottom of the calendar page, click <strong>Import or export calendars</strong>,
+   then <strong>Export calendar</strong>.</li>
+<li>Under <strong>Events to export</strong>, choose <strong>All events</strong>.</li>
+<li>Under <strong>Time period</strong>, choose the longest range offered (see below).</li>
+<li>Click <strong>Get calendar URL</strong> and copy the link that appears.</li>
+<li>On a computer, open Google Calendar. Next to <strong>Other calendars</strong>, click
+   <strong>+</strong> and choose <strong>From URL</strong>. Paste the link and click <strong>Add calendar</strong>.</li>
+</ol>
+<p>Button names above are from Moodle 4.x and 5.x. Older sites show an <strong>Export
+calendar</strong> link directly under the calendar, and some school themes move it.
+Moodle&rsquo;s <a href="https://docs.moodle.org/500/en/Calendar_export">Calendar export page</a>
+still shows older labels such as &ldquo;Get URL address&rdquo;.</p>
+<h2 id="the-two-choices-on-the-export-form">The two choices on the export form</h2>
+<h3 id="events-to-export">Events to export</h3>
+<p>Moodle offers <strong>All events</strong>, <strong>Events related to categories</strong>, <strong>Events
+related to courses</strong>, <strong>Events related to groups</strong> and <strong>My personal events</strong>.
+Pick <strong>All events</strong>. The others each leave something out.</p>
+<p>There is no option for a single course. As
+<a href="https://docs.moodle.org/500/en/Calendar_export">Moodle&rsquo;s documentation</a> puts
+it, the URL covers all the courses you are enrolled in. If you want one course
+per Google calendar, you will need to filter on the Google side instead.</p>
+<h3 id="time-period">Time period</h3>
+<p>This is the setting that causes the most &ldquo;missing assignment&rdquo; questions. The
+choices usually include <strong>This week</strong>, <strong>This month</strong>, <strong>Recent and next 60
+days</strong> and, if your school allows it, a <strong>Custom range</strong> with dates written
+next to it. Some choices only appear on certain days.</p>
+<p>Two things are worth knowing:</p>
+<ul>
+<li><strong>The range moves with time.</strong> The link does not store fixed dates. Each
+  time Google opens it, Moodle works out the range again from that day. &ldquo;This
+  month&rdquo; always means the current month.</li>
+<li><strong>&ldquo;Recent and next 60 days&rdquo; is the default.</strong> In Moodle&rsquo;s code it means the
+  last 5 days and the next 60. A final exam in 10 weeks will not be in your
+  feed until it is 60 days away.</li>
+</ul>
+<p>If <strong>Custom range</strong> is offered, choose it. On a default Moodle install it
+covers 5 days back and 365 days ahead, but your school&rsquo;s administrator can set
+other values, so check the dates printed next to the option.</p>
+<h2 id="what-the-link-looks-like">What the link looks like</h2>
+<p>A Moodle calendar link looks roughly like this:</p>
+<pre><code class="language-text">https://moodle.yourschool.edu/calendar/export_execute.php?userid=12345&amp;authtoken=1a2b3c...&amp;preset_what=all&amp;preset_time=custom
+</code></pre>
+<p>Unlike many calendar links, it does not end in <code>.ics</code>, and that is fine. The
+<code>preset_what</code> and <code>preset_time</code> parts are the two choices you made, so you can
+check them at a glance. The <code>authtoken</code> part is what lets Google read your
+calendar without logging in, which is why the link should stay private.</p>
+<h2 id="three-ways-to-get-moodle-into-google-calendar">Three ways to get Moodle into Google Calendar</h2>
+<h3 id="option-1-subscribe-with-from-url">Option 1: subscribe with &ldquo;From URL&rdquo;</h3>
+<p>This is the method in the short version. Google Calendar stores the link and
+fetches it again from time to time. It is free, and it has limits:</p>
+<ul>
+<li><strong>Slow updates.</strong> Google does not publish how often it re-reads a subscribed
+  link, and you cannot change it. Moodle&rsquo;s own docs note it can take several
+  hours. In practice, a moved deadline can take hours to a day to show. We
+  explain why in
+  <a href="/blog/calendar-not-updating/">why your Google Calendar subscription is not updating</a>.</li>
+<li><strong>Read-only events.</strong> You cannot edit, move or add notes to them.</li>
+<li><strong>Computer only for setup.</strong> Google requires a computer browser to subscribe
+  to a calendar (<a href="https://support.google.com/calendar/answer/37100">Google&rsquo;s help page</a>).
+  Once added, it shows in the phone app too.</li>
+</ul>
+<h3 id="option-2-import-a-file-once">Option 2: import a file once</h3>
+<p>On the same export page, the <strong>Export</strong> button downloads a file instead of
+making a link. You can import it in Google Calendar under <strong>Settings → Import
+&amp; export</strong>. The events become editable, but they never update. When a teacher
+pushes a due date back, your calendar keeps the old one. Use this only for a
+schedule that will not change.</p>
+<h3 id="option-3-sync-the-link-into-a-calendar-you-own">Option 3: sync the link into a calendar you own</h3>
+<p>The third option keeps the Moodle link as the source, and copies its events
+into one of your own Google calendars, checking for changes every few minutes.
+New deadlines are added, moved ones move, deleted ones disappear.</p>
+<p>This is what <a href="/apps/icalsync/">ICalSync</a> does. It is a Google Workspace add-on
+that opens in the right-hand side panel of Google Calendar on a computer. The
+sync is one way: Moodle to Google. Changes you make in Google are not sent back
+to Moodle.</p>
+<p><img alt="ICalSync side panel in Google Calendar: pick where the calendar lives, then choose the Google calendar it lands in" height="800" loading="lazy" src="/images/icalsync/2-connect.webp" width="1280" /></p>
+<h3 id="side-by-side">Side by side</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Subscribe (From URL)</th>
+<th>Import once</th>
+<th>Sync (ICalSync)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New and moved deadlines</td>
+<td>Hours to a day, on Google&rsquo;s schedule</td>
+<td>Never</td>
+<td>Every 5 minutes on trial and Pro, 15 on Personal, or right away with <strong>Sync now</strong></td>
+</tr>
+<tr>
+<td>Edit, recolor or add notes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Set up from a phone</td>
+<td>No</td>
+<td>No</td>
+<td>No (add-ons run on a computer)</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Free</td>
+<td>Free</td>
+<td>14-day free trial, then a paid plan; a free plan updates one calendar once a day</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setting-up-the-sync-with-icalsync">Setting up the sync with ICalSync</h2>
+<ol>
+<li>Install ICalSync from the
+   <a href="https://workspace.google.com/marketplace/app/icalsync/1001284326178">Google Workspace Marketplace</a>
+   and open it from the right-hand panel of Google Calendar.</li>
+<li>There is no Moodle button. On the start card, under <strong>Something else</strong>,
+   pick <strong>Other calendar link (.ics)</strong>. The hint mentions links that end in
+   <code>.ics</code>, but your Moodle link works there too.</li>
+<li>Paste the Moodle calendar URL, give it a short name such as <em>Moodle</em>, pick
+   the Google calendar the events should go into, and click <strong>Sync</strong>.</li>
+</ol>
+<p>A separate Google calendar for Moodle is worth the extra minute (<strong>Other
+calendars → + → Create new calendar</strong>). It gets its own color and its own
+default reminder.</p>
+<p>The 14-day trial starts when you connect your first calendar, not when you
+install, and it does not ask for a card. After that, Personal is $4/month or
+$39/year for 5 calendars, and Pro is $9/month or $86/year for 20.</p>
+<h2 id="what-is-not-in-the-moodle-feed">What is not in the Moodle feed</h2>
+<p>Whichever option you choose, some things never reach Google:</p>
+<ul>
+<li><strong>Anything outside the time period</strong> you picked when making the link.</li>
+<li><strong>Activities without a date.</strong> An assignment with no due date or a quiz with
+  no close date has no calendar event.</li>
+<li><strong>Activities you cannot see in Moodle.</strong> The export skips events for
+  activities that are hidden from you, for example a quiz your teacher has not
+  opened yet or one with access restrictions. It appears once Moodle shows it
+  to you.</li>
+<li><strong>Real all-day events.</strong> Moodle has no all-day events. A due date is
+  exported as a moment in time, such as 11:59 PM, with no length.</li>
+</ul>
+<h2 id="fixing-common-problems">Fixing common problems</h2>
+<h3 id="there-is-no-export-option">There is no export option</h3>
+<p>A Moodle administrator can turn calendar export off for the whole site, and the
+export links then disappear. A theme can also hide them. Nothing you change
+in your own settings brings them back, so ask your school&rsquo;s Moodle support.</p>
+<h3 id="deadlines-a-few-months-out-are-missing">Deadlines a few months out are missing</h3>
+<p>Look at <code>preset_time=</code> in your link. If it says <code>recentupcoming</code>, the feed stops
+60 days from today. Make a new link with <strong>Custom range</strong> if it is offered, and
+replace the old one. If only short ranges are offered, the deadlines will
+appear on their own as they come within range.</p>
+<h3 id="the-link-stopped-working">The link stopped working</h3>
+<p>The token in the link is built from your Moodle account. In standard Moodle,
+changing your Moodle password changes it, so the old link stops working. If you
+log in through your school&rsquo;s single sign-on, this may not apply in the same
+way. An administrator can also invalidate every calendar link on the site at
+once. Either way, make a fresh link from <strong>Export calendar</strong> and replace the
+old one wherever you pasted it.</p>
+<h3 id="times-are-off">Times are off</h3>
+<p>Moodle sends each event as an exact moment, and Google shows it in Google
+Calendar&rsquo;s time zone (<strong>Settings → General</strong>). If Moodle shows a different
+time, check the time zone in your Moodle profile. If you study from another
+country, make sure the Google setting matches where you are.</p>
+<h3 id="every-deadline-appears-twice">Every deadline appears twice</h3>
+<p>You probably added the link twice, once with <strong>From URL</strong> and once in a sync
+tool, or subscribed again after an earlier try seemed to fail. Remove the extra
+calendar under <strong>Other calendars</strong> and keep one.</p>
+<h2 id="keep-the-link-to-yourself">Keep the link to yourself</h2>
+<p>Moodle&rsquo;s docs point out that the link works without logging into the site.
+Anyone who has it can read your course names and the event descriptions it
+covers. Do not paste it in group chats or forums when asking for help. If you
+think it leaked, change your Moodle password if your school lets you, and make
+a new link.</p>
+<h2 id="which-option-to-choose">Which option to choose</h2>
+<p>If you only glance at your calendar to see the week ahead, <strong>From URL</strong> is
+free and good enough. If you plan your work around deadlines, or your teachers
+move them often, the delay will catch you at some point, and a sync that
+checks every few minutes is worth it.</p>
+<p>If you also have courses on Canvas, our guide to
+<a href="/blog/canvas-calendar-google-calendar/">adding the Canvas calendar to Google Calendar</a>
+covers its feed, which works a little differently. <a href="/help/icalsync/">The ICalSync help
+pages</a> walk through every setting.</p></div>
+  <h2>Questions</h2>
+<div class="faq">
+  <details class="faq-item">
+    <summary>How do I add my Moodle calendar to Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>In Moodle, open the Calendar, click Import or export calendars at the bottom of the page, then Export calendar. Choose All events and a time period, click Get calendar URL and copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why is my Moodle calendar not syncing with Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Two common reasons. Google refreshes a From URL calendar on its own schedule, so a new or moved deadline can take hours to a day to appear. And if you chose Recent and next 60 days when you made the link, anything due later than 60 days from now is not in the feed yet.</p>
+  </details>
+  <details class="faq-item">
+    <summary>I cannot find Export calendar in Moodle. Where is it?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Your school may have turned calendar export off. A Moodle administrator controls it with a single setting, and when it is off the export links do not appear. Ask your school&#39;s Moodle support whether calendar export is enabled.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why did my Moodle calendar link stop working?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>The link contains a token tied to your Moodle account. On a standard Moodle site, changing your Moodle password changes the token, and the old link then fails. An administrator can also reset every link at once. Make a new link from Export calendar and replace the old one.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Is the Moodle calendar URL private?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Treat it like a password. It works without logging in, so anyone who has it can read every event it covers, including course names and event descriptions. Paste it only into tools you trust.</p>
+  </details>
+</div>  <div class="cta-band inline">
+    <div><h3>Moodle deadlines in Google Calendar, minutes after they change</h3><p class="muted">14-day free trial from your first calendar. No credit card.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">Get ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/unlinker/">Unlinker</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/terms/">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

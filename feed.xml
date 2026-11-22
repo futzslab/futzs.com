@@ -7,6 +7,14 @@
     <language>en</language>
     <atom:link href="https://futzs.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>How to add your Moodle calendar to Google Calendar (and keep it in sync)</title>
+      <link>https://futzs.com/blog/moodle-calendar-google-calendar/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/moodle-calendar-google-calendar/</guid>
+      <description>Get your Moodle calendar URL, add it to Google Calendar, and fix the usual problems: missing export button, short time span, broken link, wrong times.</description>
+      <pubDate>Sun, 22 Nov 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
       <title>How to sync your Airbnb and Booking.com calendars with Google Calendar</title>
       <link>https://futzs.com/blog/airbnb-booking-calendar-google-calendar/</link>
       <guid isPermaLink="true">https://futzs.com/blog/airbnb-booking-calendar-google-calendar/</guid>
