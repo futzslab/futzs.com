@@ -7,6 +7,14 @@
     <language>en</language>
     <atom:link href="https://futzs.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>How to add your Blackboard calendar to Google Calendar (Ultra and Original)</title>
+      <link>https://futzs.com/blog/blackboard-calendar-google-calendar/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/blackboard-calendar-google-calendar/</guid>
+      <description>Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.</description>
+      <pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
       <title>How to add your Moodle calendar to Google Calendar (and keep it in sync)</title>
       <link>https://futzs.com/blog/moodle-calendar-google-calendar/</link>
       <guid isPermaLink="true">https://futzs.com/blog/moodle-calendar-google-calendar/</guid>

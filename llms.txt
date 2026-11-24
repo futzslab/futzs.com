@@ -36,6 +36,8 @@ policy and terms.
 
 ## Articles
 
+- [How to add your Blackboard calendar to Google Calendar (Ultra and Original)](https://futzs.com/blog/blackboard-calendar-google-calendar/): Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.
+
 - [How to add your Moodle calendar to Google Calendar (and keep it in sync)](https://futzs.com/blog/moodle-calendar-google-calendar/): Get your Moodle calendar URL, add it to Google Calendar, and fix the usual problems: missing export button, short time span, broken link, wrong times.
 
 - [How to sync your Airbnb and Booking.com calendars with Google Calendar](https://futzs.com/blog/airbnb-booking-calendar-google-calendar/): Put your Airbnb, Booking.com and Vrbo bookings in Google Calendar, block dates across channels, and cut the window where double bookings happen.

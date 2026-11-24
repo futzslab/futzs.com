@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add Blackboard calendar to Google Calendar: Ultra and Original guide</title>
+<meta name="description" content="Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.">
+<link rel="canonical" href="https://futzs.com/blog/blackboard-calendar-google-calendar/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Add Blackboard calendar to Google Calendar: Ultra and Original guide">
+<meta property="og:description" content="Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.">
+<meta property="og:url" content="https://futzs.com/blog/blackboard-calendar-google-calendar/">
+<meta property="og:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+<meta property="og:image:alt" content="How to add your Blackboard calendar to Google Calendar (Ultra and Original)">
+<meta property="article:published_time" content="2026-11-24"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add Blackboard calendar to Google Calendar: Ultra and Original guide">
+<meta name="twitter:description" content="Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.">
+<meta name="twitter:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"How to add your Blackboard calendar to Google Calendar (Ultra and Original)","item":"https://futzs.com/blog/blackboard-calendar-google-calendar/"}]},{"@type":"BlogPosting","headline":"How to add your Blackboard calendar to Google Calendar (Ultra and Original)","description":"Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.","url":"https://futzs.com/blog/blackboard-calendar-google-calendar/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/blackboard-calendar-google-calendar/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-11-24","dateModified":"2026-11-24","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/icalsync/2-connect.webp"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add my Blackboard calendar to Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"In Blackboard, open Calendar from the navigation bar, select Calendar Settings, open the dots menu and choose Share Calendar. Copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar."}},{"@type":"Question","name":"Can I share only one Blackboard course with Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"No. Blackboard shares one calendar for all your courses together. If you want to see one course at a time, you have to do it on the Google side, for example by hiding the whole calendar when you do not need it."}},{"@type":"Question","name":"Why is my Blackboard calendar not updating in Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"Two delays add up. Anthology says events can take up to 24 hours to reach an external calendar, and Google re-reads a subscribed link on its own schedule, which you cannot change. A sync tool such as ICalSync checks the link every few minutes and copies changes into a calendar you own."}},{"@type":"Question","name":"Why don't I see a Share Calendar option in Blackboard?","acceptedAnswer":{"@type":"Answer","text":"Your school controls which Blackboard tools are turned on, and menus differ between versions. If the option is missing, ask your school's Blackboard help desk whether calendar sharing is available on your site."}},{"@type":"Question","name":"Is the Blackboard calendar link private?","acceptedAnswer":{"@type":"Answer","text":"The link works without a password, so anyone who has it can read your course calendar. Anthology's own help says to share the URL only with trusted sources."}}]}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Outlook, iCloud, another Google account, Airbnb, Booking.com or any iCal (.ics) link: ICalSync copies them into Google Calendar, or keeps both sides in step, every few minutes instead of the 8 to 24 hours Google&#39;s own &#34;From URL&#34; takes.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
+              </a>
+              <a href="/apps/unlinker/">
+                <strong>Unlinker</strong><span>Some documents must go out without a single clickable link: grant applications, court filings, submissions with a no-hyperlink rule. Unlinker removes the links from a PDF and turns the blue link text black, in two clicks, without leaving Drive.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>How to add your Blackboard calendar to Google Calendar (Ultra and Original)</h1>
+  <div class="post-meta">Serge Koudoro &middot; 7 min read</div>
+  <div class="prose flush"><p>Blackboard holds your due dates and class events. Google Calendar holds the
+rest of your life. If you keep both open side by side, sooner or later a
+deadline lands in the gap.</p>
+<p>Blackboard Learn can publish your course calendar as a link that Google
+Calendar understands. Getting that link takes a minute once you know where it
+is. What happens after you paste it depends on which of three methods you pick,
+and the default one is slower than most students expect.</p>
+<h2 id="the-short-version">The short version</h2>
+<ol>
+<li>In Blackboard, open <strong>Calendar</strong> from the navigation bar on the left.</li>
+<li>Select <strong>Calendar Settings</strong>.</li>
+<li>On the Calendar Settings screen, open the dots menu (<strong>&hellip;</strong>) and select
+   <strong>Share Calendar</strong>.</li>
+<li>Copy the link in the window that opens.</li>
+<li>On a computer, open Google Calendar. Next to <strong>Other calendars</strong>, click
+   <strong>+</strong> and choose <strong>From URL</strong>. Paste the link and click <strong>Add calendar</strong>.</li>
+</ol>
+<p>Your Blackboard events now show as a new calendar under <strong>Other calendars</strong>.
+Read on for what the link includes and what to do when something looks wrong.</p>
+<h2 id="ultra-or-original-where-the-link-lives">Ultra or Original: where the link lives</h2>
+<p>Blackboard Learn comes in two looks, and your school may use one or a mix:</p>
+<ul>
+<li><strong>Ultra</strong> is the newer interface, with a dark navigation bar on the left
+  (Institution page, Profile, Activity Stream, Courses, Calendar and so on).</li>
+<li><strong>Original course view</strong> is the older course layout, with a course menu
+  down the left side of each course.</li>
+</ul>
+<p>The confusing part is that most schools now run the Ultra navigation bar even
+when some or all courses still use the Original course view. In that setup
+there is one calendar for everything, and you reach it from <strong>Calendar</strong> on the
+navigation bar, not from inside a course. Anthology documents the same steps
+(<strong>Calendar Settings</strong>, dots menu, <strong>Share Calendar</strong>) for both the
+<a href="https://help.anthology.com/blackboard/student/en/getting-started/calendar.html">Ultra calendar</a>
+and the
+<a href="https://help.anthology.com/blackboard/student/en/original-course-view/stay-in-the-loop/calendar.html">calendar in Original course view</a>.</p>
+<p>Some older Blackboard sites still use the Original layout everywhere,
+including the landing page. On those, campus help pages describe a <strong>Get
+External Calendar Link</strong> button at the bottom of the Calendar page instead.
+If your screen matches neither, ask your school&rsquo;s help desk.</p>
+<h2 id="what-the-blackboard-calendar-link-includes">What the Blackboard calendar link includes</h2>
+<p>The link points to a file in the iCalendar format (<code>.ics</code>), which almost every
+calendar app can read. According to Anthology&rsquo;s help pages, it carries:</p>
+<ul>
+<li><strong>Assignment and test due dates</strong>, which appear automatically when an
+  instructor sets a due date.</li>
+<li><strong>Course events</strong> that instructors add, such as class meetings, course
+  schedules and office hours.</li>
+<li><strong>All your courses at once.</strong> You cannot share a single course&rsquo;s calendar.</li>
+<li><strong>A two-year window</strong>: course events from one year in the past to one year
+  ahead.</li>
+</ul>
+<p>What it leaves out:</p>
+<ul>
+<li><strong>Non-graded items with due dates</strong>, such as tasks. Anthology notes that
+  these do not appear in the course calendar automatically, so they will not
+  be in the link either.</li>
+<li><strong>Anything without a date.</strong> If an instructor posts an assignment with no
+  due date, there is nothing to put on a calendar.</li>
+<li><strong>Changes in the other direction.</strong> The link is one-way. Events you add or
+  edit in Google Calendar never go back to Blackboard.</li>
+</ul>
+<p>If you also use Canvas for some classes, the setup is similar but the link
+lives somewhere else. See our guide to <a href="/blog/canvas-calendar-google-calendar/">adding the Canvas calendar to Google
+Calendar</a>.</p>
+<h2 id="three-ways-to-get-blackboard-into-google-calendar">Three ways to get Blackboard into Google Calendar</h2>
+<h3 id="option-1-subscribe-with-from-url">Option 1: subscribe with &ldquo;From URL&rdquo;</h3>
+<p>This is the method in the short version, and the one Anthology describes.
+Google Calendar keeps the link and fetches the file again from time to time.
+It is free. It also has limits:</p>
+<ul>
+<li><strong>Two delays stack up.</strong> Anthology&rsquo;s instructor documentation says events
+  &ldquo;may take up to 24 hours to appear in your external calendar&rdquo;
+  (<a href="https://help.anthology.com/blackboard/instructor/en/original-course-view/set-up-courses/calendar.html">Anthology help</a>).
+  On top of that, Google re-reads subscribed links on its own schedule, which
+  it does not publish. In practice, expect several hours to a day. We explain
+  the Google side in
+  <a href="/blog/calendar-not-updating/">why your Google Calendar subscription is not updating</a>.</li>
+<li><strong>Read-only events.</strong> You cannot edit, move or add notes to subscribed
+  events.</li>
+<li><strong>Computer only for setup.</strong> Google requires a computer web browser to
+  subscribe to a calendar
+  (<a href="https://support.google.com/calendar/answer/37100">Google&rsquo;s help page</a>).
+  Once added, it shows on your phone too.</li>
+</ul>
+<h3 id="option-2-import-the-file-once">Option 2: import the file once</h3>
+<p>Under <strong>Settings → Import &amp; export</strong>, Google Calendar can import an <code>.ics</code>
+file. You would open the Blackboard link in your browser to download the file,
+then import it.</p>
+<p>The events become fully editable, but they are a snapshot. When an instructor
+moves an exam, your copy keeps the old date. That makes import a poor fit for a
+term&rsquo;s worth of due dates, which tend to shift.</p>
+<h3 id="option-3-sync-the-link-into-a-calendar-you-own">Option 3: sync the link into a calendar you own</h3>
+<p>The third option keeps the Blackboard link as the source and copies its events
+into one of your own Google calendars, checking for changes every few minutes.
+New items are added, moved dates move, and removed items disappear.</p>
+<p><a href="/apps/icalsync/">ICalSync</a> does this from a side panel inside Google
+Calendar. It cannot make Blackboard publish changes faster than Blackboard
+does, but it removes the Google side of the wait.</p>
+<p><img alt="ICalSync side panel in Google Calendar: pick where the calendar lives, then choose the Google calendar it lands in" height="800" loading="lazy" src="/images/icalsync/2-connect.webp" width="1280" /></p>
+<h3 id="side-by-side">Side by side</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Subscribe (From URL)</th>
+<th>Import once</th>
+<th>Sync (ICalSync)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New and moved due dates</td>
+<td>Hours to a day, on Google&rsquo;s schedule</td>
+<td>Never</td>
+<td>Checked every 5 to 15 minutes, or right away with <strong>Sync now</strong></td>
+</tr>
+<tr>
+<td>Edit, recolor or add notes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Follows Blackboard after setup</td>
+<td>Yes, slowly</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Set up from a phone</td>
+<td>No</td>
+<td>No</td>
+<td>No (Google Calendar add-ons run on a computer)</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Free</td>
+<td>Free</td>
+<td>14-day free trial, then a paid plan; a free plan updates one calendar once a day</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setting-up-the-sync-with-icalsync">Setting up the sync with ICalSync</h2>
+<ol>
+<li>Install ICalSync from the
+   <a href="https://workspace.google.com/marketplace/app/icalsync/1001284326178">Google Workspace Marketplace</a>
+   and open it from the right-hand side panel of Google Calendar on a
+   computer.</li>
+<li>There is no Blackboard button. On the start card, under <strong>Something else</strong>,
+   choose <strong>Other calendar link (.ics)</strong>. That option accepts any link that
+   ends in <code>.ics</code> or starts with <code>webcal://</code>.</li>
+<li>Paste your Blackboard Share Calendar link and give it a short name, such as
+   <em>Blackboard</em>.</li>
+<li>Pick the Google calendar the events should land in, then click <strong>Sync</strong>.</li>
+</ol>
+<p>Creating a separate Google calendar named <em>Blackboard</em> first (<strong>Other calendars
+→ + → Create new calendar</strong>) makes life easier. You can give it its own color,
+hide it during breaks, and set a default reminder that every due date picks up.</p>
+<p>ICalSync checks the link every 5 minutes on the trial and the Pro plan, and
+every 15 minutes on Personal. <strong>Sync now</strong> runs a check immediately. The sync
+is one-way, from Blackboard to Google, the same as the link itself.</p>
+<p>The 14-day trial starts when you connect your first calendar, not when you
+install, and needs no credit card. After that, Personal costs $4 a month or $39
+a year for 5 calendars, and Pro costs $9 a month or $86 a year for 20
+calendars. A free plan updates one calendar once a day.</p>
+<h2 id="fixing-common-problems">Fixing common problems</h2>
+<h3 id="there-is-no-share-calendar-option">There is no Share Calendar option</h3>
+<p>Your school decides which Blackboard tools are switched on, and menus vary by
+version. Check that you are on the main <strong>Calendar</strong> page from the navigation
+bar, not a course&rsquo;s own calendar, then look under <strong>Calendar Settings</strong>. If it
+is still missing, ask your school&rsquo;s Blackboard support whether calendar sharing
+is available on your site. No outside tool can create the link for you.</p>
+<h3 id="the-link-stopped-working">The link stopped working</h3>
+<p>Anthology&rsquo;s help pages do not describe a way to reset the link, so we cannot
+say for certain when an old link stops working. If Google Calendar or a sync
+tool reports that the link cannot be read, for example after your school moves
+Blackboard to a new address, go back to <strong>Share Calendar</strong>, copy the link
+again, and replace the old one wherever you used it.</p>
+<h3 id="due-times-are-off-by-an-hour-or-more">Due times are off by an hour or more</h3>
+<p>Blackboard and Google Calendar each have their own time zone setting. If you
+study remotely or recently moved, check your Blackboard account settings, then
+Google Calendar under <strong>Settings → General → Time zone</strong>. An assignment due
+&ldquo;at 11:59 PM&rdquo; lands at the wrong hour when the two disagree.</p>
+<h3 id="every-due-date-shows-up-twice">Every due date shows up twice</h3>
+<p>You likely added the link twice: once with <strong>From URL</strong> and once in a sync
+tool, or a second subscription after the first seemed to fail. Remove the
+extra calendar under <strong>Other calendars</strong> and keep one.</p>
+<h3 id="a-course-or-item-is-missing">A course or item is missing</h3>
+<p>Remember that tasks and undated items are not in the link, and that events
+older than a year fall outside it. If a real due date is missing, wait for
+Blackboard&rsquo;s own delay first, then use <strong>Sync now</strong> in ICalSync or check again
+later with a subscription.</p>
+<h2 id="keep-the-link-to-yourself">Keep the link to yourself</h2>
+<p>The link opens without a password. Anyone who has it can read your course
+calendar, including event titles and descriptions. Paste it only into tools you
+trust, and leave it out of group chats and forum posts when you ask for help.</p>
+<h2 id="which-option-to-choose">Which option to choose</h2>
+<p>If you only glance at Google Calendar to see the shape of your week, a free
+<strong>From URL</strong> subscription is fine. If you plan your work around due dates, or
+your instructors move things during the term, the wait of up to a day will
+catch you sooner or later, and a sync that checks every few minutes earns its
+place. Whichever you pick, set it up once on a computer, and your phone will
+follow.</p></div>
+  <h2>Questions</h2>
+<div class="faq">
+  <details class="faq-item">
+    <summary>How do I add my Blackboard calendar to Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>In Blackboard, open Calendar from the navigation bar, select Calendar Settings, open the dots menu and choose Share Calendar. Copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Can I share only one Blackboard course with Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>No. Blackboard shares one calendar for all your courses together. If you want to see one course at a time, you have to do it on the Google side, for example by hiding the whole calendar when you do not need it.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why is my Blackboard calendar not updating in Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Two delays add up. Anthology says events can take up to 24 hours to reach an external calendar, and Google re-reads a subscribed link on its own schedule, which you cannot change. A sync tool such as ICalSync checks the link every few minutes and copies changes into a calendar you own.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why don&#39;t I see a Share Calendar option in Blackboard?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Your school controls which Blackboard tools are turned on, and menus differ between versions. If the option is missing, ask your school&#39;s Blackboard help desk whether calendar sharing is available on your site.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Is the Blackboard calendar link private?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>The link works without a password, so anyone who has it can read your course calendar. Anthology&#39;s own help says to share the URL only with trusted sources.</p>
+  </details>
+</div>  <div class="cta-band inline">
+    <div><h3>Blackboard due dates in Google Calendar, minutes after they change</h3><p class="muted">14-day free trial from your first calendar. No credit card.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">Get ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/unlinker/">Unlinker</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/terms/">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>
