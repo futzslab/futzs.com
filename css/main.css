@@ -653,6 +653,8 @@ img.shot { display: block; max-width: 100%; height: auto; margin: 18px 0 24px; b
   .showcase-row.flip > .showcase-shot { order: 0; }
 }
 
+.related-posts { margin-top: 48px; }
+.related-posts h2 { margin-bottom: 16px; }
 .related-list { display: flex; flex-direction: column; gap: 2px; }
 .related-item {
   display: block;
