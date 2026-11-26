@@ -36,6 +36,8 @@ policy and terms.
 
 ## Articles
 
+- [How to see your iCloud calendar on Android](https://futzs.com/blog/icloud-calendar-on-android/): Apple has no Calendar app for Android. Copy your iCloud calendar into Google Calendar and it shows up on any Android phone, in 3 steps.
+
 - [How to add your Blackboard calendar to Google Calendar (Ultra and Original)](https://futzs.com/blog/blackboard-calendar-google-calendar/): Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.
 
 - [How to add your Moodle calendar to Google Calendar (and keep it in sync)](https://futzs.com/blog/moodle-calendar-google-calendar/): Get your Moodle calendar URL, add it to Google Calendar, and fix the usual problems: missing export button, short time span, broken link, wrong times.

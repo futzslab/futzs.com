@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iCloud calendar on Android: the simple way (via Google Calendar)</title>
+<meta name="description" content="Apple has no Calendar app for Android. Copy your iCloud calendar into Google Calendar and it shows up on any Android phone, in 3 steps.">
+<link rel="canonical" href="https://futzs.com/blog/icloud-calendar-on-android/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="iCloud calendar on Android: the simple way (via Google Calendar)">
+<meta property="og:description" content="Apple has no Calendar app for Android. Copy your iCloud calendar into Google Calendar and it shows up on any Android phone, in 3 steps.">
+<meta property="og:url" content="https://futzs.com/blog/icloud-calendar-on-android/">
+<meta property="og:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+<meta property="og:image:alt" content="How to see your iCloud calendar on Android">
+<meta property="article:published_time" content="2026-11-26"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iCloud calendar on Android: the simple way (via Google Calendar)">
+<meta name="twitter:description" content="Apple has no Calendar app for Android. Copy your iCloud calendar into Google Calendar and it shows up on any Android phone, in 3 steps.">
+<meta name="twitter:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"How to see your iCloud calendar on Android","item":"https://futzs.com/blog/icloud-calendar-on-android/"}]},{"@type":"BlogPosting","headline":"How to see your iCloud calendar on Android","description":"Apple has no Calendar app for Android. Copy your iCloud calendar into Google Calendar and it shows up on any Android phone, in 3 steps.","url":"https://futzs.com/blog/icloud-calendar-on-android/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/icloud-calendar-on-android/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-11-26","dateModified":"2026-11-26","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/icalsync/2-connect.webp"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use iCloud Calendar on Android?","acceptedAnswer":{"@type":"Answer","text":"Not directly. Apple has no Calendar app for Android, and Android cannot add an iCloud account. Copy the iCloud calendar into Google Calendar instead: the Google Calendar app on your Android phone then shows it like any other calendar."}},{"@type":"Question","name":"Why doesn't my iCloud calendar show on my Android phone?","acceptedAnswer":{"@type":"Answer","text":"If you added it in Google Calendar on a computer, open the Google Calendar app on Android, go to Settings, tap the calendar and turn on Sync. Calendars added from a URL can also take several hours to appear."}},{"@type":"Question","name":"Do I need to make my iCloud calendar public?","acceptedAnswer":{"@type":"Answer","text":"No. A public link works, but anyone with it can read your events and Google refreshes it only every few hours. A sync with an Apple app-specific password keeps the calendar private and updates it within minutes."}}]}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Outlook, iCloud, another Google account, Airbnb, Booking.com or any iCal (.ics) link: ICalSync copies them into Google Calendar, or keeps both sides in step, every few minutes instead of the 8 to 24 hours Google&#39;s own &#34;From URL&#34; takes.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
+              </a>
+              <a href="/apps/unlinker/">
+                <strong>Unlinker</strong><span>Some documents must go out without a single clickable link: grant applications, court filings, submissions with a no-hyperlink rule. Unlinker removes the links from a PDF and turns the blue link text black, in two clicks, without leaving Drive.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>How to see your iCloud calendar on Android</h1>
+  <div class="post-meta">Serge Koudoro &middot; 3 min read</div>
+  <div class="prose flush"><p>Switched from iPhone to Android, or share a family calendar with someone who
+uses Android? Apple makes no Calendar app for Android, and Android has no
+iCloud account type. The way around it: <strong>copy the iCloud calendar into Google
+Calendar.</strong> Every Android phone shows Google Calendar.</p>
+<h2 id="step-1-create-an-app-specific-password">Step 1: Create an app-specific password</h2>
+<p>Apple does not let other apps use your main Apple password.</p>
+<ol>
+<li>Sign in at <a href="https://account.apple.com/account/manage">account.apple.com</a>.</li>
+<li>Open <strong>Sign-In and Security › App-Specific Passwords</strong>.</li>
+<li>Create one named <em>ICalSync</em> and copy it (<code>xxxx-xxxx-xxxx-xxxx</code>).</li>
+</ol>
+<p>Two-factor authentication must be on.
+<a href="/blog/icloud-calendar-google-calendar/">Step-by-step guide</a>.</p>
+<h2 id="step-2-sync-icloud-into-google-calendar">Step 2: Sync iCloud into Google Calendar</h2>
+<p>On a computer:</p>
+<ol>
+<li>Open <a href="https://calendar.google.com">Google Calendar</a> and install
+   <a href="https://workspace.google.com/marketplace/app/icalsync/1001284326178">ICalSync</a>
+   from the right-hand panel.</li>
+<li>Choose <strong>iCloud</strong>, enter your Apple ID and the app-specific password.</li>
+<li>Pick the iCloud calendar and the Google calendar it copies into, then click
+   <strong>Sync</strong>.</li>
+</ol>
+<p>ICalSync checks iCloud every few minutes and copies new, moved and deleted
+events.</p>
+<h2 id="step-3-turn-the-calendar-on-in-android">Step 3: Turn the calendar on in Android</h2>
+<ol>
+<li>Open the <strong>Google Calendar</strong> app on your phone.</li>
+<li>Tap <strong>☰ › Settings</strong>, then your Google account.</li>
+<li>Tap the calendar and turn on <strong>Sync</strong>.</li>
+</ol>
+<p>Your iCloud events now show on Android, in the Google Calendar app and in any
+calendar app that reads your Google account.</p>
+<h2 id="free-alternative-a-public-link">Free alternative: a public link</h2>
+<p>On iPhone: <strong>Calendar › Calendars › ⓘ</strong> next to the calendar › <strong>Public
+Calendar</strong> › <strong>Share Link</strong>. In Google Calendar on a computer: <strong>Other calendars
+› + › From URL</strong>, paste the link.</p>
+<p>It costs nothing, but anyone with the link can read your events, and Google
+refreshes it only every few hours. Fine for a sports schedule, not for a
+personal calendar. Details in our
+<a href="/blog/icloud-calendar-google-calendar/">full iCloud to Google guide</a>.</p></div>
+  <h2>Questions</h2>
+<div class="faq">
+  <details class="faq-item">
+    <summary>Can I use iCloud Calendar on Android?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>Not directly. Apple has no Calendar app for Android, and Android cannot add an iCloud account. Copy the iCloud calendar into Google Calendar instead: the Google Calendar app on your Android phone then shows it like any other calendar.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why doesn&#39;t my iCloud calendar show on my Android phone?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>If you added it in Google Calendar on a computer, open the Google Calendar app on Android, go to Settings, tap the calendar and turn on Sync. Calendars added from a URL can also take several hours to appear.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Do I need to make my iCloud calendar public?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>No. A public link works, but anyone with it can read your events and Google refreshes it only every few hours. A sync with an Apple app-specific password keeps the calendar private and updates it within minutes.</p>
+  </details>
+</div>  <section class="related-posts">
+    <h2>Related guides</h2>
+    <div class="related-list">
+      <a class="related-item" href="/blog/icloud-calendar-google-calendar/">
+        <strong>How to add your iCloud calendar to Google Calendar (and keep it in sync)</strong>
+        <span>Put your iPhone or Mac calendar in Google Calendar: a public link, a one-time import, or a private sync with an app-specific password. What each option gets wrong.</span>
+      </a>
+    </div>
+  </section>
+  <div class="cta-band inline">
+    <div><h3>Your iCloud calendar on Android, updated in minutes</h3><p class="muted">14-day free trial from your first calendar. No credit card.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">Get ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/unlinker/">Unlinker</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/terms/">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>
