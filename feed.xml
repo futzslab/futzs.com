@@ -7,6 +7,14 @@
     <language>en</language>
     <atom:link href="https://futzs.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>How to add your Brightspace (D2L) calendar to Google Calendar</title>
+      <link>https://futzs.com/blog/brightspace-calendar-google-calendar/</link>
+      <guid isPermaLink="true">https://futzs.com/blog/brightspace-calendar-google-calendar/</guid>
+      <description>Turn on calendar feeds in Brightspace, copy the Subscribe link, add it to Google Calendar, and fix a missing Subscribe button, slow updates and wrong times.</description>
+      <pubDate>Sat, 28 Nov 2026 12:00:00 +0000</pubDate>
+      <author>contact@futzs.com (Serge Koudoro)</author>
+    </item>
+    <item>
       <title>How to see your iCloud calendar on Android</title>
       <link>https://futzs.com/blog/icloud-calendar-on-android/</link>
       <guid isPermaLink="true">https://futzs.com/blog/icloud-calendar-on-android/</guid>

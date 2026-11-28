@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add Brightspace (D2L) calendar to Google Calendar: step by step</title>
+<meta name="description" content="Turn on calendar feeds in Brightspace, copy the Subscribe link, add it to Google Calendar, and fix a missing Subscribe button, slow updates and wrong times.">
+<link rel="canonical" href="https://futzs.com/blog/brightspace-calendar-google-calendar/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Serge Koudoro">
+<meta name="theme-color" content="#b68235">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Futzs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Add Brightspace (D2L) calendar to Google Calendar: step by step">
+<meta property="og:description" content="Turn on calendar feeds in Brightspace, copy the Subscribe link, add it to Google Calendar, and fix a missing Subscribe button, slow updates and wrong times.">
+<meta property="og:url" content="https://futzs.com/blog/brightspace-calendar-google-calendar/">
+<meta property="og:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+<meta property="og:image:alt" content="How to add your Brightspace (D2L) calendar to Google Calendar">
+<meta property="article:published_time" content="2026-11-28"><meta property="article:author" content="Serge Koudoro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add Brightspace (D2L) calendar to Google Calendar: step by step">
+<meta name="twitter:description" content="Turn on calendar feeds in Brightspace, copy the Subscribe link, add it to Google Calendar, and fix a missing Subscribe button, slow updates and wrong times.">
+<meta name="twitter:image" content="https://futzs.com/images/icalsync/2-connect.webp">
+
+<link rel="icon" href="/images/futzs_favicon.png">
+<link rel="apple-touch-icon" href="/images/futzs_favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Futzs — Blog" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://futzs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://futzs.com/blog/"},{"@type":"ListItem","position":3,"name":"How to add your Brightspace (D2L) calendar to Google Calendar","item":"https://futzs.com/blog/brightspace-calendar-google-calendar/"}]},{"@type":"BlogPosting","headline":"How to add your Brightspace (D2L) calendar to Google Calendar","description":"Turn on calendar feeds in Brightspace, copy the Subscribe link, add it to Google Calendar, and fix a missing Subscribe button, slow updates and wrong times.","url":"https://futzs.com/blog/brightspace-calendar-google-calendar/","mainEntityOfPage":{"@type":"WebPage","@id":"https://futzs.com/blog/brightspace-calendar-google-calendar/"},"publisher":{"@id":"https://futzs.com/#organization"},"inLanguage":"en","datePublished":"2026-11-28","dateModified":"2026-11-28","author":{"@type":"Person","name":"Serge Koudoro"},"image":"https://futzs.com/images/icalsync/2-connect.webp"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add my Brightspace calendar to Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"In Brightspace, open the Calendar, click Settings, tick Enable Calendar Feeds and save. Click Subscribe, choose All Calendars and Tasks or one course, and copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar."}},{"@type":"Question","name":"Why is there no Subscribe button in my Brightspace calendar?","acceptedAnswer":{"@type":"Answer","text":"First check that Enable Calendar Feeds is ticked under Settings in the Calendar tool. If that option is not there at all, your school has turned calendar feeds off for everyone. Only a Brightspace administrator can turn them back on, so ask your school's help desk."}},{"@type":"Question","name":"Why is my Brightspace calendar not updating in Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"A calendar added with From URL is refreshed on Google's schedule, which Google does not publish and you cannot change. In practice a new or moved due date can take several hours to a day to appear. A sync tool such as ICalSync checks the link every few minutes and copies changes into a calendar you own."}},{"@type":"Question","name":"Should I subscribe to all courses or one course at a time?","acceptedAnswer":{"@type":"Answer","text":"All Calendars and Tasks gives you one link that covers every course you are enrolled in. Pick a single course only if you want some courses and not others, or want each course in its own color. That means one link per course."}},{"@type":"Question","name":"Is the Brightspace calendar link private?","acceptedAnswer":{"@type":"Answer","text":"The link opens without a password, so anyone who has it can read the calendars it covers. Paste it only into tools you trust and leave it out of group chats and forum posts."}}]}]}</script>
+<script defer src="https://umami.futzs.com/script.js" data-website-id="d2bf791f-8216-49e3-bc20-667f38af4393" data-domains="futzs.com"></script>
+</head>
+<body>
+<div class="nav-wrap">
+  <div class="nav-shell" data-nav>
+    <div class="nav-row">
+      <a class="nav-brand" href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <div class="nav-links" id="nav-links">
+          <div class="nav-drop">
+            <a class="nav-link" href="/apps/">Apps <span class="caret">&#9662;</span></a>
+            <div class="nav-drop-panel">
+              <a href="/apps/icalsync/">
+                <strong>ICalSync</strong><span>Outlook, iCloud, another Google account, Airbnb, Booking.com or any iCal (.ics) link: ICalSync copies them into Google Calendar, or keeps both sides in step, every few minutes instead of the 8 to 24 hours Google&#39;s own &#34;From URL&#34; takes.</span>
+              </a>
+              <a href="/apps/quickreplies/">
+                <strong>Quick Replies</strong><span>Create shortcuts for the messages you send most often, and send them in any Google Chat conversation with /qr.</span>
+              </a>
+              <a href="/apps/dutydesk/">
+                <strong>DutyDesk</strong><span>Google Chat can&#39;t mention a group. DutyDesk can. It runs your on-call rotation inside the space your team already uses, posts every shift handoff, and turns each @DutyDesk into a request the person on duty can claim, reassign and resolve.</span>
+              </a>
+              <a href="/apps/unlinker/">
+                <strong>Unlinker</strong><span>Some documents must go out without a single clickable link: grant applications, court filings, submissions with a no-hyperlink rule. Unlinker removes the links from a PDF and turns the blue link text black, in two clicks, without leaving Drive.</span>
+              </a>
+              <hr>
+              <a class="nav-drop-all" href="/apps/">All apps &amp; libraries</a>
+            </div>
+          </div>
+          <a class="nav-link" href="/services/">Services</a>
+          <a class="nav-link" href="/partnership/">Partnership</a>
+          <a class="nav-link is-current" href="/blog/">Blog</a>
+          <a class="nav-link" href="/help/">Help</a>
+        <a class="btn btn-pill nav-cta-inline" href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn-pill nav-cta" href="/contact/">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</div><main id="content">
+<article class="post">
+  <a class="back" href="/blog/">&larr; Blog</a>
+  <span class="kicker">Guide · ICalSync</span>
+  <h1>How to add your Brightspace (D2L) calendar to Google Calendar</h1>
+  <div class="post-meta">Serge Koudoro &middot; 7 min read</div>
+  <div class="prose flush"><p>Brightspace has every quiz, assignment and course event your instructors set.
+Google Calendar has your shifts, classes and everything else. Keeping both in
+your head is how a due date slips by.</p>
+<p>Brightspace by D2L can share its calendar as a link that Google Calendar reads.
+Unlike most learning platforms, it hides that link behind a setting you have to
+switch on first. This guide shows where that setting is, the three ways to use
+the link, and what to check when the button you need is not there.</p>
+<h2 id="the-short-version">The short version</h2>
+<ol>
+<li>In Brightspace, open the <strong>Calendar</strong>. From a course homepage, click the
+   arrow on the <strong>Calendar</strong> widget and choose <strong>Go to Calendar</strong>.</li>
+<li>Click <strong>Settings</strong>, tick <strong>Enable Calendar Feeds</strong>, and click <strong>Save</strong>.</li>
+<li>Back on the Calendar page, click <strong>Subscribe</strong>.</li>
+<li>Under <strong>Calendar Subscriptions</strong>, choose <strong>All Calendars and Tasks</strong> or a
+   single course, and copy the link.</li>
+<li>On a computer, open Google Calendar. Next to <strong>Other calendars</strong>, click
+   <strong>+</strong>, choose <strong>From URL</strong>, paste the link and click <strong>Add calendar</strong>.</li>
+</ol>
+<p>These steps follow
+<a href="https://community.d2l.com/brightspace/kb/articles/18115-calendar">D2L&rsquo;s guide to the Calendar tool</a>.
+Your school may rename menu items or move the Calendar to its own navbar link,
+but the <strong>Settings</strong> and <strong>Subscribe</strong> controls are the same.</p>
+<h2 id="where-the-subscribe-option-lives">Where the Subscribe option lives</h2>
+<p>The step most people miss is the second one. Until <strong>Enable Calendar Feeds</strong>
+is ticked in your Calendar settings, Brightspace does not show <strong>Subscribe</strong>
+at all. It is a personal setting, so turning it on affects only your own
+calendar.</p>
+<p>There is a second switch above yours. Brightspace administrators control
+whether calendar feeds are allowed for the whole institution, through a
+setting D2L lists in its
+<a href="https://community.d2l.com/brightspace/kb/articles/4439-schedule-configuration-variables">Schedule configuration variables</a>.
+It is on by default, but a school can turn it off. If it is off, you will not
+find the option in your settings, and nothing you change on your side will
+bring it back.</p>
+<p>When you click <strong>Subscribe</strong>, the window offers a few choices:</p>
+<ul>
+<li><strong>All Calendars and Tasks</strong>: one link covering every course you are enrolled
+  in, plus your personal tasks.</li>
+<li><strong>Tasks Only</strong>: just the tasks you add yourself in the Calendar tool.</li>
+<li><strong>A single course</strong>: one link for that course alone.</li>
+</ul>
+<p>The same window has a <strong>Download</strong> button. That gives you a <code>.ics</code> file, which
+is a snapshot, not a live link. More on that below.</p>
+<h2 id="what-the-feed-carries-and-what-it-leaves-out">What the feed carries, and what it leaves out</h2>
+<p>The feed is a link to a file in the iCalendar (<code>.ics</code>) format, which almost
+every calendar app reads. It carries what you see in the Brightspace Calendar
+tool for the calendars you chose: course events, and the due dates and start
+or end dates that instructors publish there.</p>
+<p>That last part matters. In Brightspace, an instructor decides whether an
+assignment, quiz or discussion date shows in the calendar. If a due date is on
+the assignment page but not in your Brightspace Calendar, it is not in the
+feed either. Only the instructor can fix that.</p>
+<p>Things that are not in the feed:</p>
+<ul>
+<li><strong>Dates that never reach the Calendar tool</strong>, as above.</li>
+<li><strong>Courses you hid.</strong> If you unticked a course in the Calendar&rsquo;s course
+  selector, check that it is shown again.</li>
+<li><strong>Your Google events.</strong> The feed only goes one way, from Brightspace out.</li>
+</ul>
+<h2 id="three-ways-to-get-brightspace-into-google-calendar">Three ways to get Brightspace into Google Calendar</h2>
+<h3 id="option-1-subscribe-with-from-url">Option 1: subscribe with &ldquo;From URL&rdquo;</h3>
+<p>This is the method in the short version. Google Calendar stores the link and
+re-reads it from time to time. It is free, and for a quick view of your week
+it works. The limits:</p>
+<ul>
+<li><strong>Slow updates.</strong> Google does not say how often it refreshes a subscribed
+  calendar, and you cannot change it. A new quiz or a moved deadline can take
+  several hours to a day to show up. Our article on
+  <a href="/blog/calendar-not-updating/">why Google Calendar subscriptions stop updating</a>
+  explains the reasons.</li>
+<li><strong>Read-only events.</strong> You cannot edit a subscribed event, move it, or add a
+  note like &ldquo;start the draft Monday&rdquo;.</li>
+<li><strong>Computer only for setup.</strong> You cannot subscribe from the Google Calendar
+  phone app (<a href="https://support.google.com/calendar/answer/37100">Google&rsquo;s help page</a>).
+  Add it on a computer and it then shows on your phone.</li>
+</ul>
+<h3 id="option-2-import-the-file-once">Option 2: import the file once</h3>
+<p>Click <strong>Download</strong> in the Brightspace Subscribe window, then use <strong>Settings ›
+Import &amp; export</strong> in Google Calendar to import the <code>.ics</code> file. The events
+become normal, editable events in a calendar you pick.</p>
+<p>They also never update again. When an instructor pushes a deadline back, your
+calendar keeps the old date. Use this only for a schedule that will not
+change, such as a published final exam timetable.</p>
+<h3 id="option-3-sync-the-link-into-a-calendar-you-own">Option 3: sync the link into a calendar you own</h3>
+<p>The third option keeps the Brightspace link as the source and copies its events
+into one of your own Google calendars, checking for changes every few minutes.
+New items are added, moved dates move, and removed items disappear.</p>
+<p>That is what <a href="/apps/icalsync/">ICalSync</a> does. It runs in the right-hand side
+panel of Google Calendar on a computer, so there is no separate app to keep
+open.</p>
+<p><img alt="ICalSync side panel in Google Calendar: pick where the calendar lives, then choose the Google calendar it lands in" height="800" loading="lazy" src="/images/icalsync/2-connect.webp" width="1280" /></p>
+<h3 id="side-by-side">Side by side</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Subscribe (From URL)</th>
+<th>Import once</th>
+<th>Sync (ICalSync)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New and moved due dates</td>
+<td>Hours to a day, on Google&rsquo;s schedule</td>
+<td>Never</td>
+<td>Every 5 to 15 minutes, or right away with <strong>Sync now</strong></td>
+</tr>
+<tr>
+<td>Edit, recolor or add notes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Reminders on each due date</td>
+<td>No per-event control</td>
+<td>Manual</td>
+<td>Your calendar&rsquo;s default reminders apply</td>
+</tr>
+<tr>
+<td>Set up from a phone</td>
+<td>No</td>
+<td>No</td>
+<td>No (Google Calendar add-ons run on a computer)</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Free</td>
+<td>Free</td>
+<td>14-day free trial, then a paid plan from $4/month</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setting-up-the-sync-with-icalsync">Setting up the sync with ICalSync</h2>
+<ol>
+<li>Install ICalSync from the
+   <a href="https://workspace.google.com/marketplace/app/icalsync/1001284326178">Google Workspace Marketplace</a>
+   and open it from the right-hand side panel in Google Calendar.</li>
+<li>On the start card, under <strong>Something else</strong>, choose <strong>Other calendar link
+   (.ics)</strong>. There is no Brightspace button; the <strong>Canvas / school</strong> button is
+   for Canvas only, so skip it.</li>
+<li>Paste the link you copied from <strong>Subscribe</strong>, give it a short name such as
+   <em>Brightspace</em>, and pick the Google calendar the events should land in.</li>
+<li>Click <strong>Sync</strong>.</li>
+</ol>
+<p>ICalSync checks the link every 5 minutes on the trial and the Pro plan, and
+every 15 minutes on Personal. <strong>Sync now</strong> runs a check right away, which is
+handy right after an instructor announces a change. The sync is one-way:
+edits you make in Google Calendar do not go back to Brightspace.</p>
+<p>A separate Google calendar called <em>Brightspace</em> is worth creating first
+(<strong>Other calendars › + › Create new calendar</strong>). You get its own color, you can
+hide it in one click, and a default reminder such as &ldquo;1 day before&rdquo; applies to
+every due date.</p>
+<p>The 14-day trial starts when you connect your first calendar, not when you
+install, and needs no credit card. After that, Personal is $4 a month or $39 a
+year for 5 calendars, and Pro is $9 a month or $86 a year for 20.</p>
+<h2 id="fixing-common-problems">Fixing common problems</h2>
+<h3 id="there-is-no-subscribe-button">There is no Subscribe button</h3>
+<p>Open <strong>Settings</strong> in the Calendar tool and check that <strong>Enable Calendar
+Feeds</strong> is ticked and saved. If the option is missing from Settings entirely,
+your school has disabled calendar feeds. Ask your help desk; only an
+administrator can change it.</p>
+<h3 id="one-course-is-missing">One course is missing</h3>
+<p>If you copied a single-course link, it only ever covers that course. Go back
+to <strong>Subscribe</strong>, pick <strong>All Calendars and Tasks</strong>, and replace the old link.
+If you want a few courses but not all, you need one link per course, each
+added separately. If the course still does not appear, confirm it is ticked in
+the Brightspace Calendar&rsquo;s course list and that its dates show there.</p>
+<h3 id="the-link-stopped-working">The link stopped working</h3>
+<p>D2L&rsquo;s documentation does not describe a button to reset or regenerate the
+feed link, and the controls can differ between Brightspace versions and
+schools. What is clear is that the feed depends on <strong>Enable Calendar Feeds</strong>:
+if it gets switched off, by you or by your school, apps can no longer read the
+calendar. Turn it back on, open <strong>Subscribe</strong>, copy the link again, and
+replace the old one wherever you used it.</p>
+<h3 id="times-are-off-by-an-hour-or-more">Times are off by an hour or more</h3>
+<p>Brightspace shows times in the time zone set in your Brightspace account
+settings, which your school may set for you. Google Calendar uses its own,
+under <strong>Settings › General</strong>. If you study remotely or travel, check both.
+When they disagree, due times look shifted.</p>
+<h3 id="every-due-date-appears-twice">Every due date appears twice</h3>
+<p>You probably added the link twice, for example once with <strong>From URL</strong> and
+once in a sync tool, or both an all-courses link and a single-course link.
+Remove the extra calendar under <strong>Other calendars</strong> and keep one.</p>
+<h2 id="keep-the-link-to-yourself">Keep the link to yourself</h2>
+<p>The Subscribe link includes a long private key, and it works without a
+password. Anyone who has it can read the calendars it covers. Paste it only
+into tools you trust. When you ask for help in a forum or a group chat,
+describe the problem and leave the link out.</p>
+<h2 id="which-option-to-choose">Which option to choose</h2>
+<p>If you want a rough view of your week and your instructors rarely change
+dates, <strong>From URL</strong> is free and good enough. If you plan your days around due
+dates, or your courses shift deadlines mid-term, the delay will eventually cost
+you, and a sync that checks every few minutes is the safer choice. Import once
+only for schedules that are final.</p>
+<p>The same steps work for any platform with a calendar link. Our
+<a href="/blog/canvas-calendar-google-calendar/">Canvas calendar guide</a> covers
+Canvas, where the link sits in a different place, and
+<a href="/help/icalsync/">the ICalSync help pages</a> go through every setting.</p></div>
+  <h2>Questions</h2>
+<div class="faq">
+  <details class="faq-item">
+    <summary>How do I add my Brightspace calendar to Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>In Brightspace, open the Calendar, click Settings, tick Enable Calendar Feeds and save. Click Subscribe, choose All Calendars and Tasks or one course, and copy the link. On a computer, open Google Calendar, click the plus sign next to Other calendars, choose From URL, paste the link and click Add calendar.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why is there no Subscribe button in my Brightspace calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>First check that Enable Calendar Feeds is ticked under Settings in the Calendar tool. If that option is not there at all, your school has turned calendar feeds off for everyone. Only a Brightspace administrator can turn them back on, so ask your school&#39;s help desk.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Why is my Brightspace calendar not updating in Google Calendar?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>A calendar added with From URL is refreshed on Google&#39;s schedule, which Google does not publish and you cannot change. In practice a new or moved due date can take several hours to a day to appear. A sync tool such as ICalSync checks the link every few minutes and copies changes into a calendar you own.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Should I subscribe to all courses or one course at a time?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>All Calendars and Tasks gives you one link that covers every course you are enrolled in. Pick a single course only if you want some courses and not others, or want each course in its own color. That means one link per course.</p>
+  </details>
+  <details class="faq-item">
+    <summary>Is the Brightspace calendar link private?<span class="faq-sign" aria-hidden="true"></span></summary>
+    <p>The link opens without a password, so anyone who has it can read the calendars it covers. Paste it only into tools you trust and leave it out of group chats and forum posts.</p>
+  </details>
+</div>  <section class="related-posts">
+    <h2>Related guides</h2>
+    <div class="related-list">
+      <a class="related-item" href="/blog/canvas-calendar-google-calendar/">
+        <strong>How to add your Canvas calendar to Google Calendar (and keep it up to date)</strong>
+        <span>Find the Canvas Calendar Feed link, add it to Google Calendar in 2 minutes, and fix slow updates, missing assignments and wrong times.</span>
+      </a>
+      <a class="related-item" href="/blog/blackboard-calendar-google-calendar/">
+        <strong>How to add your Blackboard calendar to Google Calendar (Ultra and Original)</strong>
+        <span>Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.</span>
+      </a>
+      <a class="related-item" href="/blog/moodle-calendar-google-calendar/">
+        <strong>How to add your Moodle calendar to Google Calendar (and keep it in sync)</strong>
+        <span>Get your Moodle calendar URL, add it to Google Calendar, and fix the usual problems: missing export button, short time span, broken link, wrong times.</span>
+      </a>
+    </div>
+  </section>
+  <div class="cta-band inline">
+    <div><h3>Brightspace due dates in Google Calendar, minutes after they change</h3><p class="muted">14-day free trial from your first calendar. No credit card.</p></div>
+    <a class="btn btn-primary" href="/apps/icalsync/">Get ICalSync</a>
+  </div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/images/futzs_logo.png" alt="Futzs"></a>
+      <p>Don&#39;t Waste Time Futzin&#39; Around! Level Up Your Productivity with our Apps.</p>
+      <div class="footer-social">
+<a href="https://twitter.com/skoudoro" title="X">X</a><a href="https://github.com/skoudoro" title="GH">GH</a><a href="https://www.linkedin.com/in/serge-koudoro" title="in">in</a>      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Apps</h4>
+<a href="/apps/icalsync/">ICalSync</a><a href="/apps/quickreplies/">Quick Replies</a><a href="/apps/dutydesk/">DutyDesk</a><a href="/apps/unlinker/">Unlinker</a><a href="/apps/gapps/">GAPPS</a><a href="/apps/">All apps</a>    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+<a href="/about/">About Us</a><a href="/services/">Scientific software services</a><a href="/partnership/">Partnership</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>    </div>
+    <div class="footer-col">
+      <h4>Support &amp; Legal</h4>
+<a href="/help/">Help Center</a><a href="/legal/privacy/">Privacy Policy</a><a href="/legal/terms/">Terms &amp; Conditions</a>    </div>
+  </div>
+  <div class="footer-base">
+    <span>&copy; Copyright by Futzs&reg;. All rights reserved. Futzs is a trade name of Serge Koudoro, sole proprietor.</span>
+    <span>Built in Bloomington, IN &middot; <a href="mailto:contact@futzs.com">contact@futzs.com</a></span>
+  </div>
+  <p class="footer-trademarks">Google, Google Workspace, Google Workspace Marketplace, Google Chat, Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms and Apps Script are trademarks of Google LLC. Futzs is not affiliated with or endorsed by Google. Other product names are trademarks of their respective owners.</p>
+</footer><script src="/js/site.js" defer></script>
+</body>
+</html>

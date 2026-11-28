@@ -36,6 +36,8 @@ policy and terms.
 
 ## Articles
 
+- [How to add your Brightspace (D2L) calendar to Google Calendar](https://futzs.com/blog/brightspace-calendar-google-calendar/): Turn on calendar feeds in Brightspace, copy the Subscribe link, add it to Google Calendar, and fix a missing Subscribe button, slow updates and wrong times.
+
 - [How to see your iCloud calendar on Android](https://futzs.com/blog/icloud-calendar-on-android/): Apple has no Calendar app for Android. Copy your iCloud calendar into Google Calendar and it shows up on any Android phone, in 3 steps.
 
 - [How to add your Blackboard calendar to Google Calendar (Ultra and Original)](https://futzs.com/blog/blackboard-calendar-google-calendar/): Find the Share Calendar link in Blackboard Learn, add it to Google Calendar, and fix slow updates, missing items, wrong times and duplicates.
